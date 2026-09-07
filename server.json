@@ -1,0 +1,137 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.proofable/proofable-mcp",
+  "title": "Proofable MCP",
+  "description": "Portable trust infrastructure for AI agents: identity, context, permissions, and proof across tools.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/proofable/mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://docs.proofable.me/mcp/setup",
+  "icons": [
+    {
+      "src": "https://proofable.me/images/proofable-brand-pack/web/proofable-mark-512.png",
+      "sizes": [
+        "512x512"
+      ],
+      "mimeType": "image/png"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.proofable.me/mcp"
+    }
+  ],
+  "authorization": {
+    "type": "oauth2",
+    "resourceMetadataUrl": "https://mcp.proofable.me/.well-known/oauth-protected-resource"
+  },
+  "capabilities": {
+    "tools": {
+      "supported": true,
+      "listChanged": false
+    },
+    "elicitation": {
+      "supported": true
+    }
+  },
+  "tools": [
+    {
+      "name": "proofable_context",
+      "description": "Start here. Returns the signed-in profile, available verifiers, and the recommended workflow in one call. Handles signed-in and offline modes, no separate profile tool needed."
+    },
+    {
+      "name": "proofable_verifiers_catalog",
+      "description": "Full verifier catalog: supported networks and required inputs. Use this when a verifier needs schema details beyond the compact verifierSummary in proofable_context."
+    },
+    {
+      "name": "proofable_proofs_check",
+      "description": "Does this wallet already have the required proofs? Returns pass or fail, not records. To read proofs, use proofable_proofs_get. Omit the wallet when signed in."
+    },
+    {
+      "name": "proofable_verify",
+      "description": "Create or refresh a portable proof after confirming that one is needed. Omit the wallet when signed in; the session authorizes the request. Signed-in ownership proofs finish here. Share a hosted link only when this tool returns one."
+    },
+    {
+      "name": "proofable_verify_or_guide",
+      "description": "Reuse a qualifying portable proof or return the one next step needed to finish verification. Omit the wallet when signed in. Signed-in ownership proofs continue with proofable_verify. A hosted link is returned only for an outside login, payment, or different account."
+    },
+    {
+      "name": "proofable_proofs_get",
+      "description": "Read proofs. Search by text, tag, or check; newest first; or fetch one by proof id. For pass or fail, use proofable_proofs_check. Omit the wallet when signed in."
+    },
+    {
+      "name": "proofable_agent_link",
+      "description": "Confirm the agent is linked to your profile with the identity and permissions it needs. A separate spend account also needs signed limits."
+    },
+    {
+      "name": "proofable_agent_create",
+      "description": "Create or import an agent on your profile. Default: signed-in account. Optional separate spend account and controls. Use agentWallet \"generate\" for a dedicated key. Keep the same agentId on retries."
+    },
+    {
+      "name": "proofable_agent_mount",
+      "description": "Load the agent identity, permissions, skills, and context into this project."
+    },
+    {
+      "name": "proofable_secret_create",
+      "description": "Store a secret, such as an API key, as an encrypted record. Tools never return the saved value."
+    },
+    {
+      "name": "proofable_secret_list",
+      "description": "List saved secret names, types, and update times without exposing their values."
+    },
+    {
+      "name": "proofable_secret_revoke",
+      "description": "Revoke a saved secret so it can no longer be used."
+    }
+  ],
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Proofable",
+    "url": "https://proofable.me"
+  },
+  "keywords": [
+    "proofable",
+    "portable-proof",
+    "caip-380",
+    "mcp",
+    "model-context-protocol",
+    "oauth",
+    "verification",
+    "portable-proofs",
+    "proofs",
+    "agents",
+    "agent-identity",
+    "agent-delegation",
+    "cursor",
+    "claude-code",
+    "codex",
+    "vscode",
+    "ai-assistant"
+  ],
+  "examples": [
+    {
+      "title": "Start every session",
+      "description": "Load trust context before actions or authorizations.",
+      "prompt": "Use Proofable before taking sensitive actions. Start with proofable_context, then follow the returned workflow."
+    },
+    {
+      "title": "Register an Agent",
+      "description": "Confirm agent identity and delegated authority before it acts.",
+      "prompt": "Verify this agent is trusted before it runs tools. Use proofable_agent_link first; use proofable_agent_create only when setup is still missing."
+    },
+    {
+      "title": "Reuse Portable Proofs",
+      "description": "Check existing proofs before opening a new verification flow.",
+      "prompt": "Check whether I already have the required portable proof before verifying again."
+    }
+  ],
+  "compatibility": {
+    "claudeDesktop": true,
+    "claudeCode": true,
+    "cursor": true,
+    "vscode": true
+  }
+}

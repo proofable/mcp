@@ -1,0 +1,30 @@
+{
+  "name": "proofable-mcp",
+  "displayName": "Proofable",
+  "description": "Connect AI agents to portable identity, context, permissions, and proof across tools.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Proofable"
+  },
+  "homepage": "https://docs.proofable.me/mcp/setup",
+  "repository": "https://github.com/proofable/mcp",
+  "license": "Apache-2.0",
+  "logo": "./assets/icon.svg",
+  "mcpServers": "./mcp.json",
+  "category": "security",
+  "keywords": [
+    "ai-agents",
+    "agent-permissions",
+    "agent-identity",
+    "ai-security",
+    "identity-verification",
+    "ai-assistant",
+    "cursor",
+    "vscode",
+    "codex",
+    "claude-code",
+    "oauth",
+    "mcp",
+    "security"
+  ]
+}

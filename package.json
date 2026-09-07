@@ -1,0 +1,55 @@
+{
+  "name": "@proofable/mcp-server",
+  "version": "0.1.0",
+  "description": "Portable trust infrastructure for AI agents: identity, context, permissions, and proof across tools.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "license": "Apache-2.0",
+  "author": "Proofable",
+  "homepage": "https://docs.proofable.me/mcp/overview",
+  "bugs": {
+    "url": "https://github.com/proofable/mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proofable/mcp.git"
+  },
+  "keywords": [
+    "proofable",
+    "portable-proof",
+    "caip-380",
+    "mcp",
+    "model-context-protocol",
+    "oauth",
+    "ai-agents",
+    "agent-identity",
+    "agent-permissions",
+    "identity-verification",
+    "cursor",
+    "claude-code",
+    "codex"
+  ],
+  "files": [
+    "index.mjs",
+    "LICENSE",
+    "README.md",
+    "server.json",
+    "skills/**"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "validate:package": "node -e \"const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json','utf8'));const s=JSON.parse(fs.readFileSync('server.json','utf8'));if(p.version!==s.version)throw new Error('package.json and server.json version mismatch: '+p.version+' vs '+s.version);if(p.description!==s.description)throw new Error('package.json and server.json descriptions must match');if(String(s.description||'').length>100)throw new Error('server.json description must be <=100 chars for MCP Registry');if(s.repository?.url!=='https://github.com/proofable/mcp'||s.repository?.subfolder)throw new Error('server.json must point at the repository root');if(!p.files.includes('LICENSE')||!fs.existsSync('LICENSE'))throw new Error('Apache-2.0 LICENSE must be published');\"",
+    "validate": "node scripts/validate-template.mjs && node scripts/validate-cursor-schemas.mjs && node scripts/validate-cursor-mcp.mjs && node scripts/validate-universal-manifests.mjs && node scripts/sync-plugin-skills.mjs --check && npm run validate:package",
+    "test": "npm run validate",
+    "prepublishOnly": "npm run validate"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "proofable-mcp",
+  "version": "0.1.0",
+  "description": "Connect AI agents to portable identity, context, permissions, and proof across tools.",
+  "author": {
+    "name": "Proofable",
+    "url": "https://proofable.me"
+  },
+  "homepage": "https://docs.proofable.me/mcp/setup",
+  "repository": "https://github.com/proofable/mcp",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ai-agents",
+    "agent-permissions",
+    "agent-identity",
+    "ai-security",
+    "identity-verification",
+    "ai-assistant",
+    "cursor",
+    "vscode",
+    "codex",
+    "claude-code",
+    "oauth",
+    "mcp",
+    "security"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Proofable",
+    "shortDescription": "Portable trust for AI",
+    "longDescription": "Use one Proofable profile for identity, Portable Proofs, agent permissions, and private context across supported MCP clients.",
+    "developerName": "Proofable",
+    "category": "Security",
+    "capabilities": [
+      "code",
+      "search"
+    ],
+    "websiteURL": "https://proofable.me",
+    "privacyPolicyURL": "https://proofable.me/privacy",
+    "termsOfServiceURL": "https://proofable.me/terms",
+    "defaultPrompt": [
+      "Use Proofable to verify identity and permissions before taking action.",
+      "Use Proofable to verify proofs for this wallet or organization."
+    ],
+    "brandColor": "#98C0EF",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "screenshots": []
+  }
+}

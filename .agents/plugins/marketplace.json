@@ -1,0 +1,17 @@
+{
+  "name": "proofable",
+  "owner": {
+    "name": "Proofable"
+  },
+  "metadata": {
+    "description": "Portable Trust Infrastructure for Humans and AI. Identity, proofs, permissions, and private context.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "proofable-mcp",
+      "source": "./plugins/proofable-mcp",
+      "description": "Connect AI agents to portable identity, context, permissions, and proof across tools."
+    }
+  ]
+}

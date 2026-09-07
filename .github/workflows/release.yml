@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    if: github.repository == 'proofable/mcp'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Verify release tag
+        run: node -e "const p=require('./package.json'); if (process.env.GITHUB_REF_NAME !== 'v'+p.version) throw new Error('tag must equal v'+p.version)"
+      - run: npm test
+      - run: npm pack --dry-run
+      - name: Publish @proofable/mcp-server
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="$(node -p "require('./package.json').name")"
+          version="$(node -p "require('./package.json').version")"
+          if npm view "$name@$version" version --registry https://registry.npmjs.org >/dev/null 2>&1; then
+            echo "$name@$version is already published; skipping npm publish."
+          else
+            npm publish --access public --registry https://registry.npmjs.org
+          fi
+      - name: Install MCP Registry publisher
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/v1.7.9/mcp-publisher_linux_amd64.tar.gz" -o "$RUNNER_TEMP/mcp-publisher.tar.gz"
+          echo "ab128162b0616090b47cf245afe0a23f3ef08936fdce19074f5ba0a4469281ac  $RUNNER_TEMP/mcp-publisher.tar.gz" | sha256sum --check
+          tar xzf "$RUNNER_TEMP/mcp-publisher.tar.gz" -C "$RUNNER_TEMP" mcp-publisher
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+      - name: Publish Proofable MCP Registry card
+        run: |
+          set -euo pipefail
+          mcp-publisher validate server.json
+          mcp-publisher login github-oidc
+          mcp-publisher publish server.json
+
