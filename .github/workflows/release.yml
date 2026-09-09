@@ -23,7 +23,7 @@ jobs:
         run: node -e "const p=require('./package.json'); if (process.env.GITHUB_REF_NAME !== 'v'+p.version) throw new Error('tag must equal v'+p.version)"
       - run: npm test
       - run: npm pack --dry-run
-      - name: Publish @proofable/mcp-server
+      - name: Publish @proofable/mcp
         shell: bash
         run: |
           set -euo pipefail

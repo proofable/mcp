@@ -11,7 +11,7 @@ Skills in this bundle: `proofable-setup`, `proofable-trust-workflow`, `proofable
 Optional. Writes the same endpoint and installs the public workflow skill when the plugin is not already present:
 
 ```bash
-npx -y -p @proofable/sdk proofable setup
+npx -y @proofable/sdk setup
 ```
 
 Docs: [docs.proofable.me/mcp/setup](https://docs.proofable.me/mcp/setup)

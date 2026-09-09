@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Portable Trust Infrastructure for Humans and AI. Identity, proofs, permissions, and private context.",
+    "description": "The portable trust harness for AI agents across models, tools, and runtimes.",
     "version": "0.1.0"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Connect AI agents to portable identity, context, permissions, and proof across tools."
+      "description": "Keep agent identity, authority, context, connections, limits, and proof across runtimes."
     }
   ]
 }

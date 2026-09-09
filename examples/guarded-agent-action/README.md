@@ -6,8 +6,8 @@ This example loads the current Proofable runtime mount and makes one permission 
 
 ```bash
 npm install
-npx -y -p @proofable/sdk proofable setup
-npx -y -p @proofable/sdk proofable mount <agentId> --apply <host>
+npx -y @proofable/sdk setup
+npx -y @proofable/sdk mount <agentId> --apply <host>
 ```
 
 Click **Connect** after setup. `<host>` is the adapter your CLI accepts (`cursor`, `claude`, or `codex`).

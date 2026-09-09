@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.0",
-  "description": "Connect AI agents to portable identity, context, permissions, and proof across tools.",
+  "description": "Keep agent identity, authority, context, connections, limits, and proof across AI runtimes.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -27,8 +27,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Portable trust for AI",
-    "longDescription": "Use one Proofable profile for identity, Portable Proofs, agent permissions, and private context across supported MCP clients.",
+    "shortDescription": "Switch the model. Keep the agent.",
+    "longDescription": "Connect Proofable so supported assistants can load the same agent identity, authority, selected context, connections, limits, and current proofs.",
     "developerName": "Proofable",
     "category": "Security",
     "capabilities": [

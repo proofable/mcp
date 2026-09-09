@@ -1,7 +1,7 @@
 {
-  "name": "@proofable/mcp-server",
+  "name": "@proofable/mcp",
   "version": "0.1.0",
-  "description": "Portable trust infrastructure for AI agents: identity, context, permissions, and proof across tools.",
+  "description": "The portable trust harness for AI agents across models, tools, and runtimes.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {

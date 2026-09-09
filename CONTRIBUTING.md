@@ -1,35 +1,38 @@
 # Contributing
 
-**If you are integrating Proofable into a product**, use **[docs.proofable.me](https://docs.proofable.me)** and the live product first. The table below is for people proposing changes here.
+**If you are connecting Proofable to an AI client**, use **[docs.proofable.me/mcp/setup](https://docs.proofable.me/mcp/setup)** and the live product first. The table below is for people proposing changes here.
 
 | Need | Where |
 | --- | --- |
 | Product documentation | [docs.proofable.me](https://docs.proofable.me) |
-| Possible bugs | [Issues](https://github.com/proofable/proofable/issues) |
-| Ideas and questions | [Discussions](https://github.com/proofable/proofable/discussions) |
+| Possible bugs | [Issues](https://github.com/proofable/mcp/issues) |
+| Ideas and questions | [Discussions](https://github.com/proofable/mcp/discussions) |
 | Security reports | [dev@proofable.me](mailto:dev@proofable.me) (do not post publicly) |
 | Release notes | [CHANGELOG.md](./CHANGELOG.md) |
 
+## What lives here
+
+Public discovery metadata for the hosted MCP server at `https://mcp.proofable.me/mcp`, plus the host plugins, skills, and runnable examples. The server itself is hosted; this repository publishes how clients find and connect to it.
+
+`server.json` and the tool list are generated from the hosted server. Report a wrong tool description as an issue rather than editing the generated fields by hand.
+
 ## What helps
 
-- Bug reports with clear steps to reproduce and no secrets in the thread.
-- Verifier proposals that spell out the user-visible outcome you want. Open a [Discussion](https://github.com/proofable/proofable/discussions) first; a PR should include the spec, schema, and docs together.
-- Updates to the SDK, examples, or documentation that match what the live product does today.
-- Tests or examples when you change behavior that builders rely on.
+- Bug reports with clear steps to reproduce, the client you used, and no secrets in the thread.
+- Host plugin or skill changes that a supported client can install and run today.
+- Examples that work against the hosted endpoint without local setup.
+
+To propose a new check, open a PR in [proofable/docs](https://github.com/proofable/docs). For client and CLI changes, use [proofable/sdk](https://github.com/proofable/sdk).
 
 **Do not** share keys, tokens, bearer secrets, or private proof content in public issues or change descriptions.
-
-## Verifier proposals
-
-The public verifier catalog and input schemas live in **this repo**: JSON Schemas under [`docs/verifiers/schemas/`](./docs/verifiers/schemas) and the machine index at [`spec/VERIFIERS.json`](./spec/VERIFIERS.json). A contributor opens a PR here to add a new check; once merged, it propagates to the protocol verifier registry. See [Propose a verifier](https://docs.proofable.me/verification/propose-a-verifier) for the full flow.
 
 ## Do not commit
 
 These paths are local-only or generated elsewhere (see `.gitignore`):
 
 - `.env`, `.npmrc`, secrets, and key material
-- `sdk/cjs/` and other build artifacts
+- Access keys or OAuth tokens in example configuration
 
 ## Describing your change
 
-Explain **what builders or end users will experience differently** (for example new fields, new errors, or renamed concepts). If you adjust verifiers or any documented HTTP surface, keep the written API reference and examples aligned with the live product.
+Explain **what a person connecting an AI client will experience differently** (for example a new host, a renamed tool, or a changed setup step). Keep the README and the setup docs aligned with what the hosted server actually returns.
