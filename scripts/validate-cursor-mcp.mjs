@@ -50,7 +50,7 @@ async function validatePluginMcp(pluginDir, { requireFile = false } = {}) {
   try {
     mcp = await readJsonFile(mcpPath);
   } catch (error) {
-    addError(`${relative}: invalid JSON ΓÇö ${error.message}`);
+    addError(`${relative}: invalid JSON — ${error.message}`);
     return;
   }
 
