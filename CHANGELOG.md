@@ -26,7 +26,7 @@ First Proofable MCP discovery package and public plugin release. The predecessor
 ### Upgrade
 
 ```bash
-npm install @proofable/mcp
+npx -y @proofable/sdk setup
 ```
 
 Then re-register the hosted endpoint and sign in once: [Migration guide](https://docs.proofable.me/migrate).

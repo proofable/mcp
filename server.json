@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
-  "description": "Hosted MCP connection for Proofable identity, permissions, and verification.",
+  "description": "Hosted MCP server for AI agent identity, permissions, verification, and reusable proof.",
   "version": "0.1.0",
   "repository": {
     "url": "https://github.com/proofable/mcp",
@@ -94,38 +94,39 @@
   },
   "keywords": [
     "proofable",
-    "portable-proof",
-    "caip-380",
     "mcp",
     "model-context-protocol",
-    "oauth",
-    "verification",
-    "portable-proofs",
-    "proofs",
-    "agents",
+    "mcp-server",
+    "remote-mcp",
+    "ai-agents",
+    "agent-permissions",
     "agent-identity",
-    "agent-delegation",
-    "cursor",
+    "authorization",
+    "identity-verification",
+    "proof-of-human",
+    "reusable-proof",
+    "portable-proof",
+    "oauth",
     "claude-code",
+    "cursor",
     "codex",
-    "vscode",
-    "ai-assistant"
+    "vscode"
   ],
   "examples": [
     {
-      "title": "Start every session",
-      "description": "Load trust context before actions or authorizations.",
-      "prompt": "Use Proofable before taking sensitive actions. Start with proofable_context, then follow the returned workflow."
+      "title": "Check before an agent acts",
+      "description": "Confirm who controls the agent and what it may do before a sensitive action.",
+      "prompt": "Before you run tools that change data or spend money, use Proofable to check this agent's permissions. Start with proofable_context."
     },
     {
-      "title": "Register an Agent",
-      "description": "Confirm agent identity and delegated authority before it acts.",
-      "prompt": "Verify this agent is trusted before it runs tools. Use proofable_agent_link first; use proofable_agent_create only when setup is still missing."
+      "title": "Connect an agent",
+      "description": "Give an agent an owner and permissions on your Proofable profile.",
+      "prompt": "Link this agent to my Proofable profile. Use proofable_agent_link first and proofable_agent_create only if setup is missing."
     },
     {
-      "title": "Reuse Portable Proofs",
-      "description": "Check existing proofs before opening a new verification flow.",
-      "prompt": "Check whether I already have the required portable proof before verifying again."
+      "title": "Reuse a proof",
+      "description": "Check for an existing proof before verifying again.",
+      "prompt": "Check whether I already have the required proof before verifying again."
     }
   ],
   "compatibility": {

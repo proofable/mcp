@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "Keep agent identity, authority, context, connections, limits, and proof across AI runtimes.",
+  "description": "Connect Proofable identity, permissions, and proofs to supported AI clients.",
   "version": "0.1.0",
   "author": {
     "name": "Proofable"
@@ -13,18 +13,20 @@
   "mcpServers": "./mcp.json",
   "category": "security",
   "keywords": [
+    "proofable",
+    "mcp",
     "ai-agents",
     "agent-permissions",
     "agent-identity",
-    "ai-security",
+    "authorization",
     "identity-verification",
-    "ai-assistant",
-    "cursor",
-    "vscode",
-    "codex",
-    "claude-code",
+    "proof-of-human",
+    "reusable-proof",
     "oauth",
-    "mcp",
-    "security"
+    "security",
+    "claude-code",
+    "cursor",
+    "codex",
+    "vscode"
   ]
 }

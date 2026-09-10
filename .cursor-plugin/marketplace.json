@@ -4,7 +4,7 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "The portable trust harness for AI agents across models, tools, and runtimes.",
+    "description": "Proofable plugins and skills that connect AI clients to identity, permissions, and proofs.",
     "version": "0.1.0"
   },
   "plugins": [

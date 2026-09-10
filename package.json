@@ -1,7 +1,7 @@
 {
   "name": "@proofable/mcp",
   "version": "0.1.0",
-  "description": "Hosted MCP connection for Proofable identity, permissions, and verification.",
+  "description": "Hosted MCP server for AI agent identity, permissions, verification, and reusable proof.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {
@@ -19,18 +19,23 @@
   },
   "keywords": [
     "proofable",
-    "portable-proof",
-    "caip-380",
     "mcp",
     "model-context-protocol",
-    "oauth",
+    "mcp-server",
+    "remote-mcp",
     "ai-agents",
-    "agent-identity",
     "agent-permissions",
+    "agent-identity",
+    "authorization",
     "identity-verification",
-    "cursor",
+    "proof-of-human",
+    "reusable-proof",
+    "portable-proof",
+    "oauth",
     "claude-code",
-    "codex"
+    "cursor",
+    "codex",
+    "vscode"
   ],
   "files": [
     "index.mjs",

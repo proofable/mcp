@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.0",
-  "description": "Keep agent identity, authority, context, connections, limits, and proof across AI runtimes.",
+  "description": "Connect Proofable identity, permissions, and proofs to supported AI clients.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -10,25 +10,27 @@
   "repository": "https://github.com/proofable/mcp",
   "license": "Apache-2.0",
   "keywords": [
+    "proofable",
+    "mcp",
     "ai-agents",
     "agent-permissions",
     "agent-identity",
-    "ai-security",
+    "authorization",
     "identity-verification",
-    "ai-assistant",
-    "cursor",
-    "vscode",
-    "codex",
-    "claude-code",
+    "proof-of-human",
+    "reusable-proof",
     "oauth",
-    "mcp",
-    "security"
+    "security",
+    "claude-code",
+    "cursor",
+    "codex",
+    "vscode"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Switch the model. Keep the agent.",
-    "longDescription": "Connect Proofable so supported assistants can load the same agent identity, authority, selected context, connections, limits, and current proofs.",
+    "shortDescription": "Identity, permissions, and proofs for AI clients",
+    "longDescription": "Check what an AI agent may do before it acts, verify people and accounts, and reuse proof instead of repeating checks. The plugin connects your AI client to your Proofable profile, agents, permissions, and proofs.",
     "developerName": "Proofable",
     "category": "Security",
     "capabilities": [
@@ -39,8 +41,8 @@
     "privacyPolicyURL": "https://proofable.me/privacy",
     "termsOfServiceURL": "https://proofable.me/terms",
     "defaultPrompt": [
-      "Use Proofable to verify identity and permissions before taking action.",
-      "Use Proofable to verify proofs for this wallet or organization."
+      "Show my Proofable profile and current proofs.",
+      "Check what this agent is allowed to do before it acts."
     ],
     "brandColor": "#98C0EF",
     "composerIcon": "./assets/icon.svg",

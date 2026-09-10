@@ -7,13 +7,13 @@ compatibility: Requires an MCP-capable client that can register a remote HTTP se
 
 # Connect Proofable
 
-Proofable MCP is the hosted connection for any chat, IDE, or job runtime. Same profile, proofs, listings, permissions, and private context.
+Proofable MCP is the hosted connection for supported chats, IDEs, and job runtimes. Each one gets the same profile, proofs, listings, permissions, and private context.
 
 Install Proofable, then click **Connect**:
 
 `https://mcp.proofable.me/mcp`
 
-If this host already has the Proofable plugin, install that and click **Connect**. Do not also write a second `proofable` entry.
+If the host offers the Proofable plugin, install it and click **Connect** instead of adding the URL by hand. Do not add a second `proofable` entry.
 
 Have the CLI?
 
