@@ -23,7 +23,7 @@ const canonicalSkillsDir = path.join(repoRoot, 'skills');
 const pluginSkillsDir = path.join(repoRoot, 'plugins', 'proofable-mcp', 'skills');
 const sdkSkillsDir = process.env.PROOFABLE_SDK_SKILLS_ROOT
   ? path.resolve(process.env.PROOFABLE_SDK_SKILLS_ROOT)
-  : path.resolve(repoRoot, '../proofable-sdk/skills');
+  : path.resolve(repoRoot, '../sdk/skills');
 const checkMode = process.argv.includes('--check');
 
 function directoryDigest(dir) {

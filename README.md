@@ -1,8 +1,6 @@
 # Proofable MCP
 
-**The portable trust harness.**
-
-One hosted connection carries agent identity, authority, selected context, connections, limits, and current proof into Cursor, Claude, Codex, and other supported MCP clients.
+Connect supported AI clients to your Proofable profile, agents, permissions, and proofs.
 
 - Server: `https://mcp.proofable.me/mcp`
 - Setup: `npx -y @proofable/sdk setup`

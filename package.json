@@ -1,7 +1,7 @@
 {
   "name": "@proofable/mcp",
   "version": "0.1.0",
-  "description": "The portable trust harness for AI agents across models, tools, and runtimes.",
+  "description": "Hosted MCP connection for Proofable identity, permissions, and verification.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {
