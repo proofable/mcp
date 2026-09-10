@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "Connect AI agents to portable identity, context, permissions, and proof across tools.",
+  "description": "Keep agent identity, authority, context, connections, limits, and proof across AI runtimes.",
   "version": "0.1.0",
   "author": {
     "name": "Proofable"

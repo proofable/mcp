@@ -11,7 +11,7 @@
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Keep agent identity, authority, context, connections, limits, and proof across runtimes."
+      "description": "Keep agent identity, authority, context, connections, limits, and proof across AI runtimes."
     }
   ]
 }
