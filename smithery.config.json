@@ -1,0 +1,15 @@
+{
+  "title": "Proofable Profile access key",
+  "description": "Optional. Connect (OAuth) needs no configuration. Use a Profile access key for servers, CI, and headless agents when browser sign-in is unavailable.",
+  "type": "object",
+  "properties": {
+    "profileAccessKey": {
+      "type": "string",
+      "title": "Proofable Profile access key",
+      "description": "Optional. Create one at https://proofable.me/profile?tab=account (Access keys). Used only when browser OAuth is unavailable; otherwise click Connect.",
+      "x-from": {
+        "header": "x-proofable-access-key"
+      }
+    }
+  }
+}

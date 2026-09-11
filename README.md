@@ -7,15 +7,36 @@ Hosted MCP server for AI agent identity, permissions, verification, and reusable
 
 ## Connect
 
-Add the hosted server to your MCP client, then click **Connect** and sign in:
+Two paths, one endpoint, one profile:
+
+- **Connect (OAuth):** add the hosted server, click **Connect**, sign in in the browser. Best for interactive clients.
+- **Access key:** best for servers, CI, and headless agents. Send a Profile access key as a Bearer token.
+
+Any MCP client:
 
 ```json
 {
   "mcpServers": {
-    "proofable": { "url": "https://mcp.proofable.me/mcp" }
+    "proofable": { "type": "http", "url": "https://mcp.proofable.me/mcp" }
   }
 }
 ```
+
+Servers and automation:
+
+```json
+{
+  "mcpServers": {
+    "proofable": {
+      "type": "http",
+      "url": "https://mcp.proofable.me/mcp",
+      "headers": { "Authorization": "Bearer ${PROOFABLE_ACCESS_KEY}" }
+    }
+  }
+}
+```
+
+Create a key at [Access keys](https://proofable.me/profile?tab=account), then `export PROOFABLE_ACCESS_KEY=npk_...` in that environment.
 
 Or let the installer write the same entry for Cursor, Claude Code, Codex, or VS Code:
 
@@ -47,15 +68,29 @@ Full reference: [docs.proofable.me/mcp/tools](https://docs.proofable.me/mcp/tool
 
 ## Authentication
 
-Interactive clients sign in with OAuth. Servers and CI use a profile access key in `PROOFABLE_ACCESS_KEY`. Never put a key in client config or chat. See [OAuth](https://docs.proofable.me/mcp/oauth).
+Two paths, one session model: interactive clients Connect with OAuth (PKCE, silent refresh); servers and CI send a Profile access key (`npk_...`) as a Bearer token from `PROOFABLE_ACCESS_KEY`. Same endpoint, same Proofable profile, same tools and policy. Never put a key in client config or chat when Connect works. See [Auth](https://docs.proofable.me/mcp/auth).
+
+Marketplace gateways (such as Smithery) use OAuth when their client supports it; where a gateway cannot run browser sign-in it forwards the key as `x-proofable-access-key`, which the server maps to the same Bearer principal. `smithery.config.json` publishes that optional configuration.
 
 ## This package
 
-`@proofable/mcp` publishes the registry manifest (`server.json`) and the public skills. It does not run a local server.
+`@proofable/mcp` publishes the registry manifest (`server.json`), the public skills, and the Smithery release metadata (`smithery.config.json`). It does not run a local server.
 
 ```js
 import { serverManifest } from '@proofable/mcp';
 ```
+
+The standards server card (`server.json`, `/.well-known/mcp/server-card.json`) stays OAuth-first; gateway-specific config schemas belong to the marketplace release metadata, not in the card.
+
+### Smithery release metadata
+
+`smithery.config.json` is the optional Smithery configuration schema for the hosted endpoint: one optional `profileAccessKey` field forwarded as `x-proofable-access-key`. With no key configured, Smithery clients get the standard OAuth challenge and click Connect. To (re)publish with the config schema:
+
+```bash
+smithery mcp publish "https://mcp.proofable.me/mcp" -n @proofable/mcp --config-schema "$(cat smithery.config.json)"
+```
+
+`npm run validate:smithery` guards the file's contract (optional fields only, reserved headers, 1KB limit).
 
 ## Support
 
