@@ -25,7 +25,7 @@ After Connect, call `proofable_context`. Reuse proofs before a new check. Summar
 
 Create or import an agent with `proofable_agent_create` when needed. Default is the signed-in profile. Use `generate` only for a dedicated spend key. Open **Connections** on proofable.me to link apps.
 
-To sell: set payouts at https://proofable.me/profile?tab=treasury, then create a listing at https://proofable.me/profile/portals/new (type, checks, price, Listed). Job placeholders become buyer inputs. Buyers connect apps at checkout.
+To sell: set payouts at https://proofable.me/profile?tab=credits, then create a listing at https://proofable.me/profile/portals/new (type, checks, price, Listed). Job placeholders become buyer inputs. Buyers connect apps at checkout.
 
 Full page: https://docs.proofable.me/mcp/setup
 
