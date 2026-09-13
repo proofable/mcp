@@ -6,7 +6,24 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
-(nothing yet)
+## [0.1.1] - 2026-09-13
+
+### Changed
+
+- Marketplace short now names people, organizations, agents, and associations together.
+- Aligned the package, Official MCP Registry card, Smithery configuration, and Claude Code, Codex, and Cursor plugin manifests on one release identity and description.
+- Updated the hosted contract to twelve schema-backed tools with explicit safety annotations and deterministic ordering.
+- Moved the hosted runtime to the stable MCP TypeScript SDK v2 packages, serving `2026-07-28` and legacy `2025-11-25` clients from the same endpoint.
+- Removed MCP-side private-key generation; dedicated agent keys now remain in the operator's wallet or secure runtime.
+- Updated the Registry publisher workflow to `mcp-publisher` 1.8.1 with a pinned Linux AMD64 checksum.
+- Integrate skill now teaches `defineGate` + subject `gateCheck`. MCP connect remains OAuth; API pay-per-call remains x402.
+
+### Upgrade
+
+```bash
+npm install @proofable/mcp@0.1.1
+npx -y @proofable/sdk setup
+```
 
 ## [0.1.0] - 2026-09-06
 

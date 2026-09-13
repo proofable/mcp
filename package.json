@@ -1,7 +1,7 @@
 {
   "name": "@proofable/mcp",
-  "version": "0.1.0",
-  "description": "Hosted MCP server for AI agent identity, permissions, verification, and reusable proof.",
+  "version": "0.1.1",
+  "description": "Decide what people, organizations, agents, and associations can access or change.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {

@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
-  "description": "Hosted MCP server for AI agent identity, permissions, verification, and reusable proof.",
-  "version": "0.1.0",
+  "description": "Decide what people, organizations, agents, and associations can access or change.",
+  "version": "0.1.1",
   "repository": {
     "url": "https://github.com/proofable/mcp",
     "source": "github"
@@ -68,7 +68,7 @@
     },
     {
       "name": "proofable_agent_create",
-      "description": "Create or import an agent on your profile. Default: signed-in account. Optional separate spend account and controls. Use agentWallet \"generate\" for a dedicated key. Keep the same agentId on retries."
+      "description": "Create or import an agent on your profile. Default: signed-in account. Optional separate account and controls. Generate and retain any dedicated key outside Proofable, then pass only its public address. Keep the same agentId on retries."
     },
     {
       "name": "proofable_agent_mount",
@@ -76,7 +76,7 @@
     },
     {
       "name": "proofable_secret_create",
-      "description": "Store a secret, such as an API key, as an encrypted record. Tools never return the saved value."
+      "description": "Store a secret, such as an API key, as an encrypted Vault record. Tools never return the saved value."
     },
     {
       "name": "proofable_secret_list",

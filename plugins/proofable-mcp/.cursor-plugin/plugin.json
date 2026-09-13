@@ -1,8 +1,8 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "Connect Proofable identity, permissions, and proofs to supported AI clients.",
-  "version": "0.1.0",
+  "description": "Decide what people, organizations, agents, and associations can access or change.",
+  "version": "0.1.1",
   "author": {
     "name": "Proofable"
   },
