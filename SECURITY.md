@@ -11,7 +11,7 @@ Email [dev@proofable.me](mailto:dev@proofable.me). Do not file security reports 
 ## Authentication model
 
 - **Interactive clients** sign in with hosted OAuth (PKCE, silent refresh). No key is stored in client config or chat.
-- **Servers, CI, and headless agents** send a Profile access key (`npk_...`) as a Bearer token from `PROOFABLE_ACCESS_KEY`. Keep access keys out of repositories, screenshots, and public threads; rotate from [Access keys](https://proofable.me/profile?tab=account).
+- **Servers, CI, and headless agents** send a server key (`npk_...`) as a Bearer token from `PROOFABLE_ACCESS_KEY`. Keep server keys out of repositories, screenshots, and public threads; rotate from [Access keys](https://proofable.me/profile?tab=account).
 - Never paste keys into chat, issue threads, or skill prompts.
 
 ## Privacy defaults

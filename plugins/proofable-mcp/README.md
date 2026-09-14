@@ -1,4 +1,4 @@
-# proofable-mcp
+# Proofable MCP plugin
 
 Add `https://mcp.proofable.me/mcp`, click **Connect**, and reuse your profile, agents, and proofs.
 
