@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Decide what people, organizations, agents, and associations can access or change.",
+    "description": "Give AI agents identity, permissions, and reusable proof through one MCP.",
     "version": "0.1.1"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Decide what people, organizations, agents, and associations can access or change."
+      "description": "Give AI agents identity, permissions, and reusable proof through one MCP."
     }
   ]
 }

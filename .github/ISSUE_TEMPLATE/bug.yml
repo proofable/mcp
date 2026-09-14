@@ -1,0 +1,34 @@
+name: Bug
+description: Something in the MCP package, plugin, or skill does not match the live product
+labels: [bug]
+body:
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      placeholder: What you saw.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      placeholder: 1. …
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Client
+      placeholder: Cursor, Claude Code, Codex, VS Code, other
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Do not paste keys, tokens, or private proof content.

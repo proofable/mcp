@@ -1,6 +1,9 @@
 # Changelog
 
-All notable changes to the Proofable MCP package, plugins, and skills are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to the Proofable MCP package, plugins, and skills are documented in this file.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/changelog).
 
@@ -8,15 +11,18 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [0.1.1] - 2026-09-13
 
+### Added
+
+- **One description for the package and every registry.** Package, npm, Official MCP Registry, Smithery, and the host plugin manifests share one description: Give AI agents identity, permissions, and reusable proof through one MCP.
+- **README opens with the GitHub line.** Give AI agents verified identity, scoped permissions, and reusable proof through one MCP.
+
 ### Changed
 
-- Marketplace short now names people, organizations, agents, and associations together.
-- Aligned the package, Official MCP Registry card, Smithery configuration, and Claude Code, Codex, and Cursor plugin manifests on one release identity and description.
-- Updated the hosted contract to twelve schema-backed tools with explicit safety annotations and deterministic ordering.
-- Moved the hosted runtime to the stable MCP TypeScript SDK v2 packages, serving `2026-07-28` and legacy `2025-11-25` clients from the same endpoint.
-- Removed MCP-side private-key generation; dedicated agent keys now remain in the operator's wallet or secure runtime.
-- Updated the Registry publisher workflow to `mcp-publisher` 1.8.1 with a pinned Linux AMD64 checksum.
-- Integrate skill now teaches `defineGate` + subject `gateCheck`. MCP connect remains OAuth; API pay-per-call remains x402.
+- **Twelve public tools, documented.** Every `proofable_*` tool carries safety annotations, and `tools/list` returns one stable order.
+- **One endpoint serves two MCP protocol dates.** Hosted MCP runs the MCP TypeScript SDK v2 packages and answers both `2026-07-28` and `2025-11-25` clients.
+- **Proofable no longer holds agent private keys.** Dedicated agent accounts are created in your wallet or runtime; only the public address reaches Proofable.
+- **Registry publishing is reproducible.** The publisher workflow pins `mcp-publisher` 1.8.1 with a pinned Linux AMD64 checksum.
+- **The integrate skill teaches inline gates.** `defineGate` with subject `gateCheck` gates a page without a published listing. MCP connect stays OAuth; API calls stay x402.
 
 ### Upgrade
 
@@ -27,17 +33,17 @@ npx -y @proofable/sdk setup
 
 ## [0.1.0] - 2026-09-06
 
-First Proofable MCP discovery package and public plugin release. The predecessor `@neus/mcp-server` 1.x releases remain on npm as immutable history.
+First Proofable MCP discovery package and public plugin release. The predecessor `@neus/mcp-server` 1.x releases remain on npm as history.
 
 ### Added
 
-- **Hosted connection.** One OAuth endpoint for identity, context, permissions, proofs, and guarded actions at `https://mcp.proofable.me/mcp`.
+- **Hosted connection.** One OAuth endpoint at `https://mcp.proofable.me/mcp`.
 - **Public tools.** The twelve `proofable_*` MCP tools documented on [docs.proofable.me/mcp](https://docs.proofable.me/mcp/overview).
 - **Plugins and skills.** Plugin manifests and skills for Claude Code, Codex, and Cursor, including the trust workflow skill.
 
 ### Changed
 
-- **Package identity.** `@neus/mcp-server` is now `@proofable/mcp`. The package publishes discovery metadata only; the hosted server runs on Proofable infrastructure.
+- **Package identity.** `@neus/mcp-server` is now `@proofable/mcp`. The package publishes discovery metadata only; the hosted server runs on Proofable.
 - **MCP config key.** The server key in client MCP config is `proofable` (was `neus`). Remove a stale `neus` key after upgrading.
 
 ### Upgrade
@@ -48,8 +54,61 @@ npx -y @proofable/sdk setup
 
 Then re-register the hosted endpoint and sign in once: [Migration guide](https://docs.proofable.me/migrate).
 
-### Links
+<!-- Historical archive: the predecessor @neus/mcp-server package this release replaces. -->
+<!-- Full release-by-release notes: https://github.com/proofable/network/blob/neus-final/CHANGELOG.md -->
+<!-- npm: https://www.npmjs.com/package/@neus/mcp-server -->
 
-- [MCP overview](https://docs.proofable.me/mcp/overview)
-- [Migrate from @neus](https://docs.proofable.me/migrate)
-- [npm: @proofable/mcp](https://www.npmjs.com/package/@proofable/mcp)
+## History: @neus/mcp-server
+
+The `@proofable/mcp` package continues the line published as `@neus/mcp-server`. The notes below are the user-facing highlights of each predecessor release. The complete record stays with the predecessor package on npm and in the archived source at [proofable/network](https://github.com/proofable/network) under the `neus-final` tag.
+
+| Release | Date | What it changed for someone connecting a client |
+| --- | --- | --- |
+| [1.3.9](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.9) | 2026-08-13 | Removed the OAuth browser command-injection sink: authorization URLs open through fixed executables, never a shell. Registry scanning scoped to the MCP package so published metadata includes the Apache-2.0 license. Retired the `neus import` / `neus export` / `neus revoke` alias paths. Restored `neus-trust-workflow` in the `neus-mcp` plugin bundle. |
+| [1.3.8](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.8) | 2026-07-30 | Added RFC 9207 issuer validation to `neus setup` and `neus auth`, closing an authorization-code interception path. Removed the retired `neus-trust` plugin fallback. |
+| [1.3.7](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.7) | 2026-07-30 | Restored one-click plugin install in Cursor, and normalized the RFC 8707 `resource` parameter so canonicalizing clients stop failing with `invalid_target`. |
+| [1.3.6](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.6) | 2026-07-30 | The `neus-mcp` plugin became the MCP registration owner in Cursor while the CLI defers to it, ending duplicate `neus` entries. The trust-workflow skill moved into the package as its single home. |
+| [1.3.5](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.5) | 2026-07-21 | Aligned the optional ZKPassport dependency with the hosted verifier runtime patch (0.16.1). |
+| [1.3.4](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.4) | 2026-07-21 | Added offline portable-proof verification (EIP-191, Ed25519, provider-backed EIP-1271) with strict canonical JSON, and a CAIP-380 interoperability fixture. |
+| [1.3.3](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.3) | 2026-07-16 | ZKPassport 0.16 alignment. `neus setup` warns when both the plugin and a manual `neus` entry are present. `neus doctor --live` reports handle, wallet, proof count, and mounted agent. Tag pushes now publish matching GitHub Releases. |
+| [1.3.2](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.2) | 2026-07-09 | Restored one-click Cursor marketplace install (the plugin again ships the required MCP config). Sharpened the trust-workflow skill and aligned docs and examples with the live assistant guidance. |
+| [1.3.1](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.1) | 2026-07-08 | `neus mount` and `@neus/sdk/runtime-mount` became the supported path for loading a Trusted Agent into a project. |
+| [1.3.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.0) | 2026-07-08 | Added `llms.txt` and `pricing.txt` for AI search, opened docs to AI crawlers, published the Codex plugin metadata, and tightened the public SDK surface. |
+| [1.2.5](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.5) | 2026-07-03 | One plugin install path for every editor: Cursor, Claude Code, Codex, and VS Code, with a refreshed marketplace mark. |
+| [1.2.4](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.4) | 2026-06-23 | SDK, MCP server, plugin, and trust-workflow skill report one version: 1.2.4. |
+| [1.2.3](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.3) | 2026-06-21 | VS Code joined `neus setup` and the install docs. `neus doctor --live` works with browser OAuth sessions, and a sign-in challenge counts as reachable, not down. |
+| [1.2.2](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.2) | 2026-06-21 | OAuth docs now match the real editor sign-in flow, and Cursor setup stopped warning about a stale local token format. |
+| [1.2.1](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.1) | 2026-06-18 | Clean installs include the CLI and agent-context modules, and Node-only adapters left the main entry point for browser builds. |
+| [1.2.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.0) | 2026-06-18 | Added agent context mount: `neus mount <agentId>` writes project context for Cursor, Claude Code, or Codex, `neus_agent_mount` loads it in-session, and `neus doctor --live` reports readiness. |
+| [1.1.7](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.7) | 2026-06-16 | Fixed gate checkout paths and proof revocation response parsing. |
+| [1.1.6](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.6) | 2026-06-12 | Fixed a Node ESM crash in `neus auth` browser sign-in. `neus setup --oauth` forces browser sign-in even when an access key is present. |
+| [1.1.5](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.5) | 2026-06-07 | One install path across README, install, MCP, plugin, and SDK, leading with portable proofs. Removed the redundant per-host install files. |
+| [1.1.3](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.3) | 2026-06-05 | Install docs start from hosted MCP setup with platform cards, and the Claude Code plugin loads the trust workflow skill correctly. |
+| [1.1.2](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.2) | 2026-06-04 | Added `@neus/sdk/mcp-hosts` helpers for MCP install URLs, setup commands, and editor deep links. `neus import --from auto` prefers Claude Code, Cursor, and Claude Desktop. |
+| [1.1.1](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.1) | 2026-05-28 | `neus_context` returns the current profile when connected, and `neus setup` writes the correct config path for each editor. |
+| [1.1.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.0) | 2026-05-26 | First public MCP release: OAuth-first setup (`neus setup`, `neus auth`, `neus doctor --live`), the `@neus/mcp-server` npm package, public tools including encrypted Vault secrets, and the Claude Code marketplace plugin with the trust workflow skill. |
+| [1.0.12](https://www.npmjs.com/package/@neus/mcp-server/v/1.0.12) | 2026-05-26 | First `@neus/sdk` release with the hosted MCP CLI and OAuth browser flow. |
+
+<!--
+Media placeholders for this release line. Drop the finished files under docs/images/releases/ and swap each comment for the matching <img> / <Video> include.
+-->
+
+<!--
+<update-image-0.1.1>
+  TODO: screenshot — MCP tools/list in a host with safety annotations visible.
+  Suggested path: docs/images/releases/mcp-0.1.1-tools-list.png
+</update-image-0.1.1>
+-->
+
+<!--
+<update-image-0.1.0>
+  TODO: screenshot — Connect flow: add https://mcp.proofable.me/mcp, click Connect, sign in.
+  Suggested path: docs/images/releases/mcp-0.1.0-connect.png
+  TODO: 30-60s clip — first run: register endpoint, Connect, ask for profile and current proofs.
+  Suggested path: docs/images/releases/mcp-0.1.0-first-run.mp4
+</update-image-0.1.0>
+-->
+
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/proofable/mcp/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/proofable/mcp/releases/tag/v0.1.0

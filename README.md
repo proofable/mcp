@@ -1,13 +1,15 @@
-# Proofable MCP
+# Proofable for MCP
 
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
-Decide what people, organizations, agents, and associations can access or change.
+Give AI agents verified identity, scoped permissions, and reusable proof through one MCP.
 
-Every decision leaves proof you can inspect and reuse.
+Add Proofable to any app, chat, or agent that speaks MCP. Same checks, proofs, and limits.
 
-Connect Proofable to your AI client. Sign in with OAuth, then check what a person or agent may do before they act.
+`https://mcp.proofable.me/mcp`
+
+Start building from [github.com/proofable/sdk](https://github.com/proofable/sdk). This repository is the MCP package, plugins, and registry metadata.
 
 ## Connect
 
@@ -48,7 +50,7 @@ Or let the installer write the same entry for Cursor, Claude Code, Codex, or VS 
 npx -y @proofable/sdk setup
 ```
 
-Then ask: "Load my existing Proofable agents into this project. If I do not have one yet, create or import an agent and set its context and limits."
+Then ask: "Show my Proofable profile and current proofs."
 
 This repository is also a plugin marketplace. In Claude Code:
 
@@ -89,5 +91,6 @@ The standards server card (`server.json`, `/.well-known/mcp/server-card.json`) s
 - Docs: [docs.proofable.me/mcp/overview](https://docs.proofable.me/mcp/overview)
 - Issues: [github.com/proofable/mcp/issues](https://github.com/proofable/mcp/issues)
 - Security: [SECURITY.md](./SECURITY.md)
+- Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 Apache-2.0. Proofable is published by NEUS Network, Inc.

@@ -1,13 +1,15 @@
 ---
 name: proofable-setup
-description: Install Proofable on this host, sign in, and reuse profile, proofs, listings, and agents.
+description: Add Proofable to any MCP client, sign in, and reuse profile, proofs, listings, and agents.
 license: Apache-2.0
 compatibility: Requires an MCP-capable client that can register a remote HTTP server.
 ---
 
-# Connect Proofable
+# Set up Proofable
 
-Proofable MCP is the hosted connection for supported chats, IDEs, and job runtimes. Each one gets the same profile, proofs, listings, permissions, and private context.
+Give AI agents verified identity, scoped permissions, and reusable proof through one MCP.
+
+Add Proofable to any app, chat, or agent that speaks MCP. Cursor, Claude, Codex, and VS Code are shortcuts.
 
 Install Proofable, then click **Connect**:
 
@@ -21,11 +23,23 @@ Have the CLI?
 proofable setup
 ```
 
-After Connect, call `proofable_context`. Load existing agents with `proofable_agent_mount`, or create or import one with `proofable_agent_create`. Do not start with an unscoped `proofable_proofs_get`. Summarize as Passed, Action needed, or Blocked.
+After Connect, ask:
 
-Default is the signed-in profile. Use `generate` only for a dedicated spend key. Open **Connections** on proofable.me to link apps.
+```text
+Show my Proofable profile and current proofs.
+```
 
-To sell: set payouts at https://proofable.me/profile?tab=credits, then create a listing at https://proofable.me/profile/portals/new (type, checks, price, Listed). Job placeholders become buyer inputs. Buyers connect apps at checkout.
+Do not fetch every proof as the first step. Summarize as Passed, Action needed, or Blocked.
+
+Then, if you need agents:
+
+```text
+Show what my agents are allowed to do.
+```
+
+The agent lives on the signed-in profile by default. Ask for a dedicated spend account only when the agent should pay from its own account. Open **Connections** on proofable.me to link apps.
+
+To sell: set payouts at https://proofable.me/profile?tab=credits, then create a listing at https://proofable.me/profile/portals/new.
 
 Full page: https://docs.proofable.me/mcp/setup
 

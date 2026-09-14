@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://docs.proofable.me/mcp/setup
+    about: How to connect an AI client to Proofable
+  - name: Discussions
+    url: https://github.com/proofable/mcp/discussions
+    about: Questions and ideas
+  - name: Security
+    url: https://github.com/proofable/mcp/blob/main/SECURITY.md
+    about: Report a vulnerability privately

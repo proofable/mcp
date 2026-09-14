@@ -1,5 +1,7 @@
 # Contributing
 
+By participating you agree to the [Code of Conduct](./CODE_OF_CONDUCT.md).
+
 **If you are connecting Proofable to an AI client**, use **[docs.proofable.me/mcp/setup](https://docs.proofable.me/mcp/setup)** and the live product first. The table below is for people proposing changes here.
 
 | Need | Where |
@@ -26,6 +28,10 @@ To propose a new check, open a PR in [proofable/docs](https://github.com/proofab
 
 **Do not** share keys, tokens, bearer secrets, or private proof content in public issues or change descriptions.
 
+## Changelog
+
+Put a user-facing note under `## [Unreleased]` in [CHANGELOG.md](./CHANGELOG.md). Use Added, Changed, Deprecated, Removed, Fixed, or Security. Write what a person connecting an AI client will notice. Leave out ticket IDs, private repository names, and process notes.
+
 ## Do not commit
 
 These paths are local-only or generated elsewhere (see `.gitignore`):
@@ -35,4 +41,4 @@ These paths are local-only or generated elsewhere (see `.gitignore`):
 
 ## Describing your change
 
-Explain **what a person connecting an AI client will experience differently** (for example a new host, a renamed tool, or a changed setup step). Keep the README and the setup docs aligned with what the hosted server actually returns.
+Explain **what a person connecting an AI client will experience differently** (for example a new host, a renamed tool, or a changed setup step). Keep the README and the setup docs in step with what the hosted server actually returns.

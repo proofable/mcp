@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.1",
-  "description": "Decide what people, organizations, agents, and associations can access or change.",
+  "description": "Give AI agents identity, permissions, and reusable proof through one MCP.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Decide what people, organizations, agents, and associations can access or change.",
-    "longDescription": "Decide what people, organizations, agents, and associations can access or change. Every decision leaves proof you can inspect and reuse.",
+    "shortDescription": "Give AI agents identity, permissions, and reusable proof through one MCP.",
+    "longDescription": "Give AI agents verified identity, scoped permissions, and reusable proof through one MCP.",
     "developerName": "Proofable",
     "category": "Security",
     "capabilities": [
@@ -41,8 +41,8 @@
     "privacyPolicyURL": "https://proofable.me/privacy",
     "termsOfServiceURL": "https://proofable.me/terms",
     "defaultPrompt": [
-      "Load my existing Proofable agents into this project. If I do not have one yet, create or import an agent and set its context and limits.",
-      "Check what this agent is allowed to do before it acts."
+      "Show my Proofable profile and current proofs.",
+      "Show what my agents are allowed to do."
     ],
     "brandColor": "#98C0EF",
     "composerIcon": "./assets/icon.svg",

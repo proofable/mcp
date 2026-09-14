@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "Decide what people, organizations, agents, and associations can access or change.",
+  "description": "Give AI agents identity, permissions, and reusable proof through one MCP.",
   "version": "0.1.1",
   "author": {
     "name": "Proofable",
