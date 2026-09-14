@@ -43,7 +43,7 @@ To sell: set payouts at https://proofable.me/profile?tab=credits, then create a 
 
 Full page: https://docs.proofable.me/mcp/setup
 
-Optional project mount (`cursor`, `claude`, or `codex`):
+Optional project mount (`cursor`, `claude`, `codex`, `hermes`, `openclaw`, or `opencode`; VS Code uses `cursor`):
 
 ```bash
 proofable mount <agentId> --apply cursor

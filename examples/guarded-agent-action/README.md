@@ -10,7 +10,7 @@ npx -y @proofable/sdk setup
 npx -y @proofable/sdk mount <agentId> --apply <host>
 ```
 
-Click **Connect** after setup. `<host>` is the adapter your CLI accepts (`cursor`, `claude`, or `codex`).
+Click **Connect** after setup. `<host>` is `cursor`, `claude`, `codex`, `hermes`, `openclaw`, or `opencode`. VS Code uses `cursor`.
 
 ## Check an action
 
