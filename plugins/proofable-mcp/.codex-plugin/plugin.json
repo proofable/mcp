@@ -29,7 +29,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Give AI agents identity, permissions, and reusable proof through one MCP.",
+    "shortDescription": "Context and control for any AI",
     "longDescription": "Give AI agents verified identity, scoped permissions, and reusable proof through one MCP.",
     "developerName": "Proofable",
     "category": "Security",
@@ -38,6 +38,7 @@
       "search"
     ],
     "websiteURL": "https://proofable.me",
+    "supportURL": "https://proofable.me/contact",
     "privacyPolicyURL": "https://proofable.me/privacy",
     "termsOfServiceURL": "https://proofable.me/terms",
     "defaultPrompt": [
