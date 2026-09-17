@@ -74,7 +74,7 @@ The `@proofable/mcp` package continues the line published as `@neus/mcp-server`.
 | [1.3.2](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.2) | 2026-07-09 | Restored one-click Cursor marketplace install (the plugin again ships the required MCP config). Sharpened the trust-workflow skill and aligned docs and examples with the live assistant guidance. |
 | [1.3.1](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.1) | 2026-07-08 | `neus mount` and `@neus/sdk/runtime-mount` became the supported path for loading a Trusted Agent into a project. |
 | [1.3.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.0) | 2026-07-08 | Added `llms.txt` and `pricing.txt` for AI search, opened docs to AI crawlers, published the Codex plugin metadata, and tightened the public SDK surface. |
-| [1.2.5](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.5) | 2026-07-03 | One plugin install path for every editor: Cursor, Claude Code, Codex, and VS Code, with a refreshed marketplace mark. |
+| [1.2.5](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.5) | 2026-07-03 | One plugin install path for every tool, with a refreshed marketplace mark. |
 | [1.2.4](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.4) | 2026-06-23 | SDK, MCP server, plugin, and trust-workflow skill report one version: 1.2.4. |
 | [1.2.3](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.3) | 2026-06-21 | VS Code joined `neus setup` and the install docs. `neus doctor --live` works with browser OAuth sessions, and a sign-in challenge counts as reachable, not down. |
 | [1.2.2](https://www.npmjs.com/package/@neus/mcp-server/v/1.2.2) | 2026-06-21 | OAuth docs now match the real editor sign-in flow, and Cursor setup stopped warning about a stale local token format. |

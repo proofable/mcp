@@ -60,7 +60,7 @@ Servers and automation:
 
 Create a key at [Access keys](https://proofable.me/profile?tab=account), then `export PROOFABLE_ACCESS_KEY=npk_...` in that environment.
 
-Or let the installer write the same entry for Cursor, Claude Code, Codex, or VS Code:
+Or let the installer write the same entry for any tool:
 
 ```bash
 npx -y @proofable/sdk setup
