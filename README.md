@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![npm downloads](https://img.shields.io/npm/dm/%40proofable%2Fmcp?color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
+[![smithery badge](https://smithery.ai/badge/proofable/proofable)](https://smithery.ai/servers/proofable/proofable)
 
 Give AI access without giving up control.
 
