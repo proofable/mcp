@@ -60,7 +60,7 @@
     },
     {
       "name": "proofable_proofs_get",
-      "description": "Read proofs. Search by text, tag, or check; newest first; or fetch one by proof id. For pass or fail, use proofable_proofs_check. Omit the wallet when signed in."
+      "description": "Read proofs. Search by text, tag, or check; newest first; or fetch one by proof id. Add include=content to a filtered search to get the bodies in one call instead of reading ids one by one. For pass or fail, use proofable_proofs_check. Omit the wallet when signed in."
     },
     {
       "name": "proofable_agent_link",
