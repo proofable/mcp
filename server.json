@@ -63,6 +63,10 @@
       "description": "Read proofs. Search by text, tag, or check; newest first; or fetch one by proof id. Add include=content to a filtered search to get the bodies in one call instead of reading ids one by one. For pass or fail, use proofable_proofs_check. Omit the wallet when signed in."
     },
     {
+      "name": "proofable_proofs_update",
+      "description": "Update mutable metadata on a proof you own: title, addTags, removeTags. Never changes verified content, verifier results, or ownership. Portable status convention: status:backlog|todo|in-progress|review|done plus workspace:<namespace> tags. Omit walletAddress when signed in."
+    },
+    {
       "name": "proofable_agent_link",
       "description": "Confirm the agent is linked to your profile with the identity and permissions it needs. A separate spend account also needs signed limits."
     },
