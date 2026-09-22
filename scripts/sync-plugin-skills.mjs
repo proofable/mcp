@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 /**
- * Sync all SDK skills into the proofable-mcp plugin bundle.
+ * Sync the canonical public skills into the plugin bundle and the SDK package.
  *
- * Public skills live at skills/<name>/ and are canonical in this repository. The plugin copies at
- * plugins/proofable-mcp/skills/<name>/ are what marketplace installers (Cursor, Claude
- * Code, Codex) deliver so skills are present without requiring a CLI run.
- *
- * Skills with a .proofable-internal marker file are excluded from the plugin bundle
- * (they are org-internal packs distributed via `npm run skills:install`, not via
- * the public marketplace plugin).
+ * Public skills live at skills/<name>/ and are canonical in this repository. The
+ * plugin copies at plugins/proofable-mcp/skills/<name>/ are what marketplace
+ * installers (Cursor, Claude Code, Codex) deliver so skills are present without
+ * requiring a CLI run. The SDK copies at ../sdk/skills/<name>/ are what
+ * `@proofable/sdk` publishes and the `proofable` CLI installs for hosts whose
+ * plugin does not bundle the trust skill.
  *
  * Run after editing any skill:  node scripts/sync-plugin-skills.mjs
  * CI check (no writes):         node scripts/sync-plugin-skills.mjs --check
@@ -64,8 +63,17 @@ let synced = 0;
 
 const targets = [
   { label: 'plugin', root: pluginSkillsDir },
-  ...(existsSync(path.dirname(sdkSkillsDir)) ? [{ label: 'SDK', root: sdkSkillsDir }] : []),
+  { label: 'SDK', root: sdkSkillsDir, required: true },
 ];
+
+for (const target of targets) {
+  if (existsSync(target.root)) continue;
+  if (target.required) {
+    console.error(`skill sync: target directory missing: ${target.root}`);
+    console.error('Set PROOFABLE_SDK_SKILLS_ROOT or clone proofable/sdk as a sibling.');
+    process.exit(1);
+  }
+}
 
 for (const name of skillNames) {
   const sourceDir = path.join(canonicalSkillsDir, name);
@@ -88,6 +96,22 @@ for (const name of skillNames) {
       `skill sync: copied ${path.relative(repoRoot, sourceDir)} → ${path.relative(repoRoot, targetDir)}`,
     );
     synced++;
+  }
+}
+
+// A skill present in a target but not canonical escapes review. Fail instead.
+for (const target of targets) {
+  if (!existsSync(target.root)) continue;
+  for (const entry of readdirSync(target.root, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    if (skillNames.includes(entry.name)) continue;
+    const orphan = path.join(target.root, entry.name);
+    if (checkMode) {
+      mismatches.push(`${target.label}: orphan skill ${entry.name} (not in canonical skills/)`);
+    } else {
+      rmSync(orphan, { recursive: true, force: true });
+      console.log(`skill sync: removed orphan ${path.relative(repoRoot, orphan)}`);
+    }
   }
 }
 

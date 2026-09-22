@@ -1,7 +1,7 @@
 {
   "name": "@proofable/mcp",
   "version": "0.1.1",
-  "description": "Give AI agents identity, permissions, and reusable proof through one MCP.",
+  "description": "Give AI agents identity, scoped access, trusted context, and verifiable actions through MCP.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {

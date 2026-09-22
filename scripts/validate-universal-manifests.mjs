@@ -163,6 +163,37 @@ async function validateCodexMarketplace() {
   }
 }
 
+// Claude Code, Codex, and Cursor each read the marketplace manifest from a
+// host-conventional path, so one logical file ships in three byte-identical
+// copies. Any drift between them would ship different marketplace content to
+// different hosts, so fail unless all three match exactly.
+async function validateMarketplaceParity() {
+  const marketplacePaths = [
+    { label: "Claude Code", path: path.join(repoRoot, ".claude-plugin", "marketplace.json") },
+    { label: "Codex", path: path.join(repoRoot, ".agents", "plugins", "marketplace.json") },
+    { label: "Cursor", path: path.join(repoRoot, ".cursor-plugin", "marketplace.json") },
+  ];
+  const contents = new Map();
+  for (const { label, path: marketplacePath } of marketplacePaths) {
+    if (!(await pathExists(marketplacePath))) {
+      addError(`${label}: missing marketplace.json at ${path.relative(repoRoot, marketplacePath)}`);
+      continue;
+    }
+    const raw = await fs.readFile(marketplacePath, "utf8");
+    contents.set(raw, [...(contents.get(raw) ?? []), label]);
+  }
+  if (contents.size > 1) {
+    addError(
+      "marketplace.json copies differ; they must be byte-identical (.claude-plugin, .agents/plugins, .cursor-plugin)."
+    );
+    let i = 1;
+    for (const labels of contents.values()) {
+      addError(`  copy ${i}: ${labels.join(", ")}`);
+      i++;
+    }
+  }
+}
+
 async function main() {
   const pluginsDir = path.join(repoRoot, "plugins");
   if (!(await pathExists(pluginsDir))) {
@@ -171,6 +202,7 @@ async function main() {
     return;
   }
 
+  await validateMarketplaceParity();
   await validateClaudeMarketplace();
   await validateCodexMarketplace();
 

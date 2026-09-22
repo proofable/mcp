@@ -14,18 +14,22 @@ Add Proofable to any app, chat, or agent that speaks MCP.
 
 **[One-click install](https://proofable.me/install)** detects your client and writes the config: Cursor, VS Code, Claude Code, or Codex.
 
-Claude Code, from the terminal:
+Then click **Connect**, sign in, and ask:
+
+```text
+Show my Proofable profile and current proofs.
+```
+
+### Claude Code
+
+In Claude Code, the repository is also a plugin marketplace:
 
 ```text
 /plugin marketplace add proofable/mcp
 /plugin install proofable-mcp@proofable
 ```
 
-Then click **Connect**, sign in, and ask:
-
-```text
-Show my Proofable profile and current proofs.
-```
+Use either the plugin or a manual entry, not both. The plugin registers the same endpoint and ships the skills in [`plugins/proofable-mcp`](./plugins/proofable-mcp).
 
 ## Connect
 
@@ -67,15 +71,6 @@ npx -y @proofable/sdk setup
 ```
 
 Then ask: "Show my Proofable profile and current proofs."
-
-This repository is also a plugin marketplace. In Claude Code:
-
-```text
-/plugin marketplace add proofable/mcp
-/plugin install proofable-mcp@proofable
-```
-
-The plugin registers the server and ships the skills in [`plugins/proofable-mcp`](./plugins/proofable-mcp). Use either the plugin or a manual entry, not both.
 
 ## What it does
 
