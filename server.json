@@ -60,11 +60,11 @@
     },
     {
       "name": "proofable_proofs_get",
-      "description": "Read proofs. Search by text, tag, or check; newest first; or fetch one by proof id. Add include=content to a filtered search to get the bodies in one call instead of reading ids one by one. For pass or fail, use proofable_proofs_check. Omit the wallet when signed in."
+      "description": "Read one proof by qHash or search proofs for an account by scope, exact tags, tag prefix or text, verifier, or query text. With no filter, returns an index hint; scope=all pages metadata. Use include=content with a known proof or narrow filter to read bodies. Omit identifier when signed in."
     },
     {
       "name": "proofable_proofs_update",
-      "description": "Set the title or tags on a proof you own. This is the durable work tracker: use status:backlog|todo|in-progress|review|done and workspace:<namespace> tags. Every tag written here is the exact index proofable_proofs_get filters by (tags, scope, tagPrefix, tagContains, full-text search), so work survives sessions and apps. Never changes verified content, verifier results, or ownership. Omit walletAddress when signed in."
+      "description": "Change the display title or retrieval tags on a proof you own. Pass exact tag values in addTags and removeTags; put descriptive prose in the title or proof content, not a tag. This does not change verified content, results, or ownership. Omit walletAddress when signed in."
     },
     {
       "name": "proofable_agent_link",
