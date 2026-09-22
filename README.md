@@ -77,7 +77,7 @@ Then ask: "Show my Proofable profile and current proofs."
 | Job | Tools |
 |---|---|
 | Load the signed-in profile and workflow | `proofable_context` (call first) |
-| Check, reuse, or create proof | `proofable_proofs_check`, `proofable_verify_or_guide`, `proofable_verify`, `proofable_proofs_get`, `proofable_verifiers_catalog` |
+| Check, reuse, or create proof | `proofable_proofs_check`, `proofable_verify_or_guide`, `proofable_verify`, `proofable_proofs_get`, `proofable_proofs_update`, `proofable_verifiers_catalog` |
 | Give agents an owner and permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
 | Store secrets without exposing them | `proofable_secret_create`, `proofable_secret_list`, `proofable_secret_revoke` |
 
