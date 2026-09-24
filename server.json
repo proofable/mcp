@@ -60,11 +60,11 @@
     },
     {
       "name": "proofable_proofs_get",
-      "description": "Read one proof by qHash or search proofs for an account by scope, exact tags, tag prefix or text, verifier, or query text. With no filter, returns an index hint; scope=all pages metadata. Use include=content with a known proof or narrow filter to read bodies. Omit identifier when signed in."
+      "description": "Read a proof by qHash or search proofs by scope, tags, verifier, or text. With no filter, returns an index hint; scope=all pages metadata. Use include=content for proof bodies and includeComments with qHash for discussion. Omit identifier when signed in."
     },
     {
       "name": "proofable_proofs_update",
-      "description": "Change the display title or retrieval tags on a proof you own. Pass exact tag values in addTags and removeTags; put descriptive prose in the title or proof content, not a tag. This does not change verified content, results, or ownership. Omit walletAddress when signed in."
+      "description": "Update title/tags on a proof you own, or leave feedback on an accessible proof. Send one action per call: vote up/down/clear or add a comment. Owners can vote on their own proofs. Delegated agents need manage_proofs."
     },
     {
       "name": "proofable_agent_link",
