@@ -14,6 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Check out proofable/sdk for skill parity
+        uses: actions/checkout@v7
+        with:
+          repository: proofable/sdk
+          path: sdk
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -21,7 +26,10 @@ jobs:
           package-manager-cache: false
       - name: Verify release tag
         run: node -e "const p=require('./package.json'); if (process.env.GITHUB_REF_NAME !== 'v'+p.version) throw new Error('tag must equal v'+p.version)"
-      - run: npm test
+      - name: Validate (incl. canonical skill parity with @proofable/sdk)
+        run: npm test
+        env:
+          PROOFABLE_SDK_SKILLS_ROOT: ${{ github.workspace }}/sdk/skills
       - run: npm pack --dry-run
       - name: Publish @proofable/mcp
         shell: bash
