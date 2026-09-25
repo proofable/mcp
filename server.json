@@ -3,7 +3,7 @@
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
   "description": "Give AI agents identity, scoped access, trusted context, and verifiable actions through MCP.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "url": "https://github.com/proofable/mcp",
     "source": "github"

@@ -1,6 +1,6 @@
 {
   "name": "proofable-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Give AI agents identity, scoped access, trusted context, and verifiable actions through MCP.",
   "author": {
     "name": "Proofable",
