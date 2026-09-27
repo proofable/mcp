@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/changelog).
 
+## [Unreleased]
+
+### Added
+
+- **One description and version, enforced across every host surface.** `scripts/validate-manifest-ssot.mjs` fails when the three plugin manifests, the three marketplace copies, or `package.json` drift from the canonical pair in `server.json`. Those identities were hand-copied in twelve places with nothing comparing them back to the source.
+
+### Fixed
+
+- **Discovery metadata re-synced from the protocol SSOT.** `server.json` carried a stale `proofable_proofs_update` description; `npm run mcp:sync` refreshed it from the canonical `protocol/mcp/server.json`, so the registry, the MCP repo, and the mirror all agree again. This file is generated — edit the canonical manifest, never this copy.
+- **The Claude Code plugin now registers the hosted server.** Claude Code reads MCP servers only from `.mcp.json`; the plugin shipped the Cursor-native `mcp.json`, so installing it added the skills but no server, and "install the plugin, then click Connect" silently needed a second manual registration. `plugins/proofable-mcp/.mcp.json` adds the spec-compliant entry (`"type": "http"`), so one plugin install now carries the endpoint on both hosts. The two files stay separate on purpose: Cursor's `mcp.json` rejects `type`, Claude's `.mcp.json` requires it.
+- **Validation requires it.** `scripts/validate-universal-manifests.mjs` no longer skips `proofable-mcp`; it now fails when the spec `.mcp.json` is missing, when it loses the hosted endpoint, or when it drifts off `mcp.proofable.me`.
+- **The discovery check no longer reports drift on a Windows checkout.** `sync-mcp-manifests.mjs` compared raw bytes, so a `core.autocrlf=true` clone — which is how these CRLF-committed blobs check out — saw permanent false drift and rewrote four files on every sync, while the same files passed on Linux CI. It now compares LF-normalized content: same files, no false drift, and no whole-file rewrite when only line endings differ.
+
 ## [0.1.2] - 2026-09-24
 
 ### Changed

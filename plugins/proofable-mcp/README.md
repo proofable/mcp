@@ -2,7 +2,13 @@
 
 Add `https://mcp.proofable.me/mcp`, click **Connect**, and reuse your profile, agents, and proofs.
 
-This plugin registers that URL. If the host already installed the plugin from a marketplace or registry, do not also add a second `proofable` entry in the host MCP config.
+This plugin registers that endpoint for the hosts that read a plugin-bundled MCP config:
+
+- **Cursor** reads `mcp.json`.
+- **Claude Code** reads `.mcp.json`.
+- **Codex** loads the skills only. Register its server with `npx -y @proofable/sdk setup --client codex`, then `codex mcp login proofable`.
+
+If the host already installed the plugin from a marketplace or registry, do not also add a second `proofable` entry in the host MCP config.
 
 Skills in this bundle: `proofable-setup`, `proofable-trust-workflow`, `proofable-integrate`.
 

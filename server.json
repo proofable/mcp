@@ -64,7 +64,7 @@
     },
     {
       "name": "proofable_proofs_update",
-      "description": "Update title/tags on a proof you own, or leave feedback on an accessible proof. Send one action per call: vote up/down/clear or add a comment. Owners can vote on their own proofs. Delegated agents need manage_proofs."
+      "description": "Update a proof you own: title, tags, and visibility (public|unlisted|private). Or leave feedback on an accessible proof. Send one kind of change per call: metadata, vote, or comment. Owners can vote on their own proofs. Delegated agents need manage_proofs."
     },
     {
       "name": "proofable_agent_link",

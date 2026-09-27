@@ -78,6 +78,11 @@ async function validateSpecMcp(pluginDir, hostLabel) {
     if (server.headers && typeof server.headers !== "object") {
       addError(`${relative}.mcpServers.${name}: "headers" must be an object.`);
     }
+    // The plugin registers the hosted server, so a spec .mcp.json that loses the
+    // endpoint (or points at a loopback copy) would fail silently at install time.
+    if (typeof server.url === "string" && !server.url.includes("mcp.proofable.me")) {
+      addError(`${relative}.mcpServers.${name}: "url" must register the hosted endpoint (mcp.proofable.me).`);
+    }
   }
 }
 
@@ -209,13 +214,16 @@ async function main() {
   const entries = await fs.readdir(pluginsDir, { withFileTypes: true });
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
-    // proofable-mcp ships a Cursor-native mcp.json (no "type" field) validated by
-    // validate-cursor-mcp.mjs. Claude Code and Codex stay skill-only here:
-    // those hosts register MCP through `proofable setup`, not a plugin .mcp.json.
-    if (entry.name === "proofable-mcp") continue;
-    if (await pathExists(path.join(pluginsDir, entry.name, ".mcp.json"))) {
-      await validateSpecMcp(path.join(pluginsDir, entry.name), entry.name);
-    }
+    const pluginDir = path.join(pluginsDir, entry.name);
+    // Two host-conventional files, never one renamed into the other:
+    //   mcp.json   — Cursor-native (no "type"); validated by validate-cursor-mcp.mjs
+    //   .mcp.json  — spec-compliant ("type": "http"); the only file Claude Code reads
+    // proofable-mcp's Claude manifest promises it registers the hosted server, so
+    // its .mcp.json is required. Codex stays skill-only: MCP registration for Codex
+    // is owned by `proofable setup --client codex`.
+    const requireSpecMcp = entry.name === "proofable-mcp";
+    if (!requireSpecMcp && !(await pathExists(path.join(pluginDir, ".mcp.json")))) continue;
+    await validateSpecMcp(pluginDir, entry.name);
   }
 
   summarizeAndExit();
