@@ -33,7 +33,7 @@ npx -y @proofable/sdk setup
 
 ### Changed
 
-- **Twelve public tools, documented.** Every `proofable_*` tool carries safety annotations, and `tools/list` returns one stable order.
+- **Thirteen public tools, documented.** Every `proofable_*` tool carries safety annotations, and `tools/list` returns one stable order.
 - **One endpoint serves two MCP protocol dates.** Hosted MCP runs the MCP TypeScript SDK v2 packages and answers both `2026-07-28` and `2025-11-25` clients.
 - **Proofable no longer holds agent private keys.** Dedicated agent accounts are created in your wallet or runtime; only the public address reaches Proofable.
 - **Registry publishing is reproducible.** The publisher workflow pins `mcp-publisher` 1.8.1 with a pinned Linux AMD64 checksum.
@@ -53,7 +53,7 @@ First Proofable MCP discovery package and public plugin release. The predecessor
 ### Added
 
 - **Hosted connection.** One OAuth endpoint at `https://mcp.proofable.me/mcp`.
-- **Public tools.** The twelve `proofable_*` MCP tools documented on [docs.proofable.me/mcp](https://docs.proofable.me/mcp/overview).
+- **Public tools.** The thirteen `proofable_*` MCP tools documented on [docs.proofable.me/mcp](https://docs.proofable.me/mcp/overview).
 - **Plugins and skills.** Plugin manifests and skills for Claude Code, Codex, and Cursor, including the trust workflow skill.
 
 ### Changed
