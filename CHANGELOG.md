@@ -12,6 +12,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 ### Added
 
 - **One description and version, enforced across every host surface.** `scripts/validate-manifest-ssot.mjs` fails when the three plugin manifests, the three marketplace copies, or `package.json` drift from the canonical pair in `server.json`. Those identities were hand-copied in twelve places with nothing comparing them back to the source.
+- **`privacyPolicyUrl` on the Claude plugin manifest.** The directory asks for it once it reviews the plugin's MCP server, and the Codex manifest already carried the same URL. Claude's manifest takes the field; Cursor's must not — its schema sets `additionalProperties: false` and does not define it.
 
 ### Fixed
 
