@@ -11,6 +11,14 @@
  *
  * Run after editing any skill:  node scripts/sync-plugin-skills.mjs
  * CI check (no writes):         node scripts/sync-plugin-skills.mjs --check
+ *
+ * The SDK copy lives in a different repository, so comparing against it can only
+ * be deterministic when both repositories already carry the same content — which
+ * is true after a coordinated merge, not while the paired pull requests are open.
+ * Pull-request CI therefore proves what this repository can prove alone
+ * (`--plugin-only`: canonical skills/ vs the bundled plugin copy), and the
+ * cross-repository comparison runs where both sides are settled: at publish time
+ * (the `validate:skills-cross-repo` script) and at release in each repository.
  */
 import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, mkdirSync, cpSync, existsSync, rmSync } from 'node:fs';
@@ -24,6 +32,9 @@ const sdkSkillsDir = process.env.PROOFABLE_SDK_SKILLS_ROOT
   ? path.resolve(process.env.PROOFABLE_SDK_SKILLS_ROOT)
   : path.resolve(repoRoot, '../sdk/skills');
 const checkMode = process.argv.includes('--check');
+// Compare only the bundled plugin copy. The SDK copy is a different repository and
+// is validated at publish/release, never from an open pull request's default branch.
+const pluginOnly = process.argv.includes('--plugin-only');
 
 function directoryDigest(dir) {
   const entries = [];
@@ -64,7 +75,7 @@ let synced = 0;
 
 const targets = [
   { label: 'plugin', root: pluginSkillsDir },
-  { label: 'SDK', root: sdkSkillsDir, required: true },
+  ...(pluginOnly ? [] : [{ label: 'SDK', root: sdkSkillsDir, required: true }]),
 ];
 
 for (const target of targets) {
