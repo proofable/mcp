@@ -89,7 +89,7 @@ Two paths, one session model: interactive clients let their client run browser s
 
 ## This package
 
-`@proofable/mcp` publishes the registry manifest (`server.json`) and the public skills. It does not run a local server. To build an app against Proofable, start from [github.com/proofable/sdk](https://github.com/proofable/sdk).
+`@proofable/mcp` publishes the registry manifest (`server.json`) and the public skills. It does not run a local server. To put Proofable behind your own product, start from [github.com/proofable/sdk](https://github.com/proofable/sdk).
 
 ```js
 import { serverManifest } from '@proofable/mcp';
