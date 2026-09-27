@@ -23,7 +23,11 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
-      - name: Validate (incl. canonical skill parity with @proofable/sdk)
+      # Pull-request CI proves only what this repository can prove deterministically:
+      # canonical skills/ vs the bundled plugin copy. The cross-repository comparison
+      # against proofable/sdk is release-time (see the Release workflow) because the
+      # paired pull requests in both repositories land atomically.
+      - name: Validate (canonical vs bundled plugin copy)
         run: npm test
         env:
           PROOFABLE_SDK_SKILLS_ROOT: ${{ github.workspace }}/sdk/skills

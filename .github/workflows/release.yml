@@ -30,6 +30,8 @@ jobs:
         run: npm test
         env:
           PROOFABLE_SDK_SKILLS_ROOT: ${{ github.workspace }}/sdk/skills
+      - name: Canonical skills match the published @proofable/sdk copy
+        run: node scripts/sync-plugin-skills.mjs --check
       - run: npm pack --dry-run
       - name: Publish @proofable/mcp
         shell: bash

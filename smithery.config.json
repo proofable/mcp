@@ -1,12 +1,12 @@
 {
   "title": "Proofable server key",
-  "description": "Optional. Connect (OAuth) needs no configuration. Use a server key for CI, containers, and headless agents when browser sign-in is unavailable.",
+  "description": "Optional. OAuth sign-in needs no configuration. Use a server key for CI, containers, and headless agents when browser sign-in is unavailable.",
   "type": "object",
   "properties": {
     "profileAccessKey": {
       "type": "string",
       "title": "Proofable server key",
-      "description": "Optional. Create one at https://proofable.me/profile?tab=account (Access keys). Used only when browser OAuth is unavailable; otherwise click Connect.",
+      "description": "Optional. Create one at https://proofable.me/profile?tab=account (Access keys). Used only when browser OAuth is unavailable; otherwise let your client run its own sign-in.",
       "x-from": {
         "header": "x-proofable-access-key"
       }

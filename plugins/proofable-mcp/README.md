@@ -1,6 +1,6 @@
 # Proofable MCP plugin
 
-Add `https://mcp.proofable.me/mcp`, click **Connect**, and reuse your profile, agents, and proofs.
+Add `https://mcp.proofable.me/mcp`, finish the sign-in your client opens, and reuse your profile, agents, and proofs.
 
 This plugin registers that URL. If the host already installed the plugin from a marketplace or registry, do not also add a second `proofable` entry in the host MCP config.
 

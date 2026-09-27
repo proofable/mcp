@@ -12,9 +12,9 @@ Add Proofable to any app, chat, or agent that speaks MCP.
 
 ## Install
 
-**[One-click install](https://proofable.me/install)** detects your client and writes the config: Cursor, VS Code, Claude Code, or Codex.
+**[One-click install](https://proofable.me/install)** detects the MCP clients on your machine and writes the config for Cursor, VS Code, Claude Code, and Codex; `npx -y @proofable/sdk setup` covers anything else.
 
-Then click **Connect**, sign in, and ask:
+Then finish sign-in in your client, and ask:
 
 ```text
 Show my Proofable profile and current proofs.
@@ -29,13 +29,13 @@ In Claude Code, the repository is also a plugin marketplace:
 /plugin install proofable-mcp@proofable
 ```
 
-Use either the plugin or a manual entry, not both. The plugin registers the same endpoint and ships the skills in [`plugins/proofable-mcp`](./plugins/proofable-mcp).
+Use either the plugin or a manual entry, not both. The Cursor plugin registers the endpoint; the Claude and Codex plugins ship the skills only, so register the server yourself there and sign in. The skills live in [`plugins/proofable-mcp`](./plugins/proofable-mcp).
 
 ## Connect
 
 Two paths, one endpoint, one profile:
 
-- **Connect (OAuth):** add the hosted server, click **Connect**, sign in in the browser. Best for interactive clients.
+- **Interactive sign-in (OAuth):** add the hosted server, then let your client run its own browser sign-in. Best for interactive clients. Only Claude connectors and Devin show a control called Connect; elsewhere the client starts the sign-in itself.
 - **Server key:** best for servers, CI, and headless agents. Send it as a Bearer token.
 
 Any MCP client:
@@ -85,11 +85,11 @@ Full reference: [docs.proofable.me/mcp/tools](https://docs.proofable.me/mcp/tool
 
 ## Authentication
 
-Two paths, one session model: interactive clients Connect with OAuth (PKCE, silent refresh); servers and CI send a server key (`npk_...`) as a Bearer token from `PROOFABLE_ACCESS_KEY`. Same endpoint, same Proofable profile, same tools and policy. Never put a key in client config or chat when Connect works. See [Auth](https://docs.proofable.me/mcp/auth).
+Two paths, one session model: interactive clients let their client run browser sign-in (OAuth, PKCE, silent refresh); servers and CI send a server key (`npk_...`) as a Bearer token from `PROOFABLE_ACCESS_KEY`. Same endpoint, same Proofable profile, same tools and policy. Never put a key in client config or chat when the client can sign in for you. See [Auth](https://docs.proofable.me/mcp/auth).
 
 ## This package
 
-`@proofable/mcp` publishes the registry manifest (`server.json`) and the public skills. It does not run a local server. To build an app against Proofable, start from [github.com/proofable/sdk](https://github.com/proofable/sdk).
+`@proofable/mcp` publishes the registry manifest (`server.json`) and the public skills. It does not run a local server. To put Proofable behind your own product, start from [github.com/proofable/sdk](https://github.com/proofable/sdk).
 
 ```js
 import { serverManifest } from '@proofable/mcp';
