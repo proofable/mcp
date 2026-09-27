@@ -11,6 +11,7 @@
   "repository": "https://github.com/proofable/mcp",
   "license": "Apache-2.0",
   "privacyPolicyUrl": "https://proofable.me/privacy",
+  "logo": "./assets/icon.svg",
   "keywords": [
     "proofable",
     "mcp",

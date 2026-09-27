@@ -10,13 +10,12 @@ This plugin registers that endpoint for the hosts that read a plugin-bundled MCP
 
 If the host already installed the plugin from a marketplace or registry, do not also add a second `proofable` entry in the host MCP config.
 
-### Why the three manifests differ
+### Manifest fields: keep them
 
-Each host reads its own manifest, and their schemas are not interchangeable. Do not collapse them:
+The three manifests are deliberately different. Do not "fix" them:
 
-- `.cursor-plugin/plugin.json` declares `logo`, because the Cursor plugin schema defines it and renders it. Claude Code's manifest has no icon field in its schema, so `logo` lives here only.
-- `.claude-plugin/plugin.json` declares `privacyPolicyUrl`, because the plugin directory reads it for the listing even though Claude Code ignores the field at load time.
-- `.codex-plugin/plugin.json` carries the same policy URLs under `interface`, matching Codex's manifest shape.
+- `logo` stays in `.claude-plugin/plugin.json` even though `claude plugin validate` reports it as an unknown key. Claude Code ignores it at load time; the plugin directory reads the same file and renders that logo for the listing. Remove it and the listing shows a letter tile instead of the mark.
+- `privacyPolicyUrl` stays in `.claude-plugin/plugin.json` for the same reason: the directory reads it for the listing.
 
 Skills in this bundle: `proofable-setup`, `proofable-trust-workflow`, `proofable-integrate`.
 
