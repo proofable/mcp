@@ -12,7 +12,11 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 ### Added
 
 - **One description and version, enforced across every host surface.** `scripts/validate-manifest-ssot.mjs` fails when the three plugin manifests, the three marketplace copies, or `package.json` drift from the canonical pair in `server.json`. Those identities were hand-copied in twelve places with nothing comparing them back to the source.
-- **`privacyPolicyUrl` on the Claude plugin manifest.** The directory asks for it once it reviews the plugin's MCP server, and the Codex manifest already carried the same URL. Claude's manifest takes the field; Cursor's must not — its schema sets `additionalProperties: false` and does not define it.
+- **`privacyPolicyUrl` on the Claude plugin manifest.** The plugin directory reads it for the listing once it reviews the plugin's MCP server, and the Codex manifest already carried the same URL. It is not an unknown-key mistake: the directory's own note says the field needs no action.
+
+### Changed
+
+- **The Claude plugin manifest dropped `logo`.** Claude Code's manifest schema has no icon or logo field, so the value was dead there and was the directory's one genuinely removable unknown-key warning. Cursor keeps `logo` because its plugin schema defines and renders it. `privacyPolicyUrl` stays for the reason it was added. The three manifests are deliberately different, and the plugin README now records why so a later cleanup does not collapse them.
 
 ### Fixed
 
