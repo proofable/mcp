@@ -12,7 +12,7 @@ Add Proofable to any app, chat, or agent that speaks MCP.
 
 ## Install
 
-**[One-click install](https://proofable.me/install)** detects your client and writes the config: Cursor, VS Code, Claude Code, or Codex.
+**[Set up Proofable](https://docs.proofable.me/mcp/setup)** has the setup skill and install links for Cursor, VS Code, Claude Code, Codex, and other MCP clients.
 
 Then click **Connect**, sign in, and ask:
 
