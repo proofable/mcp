@@ -88,11 +88,43 @@ if (pkg) {
   expectEqual("package.json", "version", pkg.version, expectedVersion);
 }
 
+// Canonical SKILL.md frontmatter carries a version a host can render beside the
+// skill. It drifted to 0.1.2 while every other surface moved to 0.1.3, because
+// this guard only compared JSON manifests. Plugin and SDK skill copies are
+// generated from skills/, so checking the canonical set covers every copy.
+const CANONICAL_SKILLS_DIR = "skills";
+async function listCanonicalSkills() {
+  try {
+    const entries = await fs.readdir(path.join(repoRoot, CANONICAL_SKILLS_DIR), { withFileTypes: true });
+    return entries
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => `${CANONICAL_SKILLS_DIR}/${entry.name}/SKILL.md`);
+  } catch {
+    return [];
+  }
+}
+for (const relative of await listCanonicalSkills()) {
+  let raw;
+  try {
+    raw = await fs.readFile(path.join(repoRoot, relative), "utf8");
+  } catch {
+    continue;
+  }
+  // Frontmatter is the leading `---` block; the version sits under metadata.
+  const frontmatter = raw.startsWith("---") ? raw.slice(3, raw.indexOf("\n---", 3)) : "";
+  const match = frontmatter.match(/^\s*version:\s*"?([^"\n]+)"?\s*$/m);
+  if (!match) {
+    errors.push(`${relative}: metadata.version is missing; expected "${expectedVersion}".`);
+    continue;
+  }
+  expectEqual(relative, "metadata.version", match[1].trim(), expectedVersion);
+}
+
 if (errors.length > 0) {
   console.error("Manifest SSOT validation failed:");
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
 console.log(
-  `Manifest SSOT: one description and version across ${PLUGIN_MANIFESTS.length} plugin manifests, ${MARKETPLACES.length} marketplaces, and package.json.`,
+  `Manifest SSOT: one description and version across ${PLUGIN_MANIFESTS.length} plugin manifests, ${MARKETPLACES.length} marketplaces, package.json, and the canonical skills.`,
 );
