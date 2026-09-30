@@ -29,7 +29,7 @@ In Claude Code, the repository is also a plugin marketplace:
 /plugin install proofable-mcp@proofable
 ```
 
-Use either the plugin or a manual entry, not both. The plugin registers the same endpoint — Claude Code from `.mcp.json`, Cursor from `mcp.json` — and ships the skills in [`plugins/proofable-mcp`](./plugins/proofable-mcp). Codex loads the skills only; register its server with `npx -y @proofable/sdk setup --client codex`.
+Use either the plugin or a manual entry, not both. The plugin registers the same endpoint from one `.mcp.json` — read by both Cursor and Claude Code — and ships the skills in [`plugins/proofable-mcp`](./plugins/proofable-mcp). Codex loads the skills only; register its server with `npx -y @proofable/sdk setup --client codex`.
 
 ## Connect
 

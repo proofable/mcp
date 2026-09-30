@@ -10,7 +10,6 @@
   "repository": "https://github.com/proofable/mcp",
   "license": "Apache-2.0",
   "logo": "./assets/icon.svg",
-  "mcpServers": "./mcp.json",
   "category": "security",
   "keywords": [
     "proofable",

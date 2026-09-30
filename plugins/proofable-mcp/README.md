@@ -4,9 +4,11 @@ Add `https://mcp.proofable.me/mcp`, click **Connect**, and reuse your profile, a
 
 This plugin registers that endpoint for the hosts that read a plugin-bundled MCP config:
 
-- **Cursor** reads `mcp.json`.
-- **Claude Code** reads `.mcp.json`.
+- **Cursor** reads `.mcp.json`, the spec-compliant form.
+- **Claude Code** reads `.mcp.json` too.
 - **Codex** loads the skills only. Register its server with `npx -y @proofable/sdk setup --client codex`, then `codex mcp login proofable`.
+
+One server name, one file. The plugin ships a single `.mcp.json`; do not add a Cursor-native `mcp.json` beside it. Cursor reads both files independently, so declaring `proofable` in each registers the server twice under one plugin identifier and the duplicate fails every call with `Unauthorized` — the failure that blocked Cursor after the 0.1.2 → 0.1.3 update. `scripts/validate-cursor-mcp.mjs` fails the build if the two files share a server name.
 
 If the host already installed the plugin from a marketplace or registry, do not also add a second `proofable` entry in the host MCP config.
 
