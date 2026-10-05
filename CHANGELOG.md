@@ -9,6 +9,14 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-10-05
+
+### Fixed
+
+- **Interactive installs now use the auth-first lane, so Cursor prompts for sign-in.** Every interactive surface shipped the bare `https://mcp.proofable.me/mcp` endpoint, which is public-first: anonymous `initialize` and `tools/list` both answer `200` with only the anonymous tier (`proofable_context`, `proofable_verifiers_catalog`, `proofable_proofs_check`, `proofable_verify_or_guide`) and never send `WWW-Authenticate`. Cursor starts OAuth only from a `401` challenge on the handshake, so it connected anonymously, showed four tools, and never offered a login — the endpoint was working exactly as designed. The plugin `.mcp.json`, the SDK host configs, and the skill copy now point at `https://mcp.proofable.me/mcp/oauth`, the auth-first lane that answers even `initialize` with `401 + WWW-Authenticate`. The bare `/mcp` endpoint stays for directory discovery, anonymous use, and server keys. `scripts/validate-universal-manifests.mjs` fails when the plugin's `proofable` entry leaves the auth-first lane.
+
+## [0.1.3] - 2026-09-28
+
 ### Added
 
 - **One description and version, enforced across every host surface.** `scripts/validate-manifest-ssot.mjs` fails when the three plugin manifests, the three marketplace copies, or `package.json` drift from the canonical pair in `server.json`.
@@ -132,14 +140,16 @@ Media placeholders for this release line. Drop the finished files under docs/ima
 
 <!--
 <update-image-0.1.0>
-  TODO: screenshot â€” Connect flow: add https://mcp.proofable.me/mcp, click Connect, sign in.
+  TODO: screenshot â€” Connect flow: add https://mcp.proofable.me/mcp/oauth, complete sign-in.
   Suggested path: docs/images/releases/mcp-0.1.0-connect.png
-  TODO: 30-60s clip â€” first run: register endpoint, Connect, ask for profile and current proofs.
+  TODO: 30-60s clip â€” first run: register endpoint, sign in, ask for profile and current proofs.
   Suggested path: docs/images/releases/mcp-0.1.0-first-run.mp4
 </update-image-0.1.0>
 -->
 
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.4...HEAD
+[0.1.4]: https://github.com/proofable/mcp/compare/v0.1.3...v0.1.4
+[0.1.3]: https://github.com/proofable/mcp/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/proofable/mcp/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/proofable/mcp/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/proofable/mcp/releases/tag/v0.1.0

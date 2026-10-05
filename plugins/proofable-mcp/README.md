@@ -1,6 +1,8 @@
 # Proofable MCP plugin
 
-Add `https://mcp.proofable.me/mcp`, click **Connect**, and reuse your profile, agents, and proofs.
+Add `https://mcp.proofable.me/mcp/oauth` and reuse your profile, agents, and proofs.
+
+`/mcp/oauth` is the sign-in endpoint: it answers the MCP handshake with a `401` challenge, which is what makes Cursor, VS Code, Claude Code, and Codex start their own OAuth (DCR + PKCE). The bare `https://mcp.proofable.me/mcp` endpoint connects anonymously and exposes only the four-tool anonymous tier, so the host never prompts.
 
 This plugin registers that endpoint for the hosts that read a plugin-bundled MCP config:
 

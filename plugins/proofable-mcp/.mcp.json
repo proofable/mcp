@@ -2,7 +2,7 @@
   "mcpServers": {
     "proofable": {
       "type": "http",
-      "url": "https://mcp.proofable.me/mcp"
+      "url": "https://mcp.proofable.me/mcp/oauth"
     }
   }
 }

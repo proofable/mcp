@@ -8,13 +8,15 @@ Give AI access without giving up control.
 
 Add Proofable to any app, chat, or agent that speaks MCP.
 
-`https://mcp.proofable.me/mcp`
+`https://mcp.proofable.me/mcp/oauth`
+
+`/mcp/oauth` is the sign-in endpoint: it answers the MCP handshake with a `401` challenge, so Cursor, VS Code, Claude Code, and Codex start their own OAuth (DCR + PKCE). The bare `https://mcp.proofable.me/mcp` endpoint connects anonymously and exposes only the four-tool anonymous tier, so the host never prompts.
 
 ## Install
 
 **[Set up Proofable](https://docs.proofable.me/mcp/setup)** has the setup skill and install links for Cursor, VS Code, Claude Code, Codex, and other MCP clients.
 
-Then click **Connect**, sign in, and ask:
+Then sign in when your client prompts, and ask:
 
 ```text
 Show my Proofable profile and current proofs.
@@ -33,17 +35,17 @@ Use either the plugin or a manual entry, not both. The plugin registers the same
 
 ## Connect
 
-Two paths, one endpoint, one profile:
+Two paths, one product, one profile:
 
-- **Connect (OAuth):** add the hosted server, click **Connect**, sign in in the browser. Best for interactive clients.
-- **Server key:** best for servers, CI, and headless agents. Send it as a Bearer token.
+- **Interactive clients (OAuth):** add `https://mcp.proofable.me/mcp/oauth`, finish the sign-in your client opens. Best for Cursor, VS Code, Claude Code, Codex, and other interactive hosts.
+- **Server key:** best for servers, CI, and headless agents. Send it as a Bearer token to `https://mcp.proofable.me/mcp`.
 
 Any MCP client:
 
 ```json
 {
   "mcpServers": {
-    "proofable": { "type": "http", "url": "https://mcp.proofable.me/mcp" }
+    "proofable": { "type": "http", "url": "https://mcp.proofable.me/mcp/oauth" }
   }
 }
 ```

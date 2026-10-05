@@ -80,7 +80,12 @@ async function validateSpecMcp(pluginDir, hostLabel) {
     }
     // The plugin registers the hosted server, so a spec .mcp.json that loses the
     // endpoint (or points at a loopback copy) would fail silently at install time.
-    if (typeof server.url === "string" && !server.url.includes("mcp.proofable.me")) {
+    // Interactive plugin installs must use the auth-first lane: the bare `/mcp`
+    // endpoint answers the handshake 200 with only the anonymous tier, so the host
+    // never issues the 401 + WWW-Authenticate challenge that starts OAuth.
+    if (name === "proofable" && typeof server.url === "string" && !server.url.includes("mcp.proofable.me/mcp/oauth")) {
+      addError(`${relative}.mcpServers.${name}: "url" must be the auth-first sign-in lane (https://mcp.proofable.me/mcp/oauth) so the host starts OAuth.`);
+    } else if (typeof server.url === "string" && !server.url.includes("mcp.proofable.me")) {
       addError(`${relative}.mcpServers.${name}: "url" must register the hosted endpoint (mcp.proofable.me).`);
     }
   }

@@ -6,7 +6,7 @@
     "profileAccessKey": {
       "type": "string",
       "title": "Proofable server key",
-      "description": "Optional. Create one at https://proofable.me/profile?tab=account (Access keys). Used only when browser OAuth is unavailable; otherwise click Connect.",
+      "description": "Optional. Create one at https://proofable.me/profile?tab=account (Access keys). Used only when browser OAuth is unavailable.",
       "x-from": {
         "header": "x-proofable-access-key"
       }
