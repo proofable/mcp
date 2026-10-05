@@ -1,9 +1,10 @@
 /**
  * @proofable/mcp: discovery metadata only.
- * The hosted Proofable MCP server runs at https://mcp.proofable.me/mcp (discovery/anonymous)
- * and https://mcp.proofable.me/mcp/oauth (interactive sign-in), not inside this npm package.
+ * The hosted Proofable MCP server runs at https://mcp.proofable.me/mcp (the single
+ * canonical endpoint: OAuth from its 401 challenge, or a server key as Bearer),
+ * not inside this npm package.
  *
- * @see https://mcp.proofable.me/mcp/oauth
+ * @see https://mcp.proofable.me/mcp
  * @see https://docs.proofable.me/mcp/setup
  */
 

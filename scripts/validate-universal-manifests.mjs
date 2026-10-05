@@ -78,13 +78,13 @@ async function validateSpecMcp(pluginDir, hostLabel) {
     if (server.headers && typeof server.headers !== "object") {
       addError(`${relative}.mcpServers.${name}: "headers" must be an object.`);
     }
-    // The plugin registers the hosted server, so a spec .mcp.json that loses the
-    // endpoint (or points at a loopback copy) would fail silently at install time.
-    // Interactive plugin installs must use the auth-first lane: the bare `/mcp`
-    // endpoint answers the handshake 200 with only the anonymous tier, so the host
-    // never issues the 401 + WWW-Authenticate challenge that starts OAuth.
-    if (name === "proofable" && typeof server.url === "string" && !server.url.includes("mcp.proofable.me/mcp/oauth")) {
-      addError(`${relative}.mcpServers.${name}: "url" must be the auth-first sign-in lane (https://mcp.proofable.me/mcp/oauth) so the host starts OAuth.`);
+    // The plugin registers the hosted server. There is one canonical endpoint:
+    // `/mcp` itself answers an uncredentialed handshake with 401 +
+    // WWW-Authenticate, so the host starts OAuth from the same URL it uses for
+    // server keys. A spec .mcp.json that loses the endpoint (or points at a
+    // loopback copy) would fail silently at install time.
+    if (name === "proofable" && typeof server.url === "string" && !server.url.includes("mcp.proofable.me/mcp")) {
+      addError(`${relative}.mcpServers.${name}: "url" must be the canonical single endpoint (https://mcp.proofable.me/mcp) whose 401 challenge starts host OAuth.`);
     } else if (typeof server.url === "string" && !server.url.includes("mcp.proofable.me")) {
       addError(`${relative}.mcpServers.${name}: "url" must register the hosted endpoint (mcp.proofable.me).`);
     }

@@ -17,9 +17,9 @@ Add Proofable to any app, chat, or agent that speaks MCP. Cursor, Claude, Codex,
 
 Add the sign-in endpoint, then finish sign-in in your client:
 
-`https://mcp.proofable.me/mcp/oauth`
+`https://mcp.proofable.me/mcp`
 
-`/mcp/oauth` answers the MCP handshake with a `401` challenge, which is what makes Cursor, VS Code, Claude Code, and Codex start their own DCR + PKCE sign-in. The bare `https://mcp.proofable.me/mcp` endpoint connects anonymously and exposes only the four-tool anonymous tier, so the host never prompts. There is no universal Connect button; only Claude connectors and Devin show a control called Connect.
+`https://mcp.proofable.me/mcp` answers the MCP handshake with a `401` challenge, which is what makes Cursor, VS Code, Claude Code, and Codex start their own DCR + PKCE sign-in. The same URL accepts a server key as a Bearer token. There is no universal Connect button; only Claude connectors and Devin show a control called Connect.
 
 If the client offers the Proofable plugin, install that instead of adding the URL by hand. It ships these skills, and in Cursor it registers the server too. Do not add a second `proofable` entry.
 
