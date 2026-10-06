@@ -13,7 +13,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Fixed
 
-- **Interactive installs now use the auth-first lane, so Cursor prompts for sign-in.** Every interactive surface shipped the bare `https://mcp.proofable.me/mcp` endpoint, which is public-first: anonymous `initialize` and `tools/list` both answer `200` with only the anonymous tier (`proofable_context`, `proofable_verifiers_catalog`, `proofable_proofs_check`, `proofable_verify_or_guide`) and never send `WWW-Authenticate`. Cursor starts OAuth only from a `401` challenge on the handshake, so it connected anonymously, showed four tools, and never offered a login — the endpoint was working exactly as designed. The plugin `.mcp.json`, the SDK host configs, and the skill copy now point at `https://mcp.proofable.me/mcp/oauth`, the auth-first lane that answers even `initialize` with `401 + WWW-Authenticate`. The bare `/mcp` endpoint stays for directory discovery, anonymous use, and server keys. `scripts/validate-universal-manifests.mjs` fails when the plugin's `proofable` entry leaves the auth-first lane.
+- **Interactive installs start sign-in from the one canonical endpoint.** The public-first endpoint answered anonymous `initialize` and `tools/list` with `200` and only the anonymous tier (`proofable_context`, `proofable_verifiers_catalog`, `proofable_proofs_check`, `proofable_verify_or_guide`), and never sent `WWW-Authenticate`. Cursor starts OAuth only from a `401` challenge on the handshake, so it connected anonymously, showed four tools, and never offered a login — the endpoint was working exactly as designed. The fix folds that challenge into `/mcp` itself: an uncredentialed request, **including `initialize`**, now returns `401 + WWW-Authenticate`, so interactive installs (Cursor, VS Code, Claude Code, Codex) start DCR + PKCE from the same URL that serves server-key Bearer access. `https://mcp.proofable.me/mcp` is the single canonical endpoint; `https://mcp.proofable.me/mcp/oauth` is a retired alias that stays mounted and behaves identically for any config still naming it. The plugin `.mcp.json`, the SDK host configs, and the skill copy all register `https://mcp.proofable.me/mcp`, and `scripts/validate-universal-manifests.mjs` fails when the plugin's `proofable` entry drifts off that canonical endpoint.
 
 ## [0.1.3] - 2026-09-28
 
@@ -140,7 +140,7 @@ Media placeholders for this release line. Drop the finished files under docs/ima
 
 <!--
 <update-image-0.1.0>
-  TODO: screenshot â€” Connect flow: add https://mcp.proofable.me/mcp/oauth, complete sign-in.
+  TODO: screenshot â€” Connect flow: add https://mcp.proofable.me/mcp, complete sign-in.
   Suggested path: docs/images/releases/mcp-0.1.0-connect.png
   TODO: 30-60s clip â€” first run: register endpoint, sign in, ask for profile and current proofs.
   Suggested path: docs/images/releases/mcp-0.1.0-first-run.mp4

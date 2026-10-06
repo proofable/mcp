@@ -56,7 +56,7 @@
     },
     {
       "name": "proofable_verify_or_guide",
-      "description": "Reuse a qualifying portable proof or return the one next step needed to finish verification. Omit the wallet when signed in. Signed-in ownership proofs continue with proofable_verify. A hosted link is returned only for an outside login, payment, or different account."
+      "description": "Start a verification or reuse one already held. It first checks whether the profile already has proofs for the given check IDs; if it does, it returns them, and if not it returns the one next step to finish — a signed-in proofable_verify call, or a hosted page for an outside login, payment, or a different account. This is the entry point of the verification flow; proofable_verify creates the proof."
     },
     {
       "name": "proofable_proofs_get",
@@ -68,7 +68,7 @@
     },
     {
       "name": "proofable_agent_link",
-      "description": "Confirm the agent is linked to your profile with the identity and permissions it needs. A separate spend account also needs signed limits."
+      "description": "Check whether an agent is set up to act for your profile, and what it may currently do. Given agentWallet (plus agentId when one account hosts several), it reports linked:true with the identity proof and active delegation, or link_required with the one next step. It does not create, change, or remove anything; to grant or change authority, use proofable_verify with agent-delegation."
     },
     {
       "name": "proofable_agent_create",
