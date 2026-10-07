@@ -64,7 +64,7 @@
     },
     {
       "name": "proofable_proofs_update",
-      "description": "Update a proof you own: title, tags, and visibility (public|unlisted|private). Or leave feedback on an accessible proof. Send one kind of change per call: metadata, vote, or comment. Owners can vote on their own proofs. Delegated agents need manage_proofs."
+      "description": "Update a proof you own: title, tags, and visibility (public|unlisted|private). Setting visibility to private revokes public access, so confirm before making an already-shared proof private. Or leave feedback on an accessible proof. Send one kind of change per call: metadata, vote, or comment. Owners can vote on their own proofs. Delegated agents need manage_proofs."
     },
     {
       "name": "proofable_agent_link",

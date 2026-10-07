@@ -9,6 +9,10 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+### Fixed
+
+- Clarified in the discovery manifest that making an already-shared proof private revokes public access and should be confirmed.
+
 ## [0.1.4] - 2026-10-05
 
 ### Fixed
