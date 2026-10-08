@@ -1,56 +1,83 @@
 # Proofable MCP
 
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
-[![npm downloads](https://img.shields.io/npm/dm/%40proofable%2Fmcp?color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
-Give AI access without giving up control.
+Give AI agents real access without giving up control.
 
-Add Proofable to any app, chat, or agent that speaks MCP.
+Connect Proofable once so agents can use your current profile, proofs, permissions, and protected tools across Cursor, Claude, Codex, VS Code, ChatGPT, and other MCP clients.
 
-`https://mcp.proofable.me/mcp`
+## Start
 
-`https://mcp.proofable.me/mcp` is the endpoint: it answers the MCP handshake with a `401` challenge, so Cursor, VS Code, Claude Code, and Codex start their own OAuth (DCR + PKCE). The same URL serves server-key Bearer access, so there is one endpoint for every caller.
-
-## Install
-
-**[Set up Proofable](https://docs.proofable.me/mcp/setup)** has the setup skill and install links for Cursor, VS Code, Claude Code, Codex, and other MCP clients.
-
-Then sign in when your client prompts, and ask:
+Open **[Set up Proofable](https://docs.proofable.me/mcp/setup)**, choose your client, and finish sign-in. Then ask:
 
 ```text
-Show my Proofable profile and current proofs.
+Show my Proofable profile and the proofs I can reuse.
 ```
 
-### Claude Code
+For a specific requirement:
 
-In Claude Code, the repository is also a plugin marketplace:
+```text
+Check whether I already have the proof needed for this task. Reuse it if it qualifies; otherwise show me the next step.
+```
+
+## Connect
+
+Add the hosted endpoint to any MCP client:
+
+```text
+https://mcp.proofable.me/mcp
+```
+
+Or use a standard MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "proofable": {
+      "type": "http",
+      "url": "https://mcp.proofable.me/mcp"
+    }
+  }
+}
+```
+
+The optional installer writes the same connection for supported clients:
+
+```bash
+npx -y @proofable/sdk setup
+```
+
+Claude Code can install the server and workflow skills together:
 
 ```text
 /plugin marketplace add proofable/mcp
 /plugin install proofable-mcp@proofable
 ```
 
-Use either the plugin or a manual entry, not both. The plugin registers the same endpoint from one `.mcp.json` — read by both Cursor and Claude Code — and ships the skills in [`plugins/proofable-mcp`](./plugins/proofable-mcp). Codex loads the skills only; register its server with `npx -y @proofable/sdk setup --client codex`.
+Install one Proofable connection per client. A marketplace plugin and a manual entry together create a duplicate connection.
 
-## Connect
+## What agents can do
 
-Two paths, one product, one profile:
+| Outcome | Tools |
+|---|---|
+| Load the signed-in profile and current context | `proofable_context` |
+| Find supported checks and their required inputs | `proofable_verifiers_catalog` |
+| Check whether a qualifying proof already exists | `proofable_proofs_check` |
+| Reuse a current proof or get the next verification step | `proofable_verify_or_guide` |
+| Create or refresh a proof | `proofable_verify` |
+| Find and read proofs | `proofable_proofs_get` |
+| Update proof metadata or add feedback | `proofable_proofs_update` |
+| Check, create, and load agent permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
+| Save, list, and revoke encrypted secrets | `proofable_secret_create`, `proofable_secret_list`, `proofable_secret_revoke` |
 
-- **Interactive clients (OAuth):** add `https://mcp.proofable.me/mcp`, finish the sign-in your client opens. Best for Cursor, VS Code, Claude Code, Codex, and other interactive hosts.
-- **Server key:** best for servers, CI, and headless agents. Send it as a Bearer token to `https://mcp.proofable.me/mcp`.
+Call `proofable_context` once after connecting. Proofable then reuses current proofs before starting another verification and returns **Passed**, **Action needed**, or **Blocked**.
 
-Any MCP client:
+See the [MCP tool reference](https://docs.proofable.me/mcp/tools) for inputs and result shapes.
 
-```json
-{
-  "mcpServers": {
-    "proofable": { "type": "http", "url": "https://mcp.proofable.me/mcp" }
-  }
-}
-```
+## Servers and automation
 
-Servers and automation:
+Create an access key under [Account → Access keys](https://proofable.me/profile?tab=account), store it as `PROOFABLE_ACCESS_KEY`, and send it as a Bearer token. Keep access keys out of source code, browser bundles, and chat.
 
 ```json
 {
@@ -58,52 +85,23 @@ Servers and automation:
     "proofable": {
       "type": "http",
       "url": "https://mcp.proofable.me/mcp",
-      "headers": { "Authorization": "Bearer ${PROOFABLE_ACCESS_KEY}" }
+      "headers": {
+        "Authorization": "Bearer ${PROOFABLE_ACCESS_KEY}"
+      }
     }
   }
 }
 ```
 
-Create a key at [Access keys](https://proofable.me/profile?tab=account), then `export PROOFABLE_ACCESS_KEY=npk_...` in that environment.
+## Build with Proofable
 
-Or let the installer write the same entry for any tool:
-
-```bash
-npx -y @proofable/sdk setup
-```
-
-Then ask: "Show my Proofable profile and current proofs."
-
-## What it does
-
-| Job | Tools |
-|---|---|
-| Load the signed-in profile and workflow | `proofable_context` (call first) |
-| Check, reuse, or create proof | `proofable_proofs_check`, `proofable_verify_or_guide`, `proofable_verify`, `proofable_proofs_get`, `proofable_proofs_update`, `proofable_verifiers_catalog` |
-| Give agents an owner and permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
-| Store secrets without exposing them | `proofable_secret_create`, `proofable_secret_list`, `proofable_secret_revoke` |
-
-Full reference: [docs.proofable.me/mcp/tools](https://docs.proofable.me/mcp/tools).
-
-## Authentication
-
-Two paths, one session model: interactive clients Connect with OAuth (PKCE, silent refresh); servers and CI send a server key (`npk_...`) as a Bearer token from `PROOFABLE_ACCESS_KEY`. Same endpoint, same Proofable profile, same tools and policy. Never put a key in client config or chat when Connect works. See [Auth](https://docs.proofable.me/mcp/auth).
-
-## This package
-
-`@proofable/mcp` publishes the registry manifest (`server.json`) and the public skills. It does not run a local server. To build an app against Proofable, start from [github.com/proofable/sdk](https://github.com/proofable/sdk).
-
-```js
-import { serverManifest } from '@proofable/mcp';
-```
-
-The standards server card (`server.json`, `/.well-known/mcp/server-card.json`) stays OAuth-first.
+Use the [Proofable SDK](https://github.com/proofable/sdk) for application code, verification gates, and the CLI. `@proofable/mcp` publishes the MCP registry manifest and public workflow skills; the hosted server runs at `mcp.proofable.me`.
 
 ## Support
 
-- Docs: [docs.proofable.me/mcp/overview](https://docs.proofable.me/mcp/overview)
-- Issues: [github.com/proofable/mcp/issues](https://github.com/proofable/mcp/issues)
-- Security: [SECURITY.md](./SECURITY.md)
-- Contributing: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- [Documentation](https://docs.proofable.me/mcp/overview)
+- [Issues](https://github.com/proofable/mcp/issues)
+- [Security](./SECURITY.md)
+- [Contributing](./CONTRIBUTING.md)
 
 Apache-2.0. Proofable is published by NEUS Network, Inc.

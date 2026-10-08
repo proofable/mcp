@@ -9,9 +9,17 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-10-07
+
+### Changed
+
+- Simplified the README, setup skill, and marketplace copy around one path: connect Proofable, sign in, and ask for a useful result.
+- Aligned the package, registry, Claude, Cursor, and Codex metadata on the buyer-facing release description.
+
 ### Fixed
 
-- Clarified in the discovery manifest that making an already-shared proof private revokes public access and should be confirmed.
+- Clarified tool descriptions for profile context, verifier discovery, proof creation, guided verification, and encrypted secret storage.
+- Marked proof visibility changes as destructive because making a shared proof private revokes public access.
 
 ## [0.1.4] - 2026-10-05
 
@@ -151,7 +159,8 @@ Media placeholders for this release line. Drop the finished files under docs/ima
 </update-image-0.1.0>
 -->
 
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.5...HEAD
+[0.1.5]: https://github.com/proofable/mcp/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/proofable/mcp/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/proofable/mcp/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/proofable/mcp/compare/v0.1.1...v0.1.2

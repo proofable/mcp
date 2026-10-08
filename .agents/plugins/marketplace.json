@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Give AI agents identity, scoped access, trusted context, and verifiable actions through MCP.",
-    "version": "0.1.4"
+    "description": "Give AI agents real access without giving up control through Proofable MCP.",
+    "version": "0.1.5"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Give AI agents identity, scoped access, trusted context, and verifiable actions through MCP."
+      "description": "Give AI agents real access without giving up control through Proofable MCP."
     }
   ]
 }

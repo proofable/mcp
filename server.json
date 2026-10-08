@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
-  "description": "Give AI agents identity, scoped access, trusted context, and verifiable actions through MCP.",
-  "version": "0.1.4",
+  "description": "Give AI agents real access without giving up control through Proofable MCP.",
+  "version": "0.1.5",
   "repository": {
     "url": "https://github.com/proofable/mcp",
     "source": "github"
@@ -40,11 +40,11 @@
   "tools": [
     {
       "name": "proofable_context",
-      "description": "Start here. Returns the signed-in profile, available verifiers, and the recommended workflow in one call. Handles signed-in and offline modes, no separate profile tool needed."
+      "description": "Return the signed-in Proofable profile and its current read-only context: proof index, agents, permissions, and verifier summary. Use once after sign-in."
     },
     {
       "name": "proofable_verifiers_catalog",
-      "description": "Full verifier catalog: supported networks and required inputs. Use this when a verifier needs schema details beyond the compact verifierSummary in proofable_context."
+      "description": "List the verification checks Proofable supports, including required inputs and supported networks for each check. Verifier IDs select Proofable checks; they are not separate MCP tools."
     },
     {
       "name": "proofable_proofs_check",
@@ -52,11 +52,11 @@
     },
     {
       "name": "proofable_verify",
-      "description": "Create or refresh a portable proof after confirming that one is needed. Omit the wallet when signed in; the session authorizes the request. Signed-in ownership proofs finish here. Share a hosted link only when this tool returns one."
+      "description": "Create or refresh portable proofs for the requested Proofable checks. For signed-in ownership checks, omit the wallet; the session supplies it. Share a browser link only when this tool returns one."
     },
     {
       "name": "proofable_verify_or_guide",
-      "description": "Start a verification or reuse one already held. It first checks whether the profile already has proofs for the given check IDs; if it does, it returns them, and if not it returns the one next step to finish — a signed-in proofable_verify call, or a hosted page for an outside login, payment, or a different account. This is the entry point of the verification flow; proofable_verify creates the proof."
+      "description": "Resolve a verification request for the selected Proofable checks. Returns current qualifying proofs when they exist; otherwise returns the single next step. This tool does not create a proof."
     },
     {
       "name": "proofable_proofs_get",
@@ -80,7 +80,7 @@
     },
     {
       "name": "proofable_secret_create",
-      "description": "Store a secret, such as an API key, as an encrypted Vault record. Tools never return the saved value."
+      "description": "Encrypt and save one secret in the Vault for the signed-in profile. Returns metadata only; the stored value is never returned."
     },
     {
       "name": "proofable_secret_list",
