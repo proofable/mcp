@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
-  "description": "Give AI agents real access without giving up control through Proofable MCP.",
+  "description": "Identity, scoped access, and proof for AI agents through Proofable MCP.",
   "version": "0.1.6",
   "repository": {
     "url": "https://github.com/proofable/mcp",

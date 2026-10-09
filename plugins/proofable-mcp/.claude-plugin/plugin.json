@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "Give AI agents real access without giving up control through Proofable MCP.",
+  "description": "Identity, scoped access, and proof for AI agents through Proofable MCP.",
   "version": "0.1.6",
   "author": {
     "name": "Proofable",

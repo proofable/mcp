@@ -1,6 +1,6 @@
 # Proofable MCP plugin
 
-Give AI agents real access without giving up control.
+Identity, scoped access, and proof for AI agents.
 
 This plugin adds the hosted Proofable MCP server and three workflow skills. Install it, finish sign-in in your client, then ask:
 
