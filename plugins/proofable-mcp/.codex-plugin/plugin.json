@@ -1,6 +1,6 @@
 {
   "name": "proofable-mcp",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Give AI agents real access without giving up control through Proofable MCP.",
   "author": {
     "name": "Proofable",
@@ -29,14 +29,9 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "AI access you can control",
-    "longDescription": "Put AI agents to work without giving up control. Connect your Proofable profile so agents can reuse current proofs, understand their permissions, and get the next verification step when something is missing.",
+    "shortDescription": "Identity, access, and proof for AI agents.",
+    "longDescription": "Connect your Proofable profile to carry verified identity, trusted context, scoped authority, and reusable proof into ChatGPT. Check the proofs you already hold, see what an agent is allowed to do, and get the next verification step only when needed. Each user signs in with OAuth. Proofable records verification results; connected services enforce their own policies.",
     "developerName": "Proofable",
-    "category": "Security",
-    "capabilities": [
-      "code",
-      "search"
-    ],
     "websiteURL": "https://proofable.me",
     "supportURL": "https://proofable.me/contact",
     "privacyPolicyURL": "https://proofable.me/privacy",
@@ -45,6 +40,11 @@
       "Show my Proofable profile and the proofs I can reuse.",
       "Check whether I already have the proof needed for this task.",
       "Show what my agents can do and where their limits apply."
+    ],
+    "category": "Security",
+    "capabilities": [
+      "code",
+      "search"
     ],
     "brandColor": "#98C0EF",
     "composerIcon": "./assets/icon.svg",

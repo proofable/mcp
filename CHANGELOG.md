@@ -9,6 +9,13 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+## [0.1.6] - 2026-10-08
+
+### Changed
+
+- **One canonical OpenAI plugin listing.** The ChatGPT/Codex `shortDescription` and `longDescription` were hand-copied into the Codex manifest and each submission bundle, and the copies diverged (three short and three long descriptions for one plugin). `openai/interface.json` is now the single owner; `scripts/sync-openai-interface.mjs` writes the Codex manifest, and `npm run validate` fails when the copy drifts. The listing now reads: Identity, access, and proof for AI agents.
+- **The OpenAI interface fields are part of the manifest SSOT.** `validate-manifest-ssot.mjs` no longer guards only the top-level `description`/`version`; the shared reviewer-facing fields are compared too, so a listing change cannot fork the surfaces again.
+
 ## [0.1.5] - 2026-10-07
 
 ### Changed
@@ -159,7 +166,8 @@ Media placeholders for this release line. Drop the finished files under docs/ima
 </update-image-0.1.0>
 -->
 
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.6...HEAD
+[0.1.6]: https://github.com/proofable/mcp/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/proofable/mcp/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/proofable/mcp/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/proofable/mcp/compare/v0.1.2...v0.1.3

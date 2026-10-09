@@ -3,7 +3,7 @@
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
   "description": "Give AI agents real access without giving up control through Proofable MCP.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "repository": {
     "url": "https://github.com/proofable/mcp",
     "source": "github"

@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Give AI agents real access without giving up control through Proofable MCP.",
-    "version": "0.1.5"
+    "version": "0.1.6"
   },
   "plugins": [
     {
