@@ -3,7 +3,7 @@
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
   "description": "Identity, scoped access, and proof for AI agents through Proofable MCP.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "repository": {
     "url": "https://github.com/proofable/mcp",
     "source": "github"
@@ -44,7 +44,7 @@
     },
     {
       "name": "proofable_verifiers_catalog",
-      "description": "List the verification checks Proofable supports, including required inputs and supported networks for each check. Verifier IDs select Proofable checks; they are not separate MCP tools."
+      "description": "Return supported check definitions with the inputs and networks each requires."
     },
     {
       "name": "proofable_proofs_check",
@@ -52,7 +52,15 @@
     },
     {
       "name": "proofable_verify",
-      "description": "Create or refresh portable proofs for the requested Proofable checks. For signed-in ownership checks, omit the wallet; the session supplies it. Share a browser link only when this tool returns one."
+      "description": "Create a proof directly for the signed-in account. Omit the wallet for your own account. If another signer is required, use proofable_verify_prepare and proofable_verify_submit."
+    },
+    {
+      "name": "proofable_verify_prepare",
+      "description": "Prepare a Proofable check for an external signature. Returns the exact signing string, timestamp, chain, and hosted fallback; does not create a proof."
+    },
+    {
+      "name": "proofable_verify_submit",
+      "description": "Submit a prepared Proofable check with its signature and original signing timestamp. Creates a proof when verification succeeds."
     },
     {
       "name": "proofable_verify_or_guide",
@@ -80,7 +88,7 @@
     },
     {
       "name": "proofable_secret_create",
-      "description": "Encrypt and save one secret in the Vault for the signed-in profile. Returns metadata only; the stored value is never returned."
+      "description": "Encrypt and save one secret in the Vault for the signed-in profile. Saving the same alias again replaces and revokes its prior value. Returns metadata only; the stored value is never returned."
     },
     {
       "name": "proofable_secret_list",
