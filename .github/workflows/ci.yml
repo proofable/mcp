@@ -14,10 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Select matching SDK review branch
+        id: sdk-ref
+        env:
+          CANDIDATE_REF: ${{ github.head_ref }}
+        run: |
+          ref=main
+          if [[ -n "$CANDIDATE_REF" ]] && git ls-remote --exit-code https://github.com/proofable/sdk.git "refs/heads/$CANDIDATE_REF" >/dev/null; then
+            ref="$CANDIDATE_REF"
+          fi
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
       - name: Check out proofable/sdk for skill parity
         uses: actions/checkout@v7
         with:
           repository: proofable/sdk
+          ref: ${{ steps.sdk-ref.outputs.ref }}
           path: sdk
       - uses: actions/setup-node@v7
         with:

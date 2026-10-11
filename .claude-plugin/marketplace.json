@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Identity, scoped access, and proof for AI agents through Proofable MCP.",
-    "version": "0.1.6"
+    "version": "0.1.7"
   },
   "plugins": [
     {

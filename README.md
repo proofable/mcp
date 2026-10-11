@@ -66,6 +66,7 @@ Install one Proofable connection per client. A marketplace plugin and a manual e
 | Check whether a qualifying proof already exists | `proofable_proofs_check` |
 | Reuse a current proof or get the next verification step | `proofable_verify_or_guide` |
 | Create or refresh a proof | `proofable_verify` |
+| Prepare and submit a check needing another signer | `proofable_verify_prepare`, `proofable_verify_submit` |
 | Find and read proofs | `proofable_proofs_get` |
 | Update proof metadata or add feedback | `proofable_proofs_update` |
 | Check, create, and load agent permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
