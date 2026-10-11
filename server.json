@@ -56,11 +56,11 @@
     },
     {
       "name": "proofable_verify_prepare",
-      "description": "Prepare a Proofable check for an external signature. Returns the exact signing string, timestamp, chain, and hosted fallback; does not create a proof."
+      "description": "Prepare a signature request for the selected Proofable checks. Returns the exact signing string, timestamp, chain, and hosted fallback. This call does not submit the check or create a proof."
     },
     {
       "name": "proofable_verify_submit",
-      "description": "Submit a prepared Proofable check with its signature and original signing timestamp. Creates a proof when verification succeeds."
+      "description": "Submit a signed Proofable check using the same wallet, checks, data, and chain used to prepare it, plus the returned signing timestamp and signature. Creates a proof only when verification succeeds."
     },
     {
       "name": "proofable_verify_or_guide",
