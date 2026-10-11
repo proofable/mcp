@@ -9,6 +9,12 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+## [0.1.7] - 2026-10-10
+
+### Changed
+
+- Replaced platform-specific marketplace copy with the shared line “Context and control for any AI,” followed by concrete identity, access, tools, and proof details across OpenAI, MCP Registry, npm, Claude, Cursor, and Codex metadata.
+
 ## [0.1.6] - 2026-10-08
 
 ### Changed

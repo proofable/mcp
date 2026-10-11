@@ -1,8 +1,8 @@
 {
   "$comment": "Canonical OpenAI-facing plugin copy. Single owner of the shared reviewer-facing fields for the ChatGPT/Codex plugin listing. Host-only fields (category, capabilities, composerIcon, logo, screenshots, review, publication) stay in each host manifest. Edit here, then run `node scripts/sync-openai-interface.mjs`; `npm run validate` fails on drift.",
   "displayName": "Proofable",
-  "shortDescription": "Make AI do work and prove it.",
-  "longDescription": "Bring your Proofable agents, trusted context, permissions, proofs, and tools into ChatGPT without rebuilding the setup.",
+  "shortDescription": "Context and control for any AI",
+  "longDescription": "Context and control for any AI. Bring the same agent identity, trusted context, scoped access, tools, and proof to the AI clients you use.",
   "developerName": "Proofable",
   "websiteURL": "https://proofable.me",
   "supportURL": "https://proofable.me/contact",

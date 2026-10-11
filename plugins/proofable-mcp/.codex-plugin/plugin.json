@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.7",
-  "description": "Identity, scoped access, and proof for AI agents through Proofable MCP.",
+  "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Make AI do work and prove it.",
-    "longDescription": "Bring your Proofable agents, trusted context, permissions, proofs, and tools into ChatGPT without rebuilding the setup.",
+    "shortDescription": "Context and control for any AI",
+    "longDescription": "Context and control for any AI. Bring the same agent identity, trusted context, scoped access, tools, and proof to the AI clients you use.",
     "developerName": "Proofable",
     "websiteURL": "https://proofable.me",
     "supportURL": "https://proofable.me/contact",

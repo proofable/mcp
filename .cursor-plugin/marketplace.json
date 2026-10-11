@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Identity, scoped access, and proof for AI agents through Proofable MCP.",
+    "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
     "version": "0.1.7"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Identity, scoped access, and proof for AI agents through Proofable MCP."
+      "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools."
     }
   ]
 }
