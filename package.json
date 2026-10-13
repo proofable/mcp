@@ -53,7 +53,8 @@
     "validate:smithery": "node scripts/validate-smithery-config.mjs",
     "validate": "node scripts/validate-template.mjs && node scripts/validate-cursor-schemas.mjs && node scripts/validate-cursor-mcp.mjs && node scripts/validate-universal-manifests.mjs && node scripts/validate-manifest-ssot.mjs && node scripts/validate-brand-assets.mjs && node scripts/sync-plugin-skills.mjs --check && node scripts/sync-openai-interface.mjs --check && npm run validate:package && npm run validate:smithery",
     "test": "npm run validate",
-    "prepublishOnly": "npm run validate"
+    "prepublishOnly": "npm run validate",
+    "build:openai": "node scripts/build-openai-bundle.mjs"
   },
   "publishConfig": {
     "access": "public",

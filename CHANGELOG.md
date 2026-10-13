@@ -9,6 +9,10 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+### Changed
+
+- **The ChatGPT plugin connects to its own server path.** OpenAI's plugin review rejects tools that pick an operation by ID with a catalog-defined input (the verifier catalog and the three verify tools) and tools that collect credentials (the secret tools). The ChatGPT bundle now points at `https://mcp.proofable.me/mcp/openai`, which serves the remaining eight tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client keep the full tool list on `/mcp`. Build the bundle with `npm run build:openai`.
+
 ## [0.1.7] - 2026-10-10
 
 ### Changed
