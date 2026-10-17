@@ -78,7 +78,11 @@ const mismatches = [];
   const manifest = readJson(CODEX_MANIFEST);
   const expectedInterface = mergeInterface(manifest.interface);
   const expected = `${JSON.stringify({ ...manifest, interface: expectedInterface }, null, 2)}\n`;
-  const actual = readFileSync(CODEX_MANIFEST, 'utf8');
+  // Compare on normalized line endings. `core.autocrlf=true` is the default on
+  // Windows, so a clean checkout there has CRLF on disk and a byte compare would
+  // report drift on a tree that is correct — the same trap `sync-plugin-skills.mjs`
+  // normalizes for.
+  const actual = readFileSync(CODEX_MANIFEST, 'utf8').replaceAll('\r\n', '\n');
   if (actual !== expected) {
     if (CHECK_ONLY) {
       mismatches.push(path.relative(repoRoot, CODEX_MANIFEST));

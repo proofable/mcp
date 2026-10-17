@@ -52,11 +52,14 @@ const expectedVersion = String(canonical.version || "");
 if (!expectedDescription) errors.push(`${CANONICAL}: description is empty; it is the SSOT value.`);
 if (!expectedVersion) errors.push(`${CANONICAL}: version is empty; it is the SSOT value.`);
 
-// Plugin manifests — what a host shows in the plugin detail pane.
+// Plugin manifests — what a host shows in the plugin detail pane, plus the
+// portable Agent Plugins v1 manifest at the plugin root that Hermes and other
+// portable-plugin clients read.
 const PLUGIN_MANIFESTS = [
   "plugins/proofable-mcp/.claude-plugin/plugin.json",
   "plugins/proofable-mcp/.cursor-plugin/plugin.json",
   "plugins/proofable-mcp/.codex-plugin/plugin.json",
+  "plugins/proofable-mcp/plugin.json",
 ];
 for (const relative of PLUGIN_MANIFESTS) {
   const manifest = await readJson(relative);

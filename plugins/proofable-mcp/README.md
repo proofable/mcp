@@ -24,7 +24,16 @@ npx -y @proofable/sdk setup --client codex
 codex mcp login proofable
 ```
 
-Keep one Proofable connection per client. Do not add a manual `proofable` entry when the plugin already registered one.
+Hermes Agent loads the three skills from this package. Add the hosted server once, then sign in:
+
+```bash
+hermes mcp add proofable --url https://mcp.proofable.me/mcp --auth oauth
+hermes mcp login proofable
+```
+
+Any client that reads Agent Plugins packages can use this folder as is: `plugin.json` declares the package, and `skills/` carries the three workflow skills. Register `https://mcp.proofable.me/mcp` as a Streamable HTTP MCP server with OAuth.
+
+Keep one Proofable connection per client. Do not add a manual `proofable` entry when the plugin or the MCP catalog already registered one.
 
 Included skills:
 
