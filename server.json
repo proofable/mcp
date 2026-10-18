@@ -48,7 +48,7 @@
     },
     {
       "name": "proofable_proofs_check",
-      "description": "Does this wallet already have the required proofs? Returns pass or fail, not records. To read proofs, use proofable_proofs_get. Omit the wallet when signed in."
+      "description": "Does this wallet already have the required proofs? Returns pass or fail, not records. Reading proof bodies needs a signed-in session, which is what unlocks proofable_proofs_get; signed-out callers get this check and can sign in to go further. Omit the wallet when signed in."
     },
     {
       "name": "proofable_verify",
