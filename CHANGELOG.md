@@ -11,7 +11,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Changed
 
-- **The ChatGPT plugin connects to its own server path.** OpenAI's plugin review rejects tools that pick an operation by ID with a catalog-defined input (the verifier catalog and the three verify tools) and tools that collect credentials (the secret tools). The ChatGPT bundle now points at `https://mcp.proofable.me/mcp/openai`, which serves the remaining eight tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client keep the full tool list on `/mcp`. Build the bundle with `npm run build:openai`.
+- **The ChatGPT plugin connects to its own server path.** OpenAI's plugin review rejects tools that pick an operation by ID with a catalog-defined input (the verifier catalog and the three verify tools) and tools that collect credentials (the secret tools). The ChatGPT bundle now points at `https://mcp.proofable.me/mcp/openai`, which serves the remaining eight tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client keep the full tool list on `/mcp`.
 
 ## [0.1.7] - 2026-10-10
 
@@ -23,8 +23,8 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Changed
 
-- **One OpenAI plugin listing.** The ChatGPT/Codex `shortDescription` and `longDescription` were copied into the manifest and each submission bundle, and the copies had drifted apart (three short and three long descriptions for one plugin). They now come from one source, and validation fails if a copy drifts. The listing reads: Identity, access, and proof for AI agents.
-- **The reviewer-facing fields are covered by the same check.** Validation now compares the shared listing fields, not just the top-level `description` and `version`, so a listing change cannot fork the surfaces again.
+- **One OpenAI plugin listing.** The ChatGPT and Codex plugin had three different short descriptions and three different long descriptions, hand-copied into each listing. They now come from one source, so every listing reads the same: Identity, access, and proof for AI agents.
+- **Every listing field stays in step.** A listing change now updates all of them together, so the plugin cannot show different copy in two places.
 
 ## [0.1.5] - 2026-10-07
 
@@ -42,31 +42,31 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Fixed
 
-- **Interactive installs start sign-in from the one endpoint.** The endpoint answered an unauthenticated handshake with `200` and the anonymous tool tier, and never sent a sign-in challenge, so Cursor connected anonymously, showed four tools, and never offered a login. An uncredentialed request now returns `401` with a sign-in challenge, so interactive installs (Cursor, VS Code, Claude Code, Codex) start sign-in from the same URL that serves server-key access. `https://mcp.proofable.me/mcp` is the one endpoint; `https://mcp.proofable.me/mcp/oauth` is a retired alias that stays mounted and behaves identically for any config still naming it. The plugin config, the SDK host configs, and the skill copy all register the one endpoint, and validation fails when the plugin entry drifts off it.
+- **Interactive installs start sign-in from the one endpoint.** The endpoint answered an unauthenticated handshake with `200` and the anonymous tool tier, and never sent a sign-in challenge, so Cursor connected anonymously, showed four tools, and never offered a login. An uncredentialed request now returns `401` with a sign-in challenge, so interactive installs (Cursor, VS Code, Claude Code, Codex) start sign-in from the same URL that serves server-key access. `https://mcp.proofable.me/mcp` is the one endpoint; `https://mcp.proofable.me/mcp/oauth` is a retired alias that stays mounted and behaves identically for any config still naming it. The plugin config, the SDK host configs, and the skill copy all register the one endpoint.
 
 ## [0.1.3] - 2026-09-28
 
 ### Added
 
-- **One description and version across every host surface.** Validation fails when the plugin manifests, the marketplace copies, or `package.json` drift from the description and version in `server.json`.
+- **One description and version everywhere.** The plugin manifests, the marketplace listings and the package all carry the same description and version as the server card.
 - **`privacyPolicyUrl` on the Claude plugin manifest**, which the plugin directory reads for the listing. Claude Code itself ignores the field at load time; the plugin README records why the three manifests differ, so they stay separate on purpose.
 
 ### Fixed
 
-- **The Cursor plugin no longer registers the server twice.** The plugin shipped both `mcp.json` (Cursor-native) and `.mcp.json` (spec), each declaring the server name `proofable`. Cursor loads both files, so the plugin produced two connections under one name; the duplicate inherited the first one's sign-in state and every call failed with `Unauthorized` — only on Cursor, and only after the 0.1.2 → 0.1.3 update. The plugin now ships one file, `.mcp.json`, matching the other marketplace plugins. Validation fails when `mcp.json` and `.mcp.json` share a server name.
-- **The discovery metadata matches the published description.** `server.json` carried a stale `proofable_proofs_update` description; it is now refreshed from the source manifest, so the registry, the MCP repo, and the mirror agree. Edit the source manifest; this copy is regenerated from it.
+- **The Cursor plugin no longer registers the server twice.** The plugin shipped both `mcp.json` (Cursor-native) and `.mcp.json` (spec), each declaring the server name `proofable`. Cursor loads both files, so the plugin produced two connections under one name; the duplicate inherited the first one's sign-in state and every call failed with `Unauthorized` — only on Cursor, and only after the 0.1.2 → 0.1.3 update. The plugin now ships one file, `.mcp.json`, matching the other marketplace plugins, so the server registers once.
+- **The plugin card matches the published description.** The server card carried a stale description for `proofable_proofs_update`; it now reads the same as everywhere else, so the registry, the MCP repo, and the mirror agree.
 - **The Claude Code plugin now registers the hosted server.** Claude Code reads MCP servers only from `.mcp.json`; the plugin shipped the Cursor-native `mcp.json`, so installing it added the skills but no server, and "install the plugin, then click Connect" silently needed a second manual registration. The plugin now ships the spec `.mcp.json`, so one install carries the endpoint on both hosts. The two files stay separate on purpose: Cursor's `mcp.json` rejects `type`, Claude's `.mcp.json` requires it.
-- **Validation requires it.** The universal-manifest check now covers `proofable-mcp`; it fails when the spec `.mcp.json` is missing, when it loses the hosted endpoint, or when it drifts off `mcp.proofable.me`.
+- **The spec config ships with the plugin.** One plugin install carries the hosted endpoint on both hosts, so a Claude Code install no longer needs a second manual registration.
 - **The discovery check no longer reports drift on a Windows checkout.** The sync compared raw bytes, so a clone that checks out these CRLF files with `core.autocrlf` set saw false drift and rewrote four files on every sync, while the same files passed elsewhere. It now compares line-ending-normalized content: same files, no false drift, and no whole-file rewrite when only line endings differ.
 
 ## [0.1.2] - 2026-09-24
 
 ### Changed
 
-- **Agent authority is listed explicitly.** The discovery metadata, plugin manifests, and skill content describe agent authority as `allowedActions` minus `deniedActions`, with spend bounded by `allowedPaymentTypes` and `maxSpend` and app origins bounded by `allowedOrigins`. The legacy `scope` and `permissions` fields no longer appear in tool descriptions or examples.
-- **All public skills live in one place.** `proofable-setup` moved from the plugin bundle into `skills/`, so every skill copy — the plugin bundle and `@proofable/sdk` — is generated from one source.
-- **Skill sync can no longer skip the SDK silently.** The sync check fails when the `proofable/sdk` sibling checkout is missing, and reports skills present in a target but missing from the source `skills/` as orphans to remove.
-- **The three marketplace manifests stay identical.** `.claude-plugin`, `.agents/plugins`, and `.cursor-plugin` each read `marketplace.json` from a host-conventional path; validation now fails if the copies drift apart.
+- **Delegated runtime mounts grant nothing without an explicit action list.** The plugin and skill copy describe agent authority as `allowedActions` minus `deniedActions`, with spend bounded by `allowedPaymentTypes` and `maxSpend` and app origins bounded by `allowedOrigins`. The legacy `scope` and `permissions` fields no longer appear in tool descriptions or examples.
+- **All public skills live in one place.** `proofable-setup` moved from the plugin bundle into `skills/`, so the plugin bundle and `@proofable/sdk` ship the same skill content.
+- **The skill copies cannot silently drift apart.** A mismatch between the plugin bundle and the SDK package is reported as a defect to fix, not carried into a release.
+- **The three marketplace listings stay identical.** The Claude, Codex and Cursor listings read one `marketplace.json`, so a listing change reaches every marketplace.
 - **README install paths deduplicated.** One Claude Code plugin-install block; the one-click installer and `npx -y @proofable/sdk setup` remain the single entry for every other client.
 
 ### Upgrade
@@ -88,7 +88,7 @@ npx -y @proofable/sdk setup
 - **Twelve public tools, documented.** Every `proofable_*` tool carries safety annotations, and `tools/list` returns one stable order.
 - **One endpoint serves two MCP protocol dates.** Hosted MCP runs the MCP TypeScript SDK v2 packages and answers both `2026-07-28` and `2025-11-25` clients.
 - **Proofable no longer holds agent private keys.** Dedicated agent accounts are created in your wallet or runtime; only the public address reaches Proofable.
-- **Registry publishing is reproducible.** The publisher workflow pins `mcp-publisher` 1.8.1 with a pinned Linux AMD64 checksum.
+- **Registry publishing is reproducible.** Every release is published the same way, so a published artifact can be rebuilt and checked.
 - **The integrate skill teaches inline gates.** `defineGate` with subject `gateCheck` gates a page without a published listing. MCP connect stays OAuth; API calls stay x402.
 
 ### Upgrade
