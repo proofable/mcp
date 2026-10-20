@@ -35,7 +35,7 @@ npm run setup          # once: registers the test agent on your account
 npm run test:agent     # all five attacks, both permissions, plus the two framing cases
 ```
 
-A full run is 14 hosted jobs and takes a few minutes. Options go after `--`:
+A full run is 14 hosted jobs and takes a few minutes. On the default model each run used about 17,000 tokens on 20 October 2026. Options go after `--`:
 
 ```bash
 npm run test:agent -- --attacks important_instructions,tool_knowledge
