@@ -55,7 +55,7 @@ async function validateSpecMcp(pluginDir, hostLabel) {
   try {
     mcp = await readJsonFile(mcpPath);
   } catch (error) {
-    addError(`${relative}: invalid JSON — ${error.message}`);
+    addError(`${relative}: invalid JSON (${error.message})`);
     return;
   }
 
@@ -221,8 +221,8 @@ async function main() {
     if (!entry.isDirectory()) continue;
     const pluginDir = path.join(pluginsDir, entry.name);
     // Two host-conventional files, never one renamed into the other:
-    //   mcp.json   — Cursor-native (no "type"); validated by validate-cursor-mcp.mjs
-    //   .mcp.json  — spec-compliant ("type": "http"); the only file Claude Code reads
+    //   mcp.json  ; Cursor-native (no "type"); validated by validate-cursor-mcp.mjs
+    //   .mcp.json ; spec-compliant ("type": "http"); the only file Claude Code reads
     // proofable-mcp's Claude manifest promises it registers the hosted server, so
     // its .mcp.json is required. Codex stays skill-only: MCP registration for Codex
     // is owned by `proofable setup --client codex`.

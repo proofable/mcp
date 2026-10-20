@@ -35,7 +35,7 @@ for (const [label, marker] of FINGERPRINTS) {
 // finalized mark is exactly two <path> elements.
 const circleCount = (iconSvg.match(/<circle/g) || []).length;
 if (circleCount !== 0) {
-  errors.push(`icon.svg: contains ${circleCount} <circle> element(s) — pre-final particle-orbit geometry detected`);
+  errors.push(`icon.svg: contains ${circleCount} <circle> element(s); pre-final particle-orbit geometry detected`);
 }
 
 // Raster tier must be the 512 web mark, not an arbitrary export.
@@ -56,7 +56,7 @@ try {
   const pngCorners = decodePngCorners(iconPng);
   for (const [label, rgba] of Object.entries(pngCorners)) {
     if (rgba[3] !== 0) {
-      errors.push(`icon.png: ${label} is rgba(${rgba.join(", ")}) — the mark must be transparent, never a baked tile`);
+      errors.push(`icon.png: ${label} is rgba(${rgba.join(", ")}); the mark must be transparent, never a baked tile`);
     }
   }
 } catch (error) {

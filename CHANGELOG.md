@@ -53,7 +53,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Fixed
 
-- **The Cursor plugin no longer registers the server twice.** The plugin shipped both `mcp.json` (Cursor-native) and `.mcp.json` (spec), each declaring the server name `proofable`. Cursor loads both files, so the plugin produced two connections under one name; the duplicate inherited the first one's sign-in state and every call failed with `Unauthorized` — only on Cursor, and only after the 0.1.2 → 0.1.3 update. The plugin now ships one file, `.mcp.json`, matching the other marketplace plugins, so the server registers once.
+- **The Cursor plugin no longer registers the server twice.** The plugin shipped both `mcp.json` (Cursor-native) and `.mcp.json` (spec), each declaring the server name `proofable`. Cursor loads both files, so the plugin produced two connections under one name; the duplicate inherited the first one's sign-in state and every call failed with `Unauthorized`, only on Cursor and only after the 0.1.2 to 0.1.3 update. The plugin now ships one file, `.mcp.json`, matching the other marketplace plugins, so the server registers once.
 - **The plugin card matches the published description.** The server card carried a stale description for `proofable_proofs_update`; it now reads the same as everywhere else, so the registry, the MCP repo, and the mirror agree.
 - **The Claude Code plugin now registers the hosted server.** Claude Code reads MCP servers only from `.mcp.json`; the plugin shipped the Cursor-native `mcp.json`, so installing it added the skills but no server, and "install the plugin, then click Connect" silently needed a second manual registration. The plugin now ships the spec `.mcp.json`, so one install carries the endpoint on both hosts. The two files stay separate on purpose: Cursor's `mcp.json` rejects `type`, Claude's `.mcp.json` requires it.
 - **The spec config ships with the plugin.** One plugin install carries the hosted endpoint on both hosts, so a Claude Code install no longer needs a second manual registration.
@@ -156,27 +156,8 @@ The `@proofable/mcp` package continues the line published as `@neus/mcp-server`.
 | [1.1.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.0) | 2026-05-26 | First public MCP release: OAuth-first setup (`neus setup`, `neus auth`, `neus doctor --live`), the `@neus/mcp-server` npm package, public tools including encrypted Vault secrets, and the Claude Code marketplace plugin with the trust workflow skill. |
 | [1.0.12](https://www.npmjs.com/package/@neus/mcp-server/v/1.0.12) | 2026-05-26 | First `@neus/sdk` release with the hosted MCP CLI and OAuth browser flow. |
 
-<!--
-Media placeholders for this release line. Drop the finished files under docs/images/releases/ and swap each comment for the matching <img> / <Video> include.
--->
-
-<!--
-<update-image-0.1.1>
-  TODO: screenshot â€” MCP tools/list in a host with safety annotations visible.
-  Suggested path: docs/images/releases/mcp-0.1.1-tools-list.png
-</update-image-0.1.1>
--->
-
-<!--
-<update-image-0.1.0>
-  TODO: screenshot â€” Connect flow: add https://mcp.proofable.me/mcp, complete sign-in.
-  Suggested path: docs/images/releases/mcp-0.1.0-connect.png
-  TODO: 30-60s clip â€” first run: register endpoint, sign in, ask for profile and current proofs.
-  Suggested path: docs/images/releases/mcp-0.1.0-first-run.mp4
-</update-image-0.1.0>
--->
-
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.7...HEAD
+[0.1.7]: https://github.com/proofable/mcp/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/proofable/mcp/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/proofable/mcp/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/proofable/mcp/compare/v0.1.3...v0.1.4
