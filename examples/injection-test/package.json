@@ -1,0 +1,18 @@
+{
+  "name": "proofable-injection-test-example",
+  "private": true,
+  "description": "Attack your own agent with prompt injection and see which calls its permission refuses, from signed receipts you can verify offline.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "setup": "node injection-test.mjs setup",
+    "test:agent": "node injection-test.mjs run",
+    "verify": "node injection-test.mjs verify"
+  },
+  "dependencies": {
+    "@proofable/sdk": "^0.1.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

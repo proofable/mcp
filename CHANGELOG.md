@@ -9,6 +9,10 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+### Added
+
+- **Prompt injection test for your own agent.** `examples/injection-test` hides the five AgentDojo attack templates in a note your agent reads, runs the same task under a permission scoped to the task and under a broad one, and grades every run from its signed receipt: whether the model tried the attacker's goal, and whether the permission check refused the call before it ran. The records check offline, and you can plant your own attack text.
+
 ### Changed
 
 - **The ChatGPT plugin connects to its own server path.** OpenAI's plugin review rejects tools that pick an operation by ID with a catalog-defined input (the verifier catalog and the three verify tools) and tools that collect credentials (the secret tools). The ChatGPT bundle now points at `https://mcp.proofable.me/mcp/openai`, which serves the remaining eight tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client keep the full tool list on `/mcp`.
