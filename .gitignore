@@ -8,3 +8,11 @@ node_modules/
 !**/.env.example
 
 dist/
+
+# Proofable operator mount artifacts (private; never publish)
+.claude/
+.cursor/
+.hermes/
+.proofable/
+AGENTS.md
+CLAUDE.md
