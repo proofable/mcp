@@ -11,7 +11,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Added
 
-- **Prompt injection test for your own agent.** `examples/injection-test` hides the five AgentDojo attack templates in a note your agent reads, runs the same task under a permission scoped to the task and under a broad one, and grades every run from its signed receipt: whether the model tried the attacker's goal, and whether the permission check refused the call before it ran. The records check offline, and you can plant your own attack text.
+- **Prompt injection test for your own agent.** `examples/injection-test` hides the five AgentDojo attack templates in a note your agent reads, runs the same task under a permission scoped to the task and under a broad one, and grades every run from its signed receipt: whether the model tried the attacker's goal (a request out of your account, or a saved record that makes the note's private data readable by others), and whether the permission check refused the call before it ran. The records check offline, and you can plant your own attack text.
 
 ### Changed
 
