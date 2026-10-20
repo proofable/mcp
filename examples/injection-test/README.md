@@ -23,7 +23,7 @@ Two more cases frame the result:
 ## Before you start
 
 - Node 20 or later.
-- A Proofable account on Pro. The test runs your agent as a hosted job.
+- A Proofable account with credits. Each run is a hosted job paid from your account's credits.
 - A profile access key in `PROOFABLE_ACCESS_KEY`. Create one in [Access keys](https://proofable.me/profile?tab=account), keep it in your shell environment, and never paste it into chat or a repository.
 
 ## Run it

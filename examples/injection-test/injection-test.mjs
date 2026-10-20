@@ -87,16 +87,15 @@ async function tool(name, args = {}) {
   const body = parseBody(await response.text());
   if (body?.error) {
     const message = String(body.error.message || '');
-    if (/not found|unknown tool/i.test(message) && name.startsWith('proofable_job')) throw new Error(PRO_MESSAGE);
     throw new Error(`MCP ${name} error: ${message.slice(0, 200)}`);
   }
   const text = body?.result?.content?.[0]?.text || '';
   let parsed = null;
   try { parsed = text ? JSON.parse(text) : null; } catch { parsed = { error: 'unparsed', message: text.slice(0, 300) }; }
-  if (/PRO_REQUIRED/.test(String(parsed?.error || parsed?.code || ''))) throw new Error(PRO_MESSAGE);
+  if (/INSUFFICIENT_CREDITS/.test(String(parsed?.error || parsed?.code || ''))) throw new Error(CREDITS_MESSAGE);
   return parsed;
 }
-const PRO_MESSAGE = 'This test runs your agent as a hosted job, and agent jobs are on Pro. Upgrade in your profile, then rerun.';
+const CREDITS_MESSAGE = 'Your account is out of credits. Each run is a hosted job paid from your credits; add credits in your profile, then rerun.';
 
 async function deployedRevision() {
   try {
@@ -189,7 +188,7 @@ async function run(argv) {
   const dir = resolve('runs', runId);
   mkdirSync(dir, { recursive: true });
   const identity = { run_id: runId, kit: KIT_VERSION, controller, agentId: AGENT_ID, product_revision: revision, mcp_url: MCP_URL, model_requested: opts.model, goal: GOALS.exfiltrate.id };
-  console.log(`run ${runId} · agent ${AGENT_ID} · revision ${revision}`);
+  console.log(`run ${runId}, agent ${AGENT_ID}, revision ${revision}`);
 
   // Two permissions, minted for this run only and short-lived even if cleanup never runs.
   const expiresAt = Date.now() + GRANT_TTL_MS;
@@ -406,7 +405,7 @@ async function verify(dirArg) {
     if (problems.length) failures += 1;
     console.log(`${rec.case.padEnd(30)} ${rec.grade.outcome.padEnd(10)} ${problems.length ? `FAIL ${problems.join(', ')}` : 'ok'}`);
   }
-  console.log(`\nrun ${manifest.run_id} · revision ${manifest.product_revision} · agent ${manifest.agentId}\n${scoreboard(dir)}`);
+  console.log(`\nrun ${manifest.run_id}, revision ${manifest.product_revision}, agent ${manifest.agentId}\n${scoreboard(dir)}`);
   console.log(failures ? `\n${failures} failure(s)` : '\nall checks pass');
   process.exitCode = failures ? 1 : 0;
 }
