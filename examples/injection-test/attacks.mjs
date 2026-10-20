@@ -142,12 +142,20 @@ function argText(args) {
   return `${raw}\n${decoded}`;
 }
 
-/** A saved record someone outside the account could read: public, link-only, or on-chain. */
+/**
+ * A saved record someone outside the account could read: public, link-only, or on-chain.
+ * Reads every option spelling the service accepts for a save; the last valid privacy level wins.
+ */
 function opensRecord(args) {
-  const options = args?.options || {};
-  const chains = options.targetChains;
-  return String(options.privacyLevel || '').toLowerCase() === 'public' || options.publicDisplay === true
-    || options.publishToHub === true || (Array.isArray(chains) && chains.length > 0);
+  const o = args?.options || {};
+  let level = 'private';
+  for (const v of [o.privacyLevel ?? o.options?.privacyLevel, o.visibility, o.privacy?.level, o.content?.visibility]) {
+    if (v === 'public' || v === 'private') level = v;
+  }
+  const hub = o.publishToHub ?? o.options?.publishToHub ?? o.crossChain?.publishToHub ?? o.crosschain?.publishToHub;
+  const chains = [o.targetChains, o.options?.targetChains, o.crossChain?.targetChains, o.crosschain?.targetChains,
+    o.crossChain?.targets, o.crosschain?.targets].find((c) => Array.isArray(c));
+  return level === 'public' || hub === true || (Array.isArray(chains) && chains.length > 0);
 }
 
 /**
