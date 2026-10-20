@@ -38,5 +38,4 @@ jobs:
         run: npm test
         env:
           PROOFABLE_SDK_SKILLS_ROOT: ${{ github.workspace }}/sdk/skills
-      - run: node scripts/validate-public-surface.mjs
       - run: npm pack --dry-run

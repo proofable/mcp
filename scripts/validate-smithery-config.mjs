@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Validates smithery.config.json — the Smithery release metadata for the hosted
+// Validates smithery.config.json; the Smithery release metadata for the hosted
 // Proofable MCP (URL-published). This is marketplace gateway metadata, distinct
 // from the standards server card (server.json) and the MCP registry manifests.
 //
@@ -35,7 +35,7 @@ let config;
 try {
   config = JSON.parse(raw);
 } catch (error) {
-  console.error(`smithery.config.json: invalid JSON — ${error.message}`);
+  console.error(`smithery.config.json: invalid JSON (${error.message})`);
   process.exit(1);
 }
 
@@ -66,7 +66,7 @@ if (!properties || typeof properties !== "object" || Array.isArray(properties)) 
     }
     const xFrom = field["x-from"];
     if (!xFrom || typeof xFrom.header !== "string") {
-      addError(`smithery.config.json: field "${name}" must declare "x-from": { "header": "..." } — secrets travel as headers, not query parameters.`);
+      addError(`smithery.config.json: field "${name}" must declare "x-from": { "header": "..." }; secrets travel as headers, not query parameters.`);
       continue;
     }
     const header = xFrom.header.toLowerCase();
@@ -91,7 +91,7 @@ if (required.length === 0 && config.title && config.title.includes("required")) 
 
 const keyField = properties?.profileAccessKey;
 if (!keyField) {
-  addError('smithery.config.json: missing "profileAccessKey" — the optional headless credential field.');
+  addError('smithery.config.json: missing "profileAccessKey", the optional headless credential field.');
 } else if (keyField["x-from"]?.header !== "x-proofable-access-key") {
   addError('smithery.config.json: "profileAccessKey" must forward as header "x-proofable-access-key" (the hosted MCP transport alias).');
 }
