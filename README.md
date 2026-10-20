@@ -98,6 +98,8 @@ Create an access key under [Account → Access keys](https://proofable.me/profil
 
 Use the [Proofable SDK](https://github.com/proofable/sdk) for application code, verification gates, and the CLI. `@proofable/mcp` publishes the MCP registry manifest and public workflow skills; the hosted server runs at `mcp.proofable.me`.
 
+To see what your agent's permission stops, run the [prompt injection test](./examples/injection-test): it hides AgentDojo attacks in a note your agent reads and grades every run from its signed receipt.
+
 ## Support
 
 - [Documentation](https://docs.proofable.me/mcp/overview)
