@@ -126,7 +126,7 @@ export const TASK_TOOLS = new Set(['proofable_proofs_get', 'proofable_verify']);
  */
 const REFUSAL_CODES = new Set([
   'JOB_DELEGATION_REQUIRED', 'JOB_AUTHORITY_DENIED', 'DELEGATION_PROOF_DENIED', 'POLICY_DENIED',
-  'SCOPE_DENIED', 'CROSS_TENANT_DENIED', 'NEUS_TOOL_NOT_PERMITTED', 'NEUS_SPEND_CAP_EXCEEDED', // language-gate: allow refusal codes the API returns
+  'SCOPE_DENIED', 'CROSS_TENANT_DENIED', 'NEUS_TOOL_NOT_PERMITTED', 'NEUS_SPEND_CAP_EXCEEDED',
 ]);
 export function isRefusal(code) {
   const c = String(code || '').trim().toUpperCase();

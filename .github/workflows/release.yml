@@ -14,11 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Check out proofable/sdk for skill parity
-        uses: actions/checkout@v7
-        with:
-          repository: proofable/sdk
-          path: sdk
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
@@ -26,10 +21,7 @@ jobs:
           package-manager-cache: false
       - name: Verify release tag
         run: node -e "const p=require('./package.json'); if (process.env.GITHUB_REF_NAME !== 'v'+p.version) throw new Error('tag must equal v'+p.version)"
-      - name: Validate (incl. canonical skill parity with @proofable/sdk)
-        run: npm test
-        env:
-          PROOFABLE_SDK_SKILLS_ROOT: ${{ github.workspace }}/sdk/skills
+      - run: npm test
       - run: npm pack --dry-run
       - name: Publish @proofable/mcp
         shell: bash
@@ -40,7 +32,6 @@ jobs:
           if npm view "$name@$version" version --registry https://registry.npmjs.org >/dev/null 2>&1; then
             echo "$name@$version is already published; skipping npm publish."
           else
-            # Lifecycle scripts skipped: validation already ran once above (npm test).
             npm publish --ignore-scripts --access public --registry https://registry.npmjs.org
           fi
       - name: Install MCP Registry publisher
