@@ -15,7 +15,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Changed
 
-- **Dedicated ChatGPT plugin endpoint.** The ChatGPT bundle connects to `https://mcp.proofable.me/mcp/openai`, which serves the eight read and guided-verification tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client keep the full tool list on `/mcp`.
+- **Dedicated ChatGPT plugin endpoint.** The ChatGPT plugin connects to `https://mcp.proofable.me/mcp/openai`, which serves the eight read and guided-verification tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client keep the full tool list on `/mcp`.
 
 ## [0.1.7] - 2026-10-10
 
