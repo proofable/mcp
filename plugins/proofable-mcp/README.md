@@ -2,7 +2,7 @@
 
 Identity, scoped access, and proof for AI agents.
 
-This plugin adds the hosted Proofable MCP server and three workflow skills. Install it, finish sign-in in your client, then ask:
+This plugin adds the hosted Proofable MCP server and three workflow skills: `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate`. Install it, finish sign-in in your client, then ask:
 
 ```text
 Show my Proofable profile and the proofs I can reuse.
@@ -24,21 +24,15 @@ npx -y @proofable/sdk setup --client codex
 codex mcp login proofable
 ```
 
-Hermes Agent loads the three skills from this package. Add the hosted server once, then sign in:
+Hermes Agent loads the skills from this package. Add the hosted server, then sign in:
 
 ```bash
 hermes mcp add proofable --url https://mcp.proofable.me/mcp --auth oauth
 hermes mcp login proofable
 ```
 
-Any client that reads Agent Plugins packages can use this folder as is: `plugin.json` declares the package, and `skills/` carries the three workflow skills. Register `https://mcp.proofable.me/mcp` as a Streamable HTTP MCP server with OAuth.
+Any client that reads Agent Plugins packages can use this folder as is: `plugin.json` declares the package and `skills/` holds the skills. Register `https://mcp.proofable.me/mcp` as a Streamable HTTP MCP server with OAuth.
 
-Keep one Proofable connection per client. Do not add a manual `proofable` entry when the plugin or the MCP catalog already registered one.
+Keep one Proofable connection per client. Skip the manual `proofable` entry when the plugin or the client's MCP catalog already registered one.
 
-Included skills:
-
-- `proofable-setup`
-- `proofable-trust-workflow`
-- `proofable-integrate`
-
-See [Set up Proofable](https://docs.proofable.me/mcp/setup) for every supported client.
+[Set up Proofable](https://docs.proofable.me/mcp/setup) covers every supported client.
