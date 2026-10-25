@@ -5,7 +5,7 @@
 
 Identity, scoped access, and proof for AI agents.
 
-Connect Proofable once so agents can use your current profile, proofs, permissions, and protected tools across Cursor, Claude, Codex, VS Code, ChatGPT, and other MCP clients.
+Connect Proofable once, and your agents can use your profile, proofs, permissions, and protected tools in Cursor, Claude, Codex, VS Code, ChatGPT, and any other MCP client.
 
 ## Start
 
@@ -23,13 +23,7 @@ Check whether I already have the proof needed for this task. Reuse it if it qual
 
 ## Connect
 
-Add the hosted endpoint to any MCP client:
-
-```text
-https://mcp.proofable.me/mcp
-```
-
-Or use a standard MCP configuration:
+Add `https://mcp.proofable.me/mcp` to any MCP client, or use a standard MCP configuration:
 
 ```json
 {
@@ -42,20 +36,20 @@ Or use a standard MCP configuration:
 }
 ```
 
-The optional installer writes the same connection for supported clients:
+The installer writes the same connection for supported clients:
 
 ```bash
 npx -y @proofable/sdk setup
 ```
 
-Claude Code can install the server and workflow skills together:
+Claude Code installs the server and the workflow skills together:
 
 ```text
 /plugin marketplace add proofable/mcp
 /plugin install proofable-mcp@proofable
 ```
 
-Install one Proofable connection per client. A marketplace plugin and a manual entry together create a duplicate connection.
+Keep one Proofable connection per client. A marketplace plugin plus a manual entry creates a duplicate.
 
 ## What agents can do
 
@@ -71,9 +65,9 @@ Install one Proofable connection per client. A marketplace plugin and a manual e
 | Update proof metadata or add feedback | `proofable_proofs_update` |
 | Check, create, and load agent permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
 
-Call `proofable_context` once after connecting. Proofable then reuses current proofs before starting another verification and returns **Passed**, **Action needed**, or **Blocked**.
+Call `proofable_context` once after connecting. Proofable reuses current proofs before starting another verification and returns **Passed**, **Action needed**, or **Blocked**.
 
-See the [MCP tool reference](https://docs.proofable.me/mcp/tools) for inputs and result shapes.
+The [MCP tool reference](https://docs.proofable.me/mcp/tools) lists every tool with its inputs and result shapes.
 
 ## Servers and automation
 
@@ -93,11 +87,14 @@ Create an access key under [Account → Access keys](https://proofable.me/profil
 }
 ```
 
+## Examples
+
+- [Prompt injection test](./examples/injection-test): hides AgentDojo attacks in a note your agent reads, runs the task under a scoped and a broad permission, and grades every run from its signed receipt.
+- [Guarded agent action](./examples/guarded-agent-action): makes one permission decision before host code runs a tool.
+
 ## Build with Proofable
 
-Use the [Proofable SDK](https://github.com/proofable/sdk) for application code, verification gates, and the CLI. `@proofable/mcp` publishes the MCP registry manifest and public workflow skills; the hosted server runs at `mcp.proofable.me`.
-
-To see what your agent's permission stops, run the [prompt injection test](./examples/injection-test): it hides AgentDojo attacks in a note your agent reads and grades every run from its signed receipt.
+Use the [Proofable SDK](https://github.com/proofable/sdk) for application code, verification gates, and the CLI. This package carries the MCP registry manifest, the host plugins, and the workflow skills; the server runs at `https://mcp.proofable.me/mcp`.
 
 ## Support
 

@@ -21,6 +21,6 @@ npm start -- send_message --irreversible
 
 The process exits with code `0` only when the current permission proof allows the action. A denied action, missing permission proof, expired permission, or required human approval exits with code `2`.
 
-The host remains responsible for stopping the tool call when the decision is not `allowed`.
+The example only decides. Your host code must stop the tool call whenever the decision is not `allowed`.
 
 See [Run your first guarded action](https://docs.proofable.me/mcp/guarded-action) for the full flow.

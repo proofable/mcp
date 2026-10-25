@@ -1,8 +1,6 @@
 # Contributing
 
-By participating you agree to the [Code of Conduct](./CODE_OF_CONDUCT.md).
-
-**If you are connecting Proofable to an AI client**, use **[docs.proofable.me/mcp/setup](https://docs.proofable.me/mcp/setup)** and the live product first. The table below is for people proposing changes here.
+By participating you agree to the [Code of Conduct](./CODE_OF_CONDUCT.md). To connect Proofable to an AI client, start at [docs.proofable.me/mcp/setup](https://docs.proofable.me/mcp/setup).
 
 | Need | Where |
 | --- | --- |
@@ -14,31 +12,18 @@ By participating you agree to the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## What lives here
 
-Public discovery metadata for the hosted MCP server at `https://mcp.proofable.me/mcp`, plus the host plugins, skills, and runnable examples. The server itself is hosted; this repository publishes how clients find and connect to it.
+The registry manifest for the hosted MCP server at `https://mcp.proofable.me/mcp`, the host plugins, the workflow skills, and runnable examples. The tool fields in `server.json` mirror the hosted server, so report a wrong tool description as an issue instead of editing them.
 
-`server.json` and the tool list are generated from the hosted server. Report a wrong tool description as an issue rather than editing the generated fields by hand.
+Propose a new check in [proofable/docs](https://github.com/proofable/docs). Client and CLI changes belong in [proofable/sdk](https://github.com/proofable/sdk).
 
 ## What helps
 
-- Bug reports with clear steps to reproduce, the client you used, and no secrets in the thread.
-- Host plugin or skill changes that a supported client can install and run today.
-- Examples that work against the hosted endpoint without local setup.
+- Bug reports with steps to reproduce and the client you used.
+- Plugin or skill changes that a supported client can install and run today.
+- Examples that run against the hosted endpoint without local setup.
 
-To propose a new check, open a PR in [proofable/docs](https://github.com/proofable/docs). For client and CLI changes, use [proofable/sdk](https://github.com/proofable/sdk).
-
-**Do not** share keys, tokens, bearer secrets, or private proof content in public issues or change descriptions.
+Keep access keys, OAuth tokens, `.env` and `.npmrc` files, and private proof content out of issues, pull requests, commits, and example configuration.
 
 ## Changelog
 
-Put a user-facing note under `## [Unreleased]` in [CHANGELOG.md](./CHANGELOG.md). Use Added, Changed, Deprecated, Removed, Fixed, or Security. Write what a person connecting an AI client will notice. Leave out ticket IDs, private repository names, and process notes.
-
-## Do not commit
-
-These paths are local-only or generated elsewhere (see `.gitignore`):
-
-- `.env`, `.npmrc`, secrets, and key material
-- Access keys or OAuth tokens in example configuration
-
-## Describing your change
-
-Explain **what a person connecting an AI client will experience differently** (for example a new host, a renamed tool, or a changed setup step). Keep the README and the setup docs in step with what the hosted server actually returns.
+Add a note under `## [Unreleased]` in [CHANGELOG.md](./CHANGELOG.md), grouped as Added, Changed, Deprecated, Removed, Fixed, or Security. Describe what a person connecting an AI client will notice, such as a new host, a renamed tool, or a changed setup step. Leave out ticket IDs and process notes. Keep the README and setup docs matching what the hosted server returns.
