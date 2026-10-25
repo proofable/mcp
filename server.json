@@ -85,18 +85,6 @@
     {
       "name": "proofable_agent_mount",
       "description": "Load the agent identity, permissions, skills, and context into this project."
-    },
-    {
-      "name": "proofable_secret_create",
-      "description": "Encrypt and save one secret in the Vault for the signed-in profile. Saving the same alias again replaces and revokes its prior value. Returns metadata only; the stored value is never returned."
-    },
-    {
-      "name": "proofable_secret_list",
-      "description": "List saved secret names, types, and update times without exposing their values."
-    },
-    {
-      "name": "proofable_secret_revoke",
-      "description": "Revoke a saved secret so it can no longer be used."
     }
   ],
   "license": "Apache-2.0",
