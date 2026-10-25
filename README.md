@@ -70,7 +70,6 @@ Install one Proofable connection per client. A marketplace plugin and a manual e
 | Find and read proofs | `proofable_proofs_get` |
 | Update proof metadata or add feedback | `proofable_proofs_update` |
 | Check, create, and load agent permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
-| Save, list, and revoke encrypted secrets | `proofable_secret_create`, `proofable_secret_list`, `proofable_secret_revoke` |
 
 Call `proofable_context` once after connecting. Proofable then reuses current proofs before starting another verification and returns **Passed**, **Action needed**, or **Blocked**.
 
