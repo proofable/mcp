@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Give AI agents scoped permissions instead of your keys, with approvals and signed proof of each run.",
+    "description": "The trust harness for AI: identity, context, limits and proof for every agent, in any MCP client.",
     "version": "0.1.7"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Give AI agents scoped permissions instead of your keys, with approvals and signed proof of each run."
+      "description": "The trust harness for AI: identity, context, limits and proof for every agent, in any MCP client."
     }
   ]
 }

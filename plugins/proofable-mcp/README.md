@@ -1,6 +1,6 @@
 # Proofable MCP plugin
 
-Put AI agents on real work without handing over your keys.
+The trust harness for AI, in every MCP client.
 
 This plugin adds the hosted Proofable MCP server and three workflow skills: `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate`. Install it, finish sign-in in your client, then ask:
 
