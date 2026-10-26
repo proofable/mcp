@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "proofable-mcp",
   "version": "0.1.7",
-  "description": "Give AI agents scoped permissions instead of your keys, with approvals and signed proof of each run.",
+  "description": "The trust harness for AI: identity, context, limits and proof for every agent, in any MCP client.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"

@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.7",
-  "description": "Give AI agents scoped permissions instead of your keys, with approvals and signed proof of each run.",
+  "description": "The trust harness for AI: identity, context, limits and proof for every agent, in any MCP client.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Permissions and signed proof for AI agents",
-    "longDescription": "Put AI agents on real work without handing over your keys. Each agent gets a permission for its job, risky steps wait for your approval, and every run leaves a signed proof anyone can verify. One connection for Claude, Cursor, Codex and VS Code.",
+    "shortDescription": "The trust harness for AI",
+    "longDescription": "Bring the same identity, context, limits and proof to every AI client you use. Connected apps and payments are checked before they run and leave a signed proof anyone can verify.",
     "developerName": "Proofable",
     "websiteURL": "https://proofable.me",
     "supportURL": "https://proofable.me/contact",
