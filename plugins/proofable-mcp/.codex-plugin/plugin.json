@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.7",
-  "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
+  "description": "Give AI agents scoped permissions instead of your keys, with approvals and signed proof of each run.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Context and control for any AI",
-    "longDescription": "Context and control for any AI. Bring the same agent identity, trusted context, scoped access, tools, and proof to the AI clients you use.",
+    "shortDescription": "Permissions and signed proof for AI agents",
+    "longDescription": "Put AI agents on real work without handing over your keys. Each agent gets a permission for its job, risky steps wait for your approval, and every run leaves a signed proof anyone can verify. One connection for Claude, Cursor, Codex and VS Code.",
     "developerName": "Proofable",
     "websiteURL": "https://proofable.me",
     "supportURL": "https://proofable.me/contact",
