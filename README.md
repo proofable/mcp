@@ -3,9 +3,9 @@
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
-Identity, scoped access, and proof for AI agents.
+Put AI agents on real work without handing over your keys.
 
-Connect Proofable once, and your agents can use your profile, proofs, permissions, and protected tools in Cursor, Claude, Codex, VS Code, ChatGPT, and any other MCP client.
+Connect once, and every agent you run in Cursor, Claude, Codex, VS Code, ChatGPT or any other MCP client works under a permission you set. Connected apps and payments run through Proofable, are checked before they run, and leave a signed proof anyone can verify.
 
 ## Start
 

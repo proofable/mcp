@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
+  "description": "Give AI agents scoped permissions instead of your keys, with approvals and signed proof of each run.",
   "version": "0.1.7",
   "author": {
     "name": "Proofable"
