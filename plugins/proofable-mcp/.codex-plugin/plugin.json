@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.7",
-  "description": "The trust harness for AI: identity, context, limits and proof for every agent, in any MCP client.",
+  "description": "The portable proof layer: identity, context, limits and proof for every agent, in any MCP client.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,7 +29,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "The trust harness for AI",
+    "shortDescription": "The portable proof layer",
     "longDescription": "Bring the same identity, context, limits and proof to every AI client you use. Connected apps and payments are checked before they run and leave a signed proof anyone can verify.",
     "developerName": "Proofable",
     "websiteURL": "https://proofable.me",

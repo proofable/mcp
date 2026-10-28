@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "displayName": "Proofable",
-  "description": "The trust harness for AI: identity, context, limits and proof for every agent, in any MCP client.",
+  "description": "The portable proof layer: identity, context, limits and proof for every agent, in any MCP client.",
   "version": "0.1.7",
   "author": {
     "name": "Proofable",
