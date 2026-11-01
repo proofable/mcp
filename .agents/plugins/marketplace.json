@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "The portable proof layer: identity, context, limits and proof for every agent, in any MCP client.",
-    "version": "0.1.7"
+    "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
+    "version": "0.1.8"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "The portable proof layer: identity, context, limits and proof for every agent, in any MCP client."
+      "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools."
     }
   ]
 }

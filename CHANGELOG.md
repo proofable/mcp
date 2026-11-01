@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/changelog).
 
-## [Unreleased]
+## [0.1.8] - 2026-11-01
 
 ### Added
 
 - **Prompt injection test for your own agent.** `examples/injection-test` hides the five AgentDojo attack templates in a note your agent reads, runs the same task under a permission scoped to the task and under a broad one, and grades every run from its signed receipt: whether the model tried the attacker's goal (a request out of your account, or a saved record that makes the note's private data readable by others), and whether the permission check refused the call before it ran. The records check offline, and you can plant your own attack text.
 
 ### Changed
+
+- **One line everywhere you meet us.** The registry, npm, marketplace and plugin listings now lead with what a builder gets: “Context and control for any AI,” then identity, scoped access and proof across tools. The ChatGPT and Codex listings describe the same thing the tools do, filed under Developer Tools, with starter prompts for checking an agent's limits, reusing a proof and reading a profile.
+
+- **The ChatGPT plugin explains itself in its own terms.** Its tool descriptions and input help no longer point at checks or tools that surface does not serve, and the verifier IDs it accepts are listed where the argument is.
 
 - **Saving a key moves to your profile.** `https://mcp.proofable.me/mcp` no longer accepts a key as a tool argument: `tools/list` does not offer the tool that saved one, and a call to it is rejected as an unknown tool, so a credential is never passed through a client. Every other tool stays on every plan for a signed-in connection, on your credits and within your permissions: the proof and permission tools, jobs, the hosted browser, connected apps, remote MCP servers, session notes, saved tools, web search, page fetch, and your saved keys (list, remove, or call a provider with one, never reading the key back). The published card lists twelve tools and no vault tool.
 
@@ -159,7 +163,8 @@ The `@proofable/mcp` package continues the line published as `@neus/mcp-server`.
 | [1.1.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.0) | 2026-05-26 | First public MCP release: OAuth-first setup (`neus setup`, `neus auth`, `neus doctor --live`), the `@neus/mcp-server` npm package, public tools including encrypted Vault secrets, and the Claude Code marketplace plugin with the trust workflow skill. |
 | [1.0.12](https://www.npmjs.com/package/@neus/mcp-server/v/1.0.12) | 2026-05-26 | First `@neus/sdk` release with the hosted MCP CLI and OAuth browser flow. |
 
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.8...HEAD
+[0.1.8]: https://github.com/proofable/mcp/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/proofable/mcp/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/proofable/mcp/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/proofable/mcp/compare/v0.1.4...v0.1.5

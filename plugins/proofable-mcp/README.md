@@ -1,6 +1,6 @@
 # Proofable MCP plugin
 
-The portable proof layer, in every MCP client.
+The trust harness for AI. Identity and governance for the agents you run, in every MCP client.
 
 This plugin adds the hosted Proofable MCP server and three workflow skills: `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate`. Install it, finish sign-in in your client, then ask:
 

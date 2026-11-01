@@ -1,7 +1,7 @@
 {
   "name": "@proofable/mcp",
-  "version": "0.1.7",
-  "description": "The portable proof layer: identity, context, limits and proof for every agent, in any MCP client.",
+  "version": "0.1.8",
+  "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {

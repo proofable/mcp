@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
-  "version": "0.1.7",
-  "description": "The portable proof layer: identity, context, limits and proof for every agent, in any MCP client.",
+  "version": "0.1.8",
+  "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,19 +29,19 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "The portable proof layer",
-    "longDescription": "Bring the same identity, context, limits and proof to every AI client you use. Connected apps and payments are checked before they run and leave a signed proof anyone can verify.",
+    "shortDescription": "The trust harness for AI.",
+    "longDescription": "Proofable is the trust harness for AI: every agent gets an owner, the limits you set, and a signed receipt of what it did, in the AI tools you already use. Check an agent's permissions before it acts, reuse a proof instead of verifying again, and load an agent's identity, limits and context into your work. Built for small AI teams and builders who let agents do real work. Sign-in is required, and proofs stay offchain unless you ask for a blockchain record.",
     "developerName": "Proofable",
+    "category": "Developer Tools",
     "websiteURL": "https://proofable.me",
     "supportURL": "https://proofable.me/contact",
     "privacyPolicyURL": "https://proofable.me/privacy",
     "termsOfServiceURL": "https://proofable.me/terms",
     "defaultPrompt": [
-      "Show my Proofable profile and the proofs I can reuse.",
-      "Check whether I already have the proof needed for this task.",
-      "Show what my agents can do and where their limits apply."
+      "Check what my agents are allowed to do.",
+      "Reuse a proof I already have instead of verifying again.",
+      "Show my Proofable profile and what it can prove."
     ],
-    "category": "Security",
     "capabilities": [
       "code",
       "search"
