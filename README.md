@@ -97,7 +97,7 @@ Create an access key under [Account → Access keys](https://proofable.me/profil
 
 ## Build with Proofable
 
-Use the [Proofable SDK](https://github.com/proofable/sdk) for application code, verification gates, and the CLI. This package carries the MCP registry manifest, the host plugins, and the workflow skills; the server runs at `https://mcp.proofable.me/mcp`.
+Use the [Proofable SDK](https://github.com/proofable/sdk) for application code, verification gates, and the CLI. This repository carries the MCP registry manifest, the host plugins, and the workflow skills; the server runs at `https://mcp.proofable.me/mcp`.
 
 ## Support
 
