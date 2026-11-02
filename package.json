@@ -42,7 +42,6 @@
     "LICENSE",
     "README.md",
     "server.json",
-    "smithery.config.json",
     "skills/**"
   ],
   "engines": {

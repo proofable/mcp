@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/changelog).
 
+## [Unreleased]
+
+### Added
+
+- Add to Cursor and Install in VS Code buttons in the README.
+
+### Removed
+
+- `smithery.config.json`. Smithery shut down its hosted gateway on 31 October 2026, so the config schema had no consumer. Gateways that reserve `Authorization` still send the key as `x-proofable-access-key`.
+
 ## [0.1.8] - 2026-11-01
 
 ### Added
