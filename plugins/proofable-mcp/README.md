@@ -2,7 +2,7 @@
 
 The trust harness for AI. Identity and governance for the agents you run, in every MCP client.
 
-This plugin adds the hosted Proofable MCP server and three workflow skills: `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate`. Install it, finish sign-in in your client, then ask:
+This plugin adds the hosted Proofable MCP server and the `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate` workflow skills. Install it, finish sign-in in your client, then ask:
 
 ```text
 Show my Proofable profile and the proofs I can reuse.
@@ -31,7 +31,7 @@ hermes mcp add proofable --url https://mcp.proofable.me/mcp --auth oauth
 hermes mcp login proofable
 ```
 
-Any client that reads Agent Plugins packages can use this folder as is: `plugin.json` declares the package and `skills/` holds the skills. Register `https://mcp.proofable.me/mcp` as a Streamable HTTP MCP server with OAuth.
+Any client that reads Agent Plugins packages can use this folder as is. `plugin.json` declares the package and `skills/` holds the skills. Register `https://mcp.proofable.me/mcp` as a Streamable HTTP MCP server with OAuth.
 
 Keep one Proofable connection per client. Skip the manual `proofable` entry when the plugin or the client's MCP catalog already registered one.
 

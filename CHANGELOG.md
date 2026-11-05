@@ -21,7 +21,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Added
 
-- **Prompt injection test for your own agent.** `examples/injection-test` hides the five AgentDojo attack templates in a note your agent reads, runs the same task under a permission scoped to the task and under a broad one, and grades every run from its signed receipt: whether the model tried the attacker's goal (a request out of your account, or a saved record that makes the note's private data readable by others), and whether the permission check refused the call before it ran. The records check offline, and you can plant your own attack text.
+- **Prompt injection test for your own agent.** `examples/injection-test` hides the five AgentDojo attack templates in a note your agent reads, runs the same task under a permission scoped to the task and under a broad one, and grades every run from its signed receipt. The receipt shows whether the model tried the attacker's goal (a request out of your account, or a saved record that makes the note's private data readable by others), and whether the permission check refused the call before it ran. The records check offline, and you can plant your own attack text.
 
 ### Changed
 
@@ -29,7 +29,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 - **The ChatGPT plugin explains itself in its own terms.** Its tool descriptions and input help no longer point at checks or tools that surface does not serve, and the verifier IDs it accepts are listed where the argument is.
 
-- **Saving a key moves to your profile.** `https://mcp.proofable.me/mcp` no longer accepts a key as a tool argument: `tools/list` does not offer the tool that saved one, and a call to it is rejected as an unknown tool, so a credential is never passed through a client. Every other tool stays on every plan for a signed-in connection, on your credits and within your permissions: the proof and permission tools, jobs, the hosted browser, connected apps, remote MCP servers, session notes, saved tools, web search, page fetch, and your saved keys (list, remove, or call a provider with one, never reading the key back). The published card lists twelve tools and no vault tool.
+- **Saving a key moves to your profile.** `https://mcp.proofable.me/mcp` no longer accepts a key as a tool argument. `tools/list` does not offer the tool that saved one, and a call to it is rejected as an unknown tool, so a credential is never passed through a client. Every other tool stays on every plan for a signed-in connection, on your credits and within your permissions. That covers the proof and permission tools, jobs, the hosted browser, connected apps, remote MCP servers, session notes, saved tools, web search, page fetch, and your saved keys (list, remove, or call a provider with one, never reading the key back). The published card lists twelve tools and no vault tool.
 
 - **Dedicated ChatGPT plugin endpoint.** The ChatGPT plugin connects to `https://mcp.proofable.me/mcp/openai`, which serves the eight read and guided-verification tools with the same OAuth sign-in; `proofable_verify_or_guide` returns the hosted link whenever a verification step is needed. Cursor, Claude Code, Codex, and every other client get the full tool list on `/mcp`.
 
@@ -49,7 +49,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Changed
 
-- Simplified the README, setup skill, and marketplace copy around one path: connect Proofable, sign in, and ask for a useful result.
+- Simplified the README, setup skill, and marketplace copy around one path. Connect Proofable, sign in, and ask for a useful result.
 - Aligned the package, registry, Claude, Cursor, and Codex metadata on the buyer-facing release description.
 
 ### Fixed
@@ -148,7 +148,7 @@ The `@proofable/mcp` package continues the line published as `@neus/mcp-server`.
 
 | Release | Date | What it changed for someone connecting a client |
 | --- | --- | --- |
-| [1.3.9](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.9) | 2026-08-13 | Removed the OAuth browser command-injection sink: authorization URLs open through fixed executables, never a shell. Registry scanning scoped to the MCP package so published metadata includes the Apache-2.0 license. Retired the `neus import` / `neus export` / `neus revoke` alias paths. Restored `neus-trust-workflow` in the `neus-mcp` plugin bundle. |
+| [1.3.9](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.9) | 2026-08-13 | Removed the OAuth browser command-injection sink. Authorization URLs open through fixed executables, never a shell. Registry scanning scoped to the MCP package so published metadata includes the Apache-2.0 license. Retired the `neus import` / `neus export` / `neus revoke` alias paths. Restored `neus-trust-workflow` in the `neus-mcp` plugin bundle. |
 | [1.3.8](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.8) | 2026-07-30 | Added RFC 9207 issuer validation to `neus setup` and `neus auth`, closing an authorization-code interception path. Removed the retired `neus-trust` plugin fallback. |
 | [1.3.7](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.7) | 2026-07-30 | Restored one-click plugin install in Cursor, and normalized the RFC 8707 `resource` parameter so canonicalizing clients stop failing with `invalid_target`. |
 | [1.3.6](https://www.npmjs.com/package/@neus/mcp-server/v/1.3.6) | 2026-07-30 | The `neus-mcp` plugin became the MCP registration owner in Cursor while the CLI defers to it, ending duplicate `neus` entries. The trust-workflow skill moved into the package as its single home. |
