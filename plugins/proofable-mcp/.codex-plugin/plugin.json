@@ -1,6 +1,6 @@
 {
   "name": "proofable-mcp",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
   "author": {
     "name": "Proofable",

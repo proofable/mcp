@@ -9,9 +9,21 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ## [Unreleased]
 
+## [0.1.10] - 2026-11-06
+
 ### Added
 
 - Add to Cursor and Install in VS Code buttons in the README.
+
+### Fixed
+
+- **Signing in starts from the chat again.** A signed-out connection listed only the four tools that work without an account, so a client could never call a tool that needs one, and an OAuth connector stayed connected and signed out with no way to sign in. A signed-out connection now lists every tool. Calling one that needs your account starts the client's sign-in (in Claude, a **Connect** button in the chat), and the same call runs once you sign in.
+- **The trust workflow no longer points at a tool the connection does not offer.** It lists and removes saved keys, and says a key is saved on the profile in Proofable.
+
+### Changed
+
+- **The trust workflow stops on an unclear requirement.** It asks one question and checks the answer against the source that owns it before it acts.
+- **The trust workflow covers who owns an agent.** Choose the agent's wallet and its controlling wallet before the first call. Re-creating an agent replaces its record, so pass every field back. A declared skill loads only when its text is saved as a proof on the agent's wallet.
 
 ### Removed
 
@@ -173,7 +185,8 @@ The `@proofable/mcp` package continues the line published as `@neus/mcp-server`.
 | [1.1.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.0) | 2026-05-26 | First public MCP release: OAuth-first setup (`neus setup`, `neus auth`, `neus doctor --live`), the `@neus/mcp-server` npm package, public tools including encrypted Vault secrets, and the Claude Code marketplace plugin with the trust workflow skill. |
 | [1.0.12](https://www.npmjs.com/package/@neus/mcp-server/v/1.0.12) | 2026-05-26 | First `@neus/sdk` release with the hosted MCP CLI and OAuth browser flow. |
 
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.8...HEAD
+[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.10...HEAD
+[0.1.10]: https://github.com/proofable/mcp/compare/v0.1.8...v0.1.10
 [0.1.8]: https://github.com/proofable/mcp/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/proofable/mcp/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/proofable/mcp/compare/v0.1.5...v0.1.6
