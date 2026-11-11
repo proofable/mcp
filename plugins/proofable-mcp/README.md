@@ -36,3 +36,16 @@ Any client that reads Agent Plugins packages can use this folder as is. `plugin.
 Keep one Proofable connection per client. Skip the manual `proofable` entry when the plugin or the client's MCP catalog already registered one.
 
 [Set up Proofable](https://docs.proofable.me/mcp/setup) covers every supported client.
+
+## What it connects to
+
+The plugin runs no local code. Its only network endpoint is the hosted Proofable MCP server, signed in with OAuth:
+
+- Claude Code and Cowork: `https://mcp.proofable.me/mcp/claude`, the Claude directory tool set (profile, proofs, verification, agents, jobs, receipts).
+- Cursor and other clients: `https://mcp.proofable.me/mcp`.
+
+The skills are Markdown instructions. Tool calls send only the arguments you see to `mcp.proofable.me`; keys and passwords are never requested in chat.
+
+## Privacy
+
+[Privacy policy](https://proofable.me/privacy) · [Terms](https://proofable.me/terms) · [Support](https://proofable.me/contact)
