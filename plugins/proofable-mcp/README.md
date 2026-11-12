@@ -48,4 +48,4 @@ The skills are Markdown instructions. Tool calls send only the arguments you see
 
 ## Privacy
 
-[Privacy policy](https://proofable.me/privacy) · [Terms](https://proofable.me/terms) · [Support](https://proofable.me/contact)
+[Privacy policy](https://proofable.me/privacy), [Terms](https://proofable.me/terms), [Support](https://proofable.me/contact)
