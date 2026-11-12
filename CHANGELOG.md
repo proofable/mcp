@@ -12,7 +12,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 ### Added
 
 - **Dedicated Claude directory endpoint.** The Claude plugin connects to `https://mcp.proofable.me/mcp/claude`, which serves the 23 profile, proof, verification, agent, job and receipt tools with the same OAuth sign-in. Cursor, Codex and every other client keep the full tool list on `/mcp`.
-- The Claude plugin manifest carries its directory listing links: icon, documentation, support, privacy policy and terms.
+- The Claude plugin manifest carries icon, documentation, support, privacy policy and terms links for its directory listing.
 
 ## [0.1.10] - 2026-11-06
 
