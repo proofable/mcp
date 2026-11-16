@@ -1,6 +1,6 @@
 {
   "name": "@proofable/mcp",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
   "type": "module",
   "main": "./index.mjs",
