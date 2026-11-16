@@ -5,7 +5,7 @@
 
 Hand your agents the job and keep the keys. Their limits and proof follow them into every MCP client.
 
-Connect Proofable once, and your agents reuse your proofs, work within a permission you can revoke, and take the jobs you hand them, in Cursor, Claude, Codex, VS Code, ChatGPT and any other MCP client.
+Add Proofable to Claude, ChatGPT, Cursor, Codex, VS Code or any MCP client. Verify users, give your AI agents their own ID and limits, and hand them work you can see and stop.
 
 ## Start
 

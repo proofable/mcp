@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.11",
-  "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
+  "description": "Verify users, give AI agents their own ID and limits, and hand them work you can see and stop.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -30,7 +30,7 @@
   "interface": {
     "displayName": "Proofable",
     "shortDescription": "Context and control for any AI.",
-    "longDescription": "Every agent gets an owner, the limits you set, and a signed receipt of what it did, in the AI tools you already use. Check an agent's permissions before it acts, reuse a proof instead of verifying again, load an agent's identity, limits and context into your work, revoke a proof or a permission everywhere at once, and hand an agent work as a job. Sign-in is required, and proofs stay offchain unless you ask for a blockchain record.",
+    "longDescription": "Check whether someone is already verified before you ask them again. Give each AI agent its own ID, owned by you, with limits on what it can do and spend. Hand it work, watch it run, and switch it off from anywhere. Every action leaves a record you can check. Sign in once with your Proofable account.",
     "developerName": "Proofable",
     "category": "Developer Tools",
     "websiteURL": "https://proofable.me",
