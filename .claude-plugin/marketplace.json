@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
+    "description": "Verify users, give AI agents their own ID and limits, and hand them work you can see and stop.",
     "version": "0.1.11"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools."
+      "description": "Verify users, give AI agents their own ID and limits, and hand them work you can see and stop."
     }
   ]
 }
