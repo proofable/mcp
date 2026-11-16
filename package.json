@@ -1,7 +1,7 @@
 {
   "name": "@proofable/mcp",
   "version": "0.1.11",
-  "description": "Verify users, give AI agents their own ID and limits, and hand them work you can see and stop.",
+  "description": "Let AI agents do real work with their own ID, limits you set, and a receipt for every job.",
   "type": "module",
   "main": "./index.mjs",
   "exports": {

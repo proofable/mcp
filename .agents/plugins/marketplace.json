@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "Verify users, give AI agents their own ID and limits, and hand them work you can see and stop.",
+    "description": "Let AI agents do real work with their own ID, limits you set, and a receipt for every job.",
     "version": "0.1.11"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "Verify users, give AI agents their own ID and limits, and hand them work you can see and stop."
+      "description": "Let AI agents do real work with their own ID, limits you set, and a receipt for every job."
     }
   ]
 }
