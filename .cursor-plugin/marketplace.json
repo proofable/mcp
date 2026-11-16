@@ -1,11 +1,13 @@
 {
   "name": "proofable",
   "owner": {
-    "name": "Proofable"
+    "name": "Proofable",
+    "url": "https://proofable.me"
   },
+  "logo": "./plugins/proofable-mcp/assets/icon.svg",
   "metadata": {
     "description": "Context and control for any AI. Agent identity, scoped access, and proof across tools.",
-    "version": "0.1.10"
+    "version": "0.1.11"
   },
   "plugins": [
     {

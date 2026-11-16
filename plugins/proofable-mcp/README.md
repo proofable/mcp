@@ -41,7 +41,7 @@ Keep one Proofable connection per client. Skip the manual `proofable` entry when
 
 The plugin runs no local code. Its only network endpoint is the hosted Proofable MCP server, signed in with OAuth:
 
-- Claude Code and Cowork: `https://mcp.proofable.me/mcp/claude`, the Claude directory tool set (profile, proofs, verification, agents, jobs, receipts).
+- Claude Code and Cowork: `https://mcp.proofable.me/mcp/claude`, the same 18 tools as every other client.
 - Cursor and other clients: `https://mcp.proofable.me/mcp`.
 
 The skills are Markdown instructions. Tool calls send only the arguments you see to `mcp.proofable.me`; keys and passwords are never requested in chat.

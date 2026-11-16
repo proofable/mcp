@@ -5,7 +5,7 @@
 
 Hand your agents the job and keep the keys. Their limits and proof follow them into every MCP client.
 
-Connect Proofable once, and your agents can use your profile, proofs, permissions, and protected tools in Cursor, Claude, Codex, VS Code, ChatGPT, and any other MCP client.
+Connect Proofable once, and your agents reuse your proofs, work within a permission you can revoke, and take the jobs you hand them, in Cursor, Claude, Codex, VS Code, ChatGPT and any other MCP client.
 
 ## Start
 
@@ -56,17 +56,20 @@ Keep one Proofable connection per client. A marketplace plugin plus a manual ent
 
 ## What agents can do
 
+18 tools, every client, every plan.
+
 | Outcome | Tools |
 |---|---|
-| Load the signed-in profile and current context | `proofable_context` |
-| Find supported checks and their required inputs | `proofable_verifiers_catalog` |
-| Check whether a qualifying proof already exists | `proofable_proofs_check` |
-| Reuse a current proof or get the next verification step | `proofable_verify_or_guide` |
-| Create or refresh a proof | `proofable_verify` |
-| Prepare and submit a check needing another signer | `proofable_verify_prepare`, `proofable_verify_submit` |
-| Find and read proofs | `proofable_proofs_get` |
-| Update proof metadata or add feedback | `proofable_proofs_update` |
-| Check, create, and load agent permissions | `proofable_agent_link`, `proofable_agent_create`, `proofable_agent_mount` |
+| Load your profile, proofs, agents and credits | `proofable_context` |
+| Reuse a proof, or get the next step to one | `proofable_verify_or_guide` |
+| See every check and its inputs | `proofable_verifiers_catalog` |
+| Gate on a proof: pass or fail | `proofable_proofs_check` |
+| Prove it | `proofable_verify` |
+| Prove it with another wallet's signature | `proofable_verify_prepare`, `proofable_verify_submit` |
+| Read, edit or review proofs | `proofable_proofs_get`, `proofable_proofs_update` |
+| Revoke a proof or an agent permission | `proofable_proof_revoke` |
+| Add an agent, check its permission, run as it | `proofable_agent_create`, `proofable_agent_link`, `proofable_agent_mount` |
+| Hand work to an agent and follow it | `proofable_job_create`, `proofable_job_get`, `proofable_job_list`, `proofable_job_decide`, `proofable_job_cancel` |
 
 Call `proofable_context` once after connecting. Proofable reuses current proofs before starting another verification and returns **Passed**, **Action needed**, or **Blocked**.
 

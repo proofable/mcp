@@ -7,11 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/changelog).
 
-## [Unreleased]
+## [0.1.11] - 2026-11-16
+
+### Changed
+
+- **One 18-tool surface on every client.** Prove, reuse, revoke, hold an agent to a permission, and hand it work. `/mcp`, `/mcp/claude` and the published card serve the same list, signed in or out. Jobs reach the browser, search and connected apps inside the agent's own permission.
+- Every tool description now states what it does, when to use it over its siblings, what it costs, and what it returns. Job tools and `proofable_proof_revoke` publish output schemas.
+
+### Removed
+
+- From connections: web search, page fetch, the hosted browser, connected-app calls, the remote MCP relay, saved-key provider calls, the vault tools, session receipts, saved JavaScript tools and the agent list. They keep running inside Proofable.
 
 ### Added
 
-- **Dedicated Claude directory endpoint.** The Claude plugin connects to `https://mcp.proofable.me/mcp/claude`, which serves the 23 profile, proof, verification, agent, job and receipt tools with the same OAuth sign-in. Cursor, Codex and every other client keep the full tool list on `/mcp`.
+- **Dedicated Claude directory endpoint.** The Claude plugin connects to `https://mcp.proofable.me/mcp/claude` with the same OAuth sign-in.
 - The Claude plugin manifest carries icon, documentation, support, privacy policy and terms links for its directory listing.
 
 ## [0.1.10] - 2026-11-06
