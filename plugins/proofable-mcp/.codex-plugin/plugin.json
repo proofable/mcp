@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "The trust harness for AI.",
-    "longDescription": "Proofable is the trust harness for AI: every agent gets an owner, the limits you set, and a signed receipt of what it did, in the AI tools you already use. Check an agent's permissions before it acts, reuse a proof instead of verifying again, and load an agent's identity, limits and context into your work. Built for small AI teams and builders who let agents do real work. Sign-in is required, and proofs stay offchain unless you ask for a blockchain record.",
+    "shortDescription": "Context and control for any AI.",
+    "longDescription": "Every agent gets an owner, the limits you set, and a signed receipt of what it did, in the AI tools you already use. Check an agent's permissions before it acts, reuse a proof instead of verifying again, and load an agent's identity, limits and context into your work. Sign-in is required, and proofs stay offchain unless you ask for a blockchain record.",
     "developerName": "Proofable",
     "category": "Developer Tools",
     "websiteURL": "https://proofable.me",

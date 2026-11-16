@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
-The trust harness for AI. Identity and governance for the agents you run, in every MCP client.
+Hand your agents the job and keep the keys. Their limits and proof follow them into every MCP client.
 
 Connect Proofable once, and your agents can use your profile, proofs, permissions, and protected tools in Cursor, Claude, Codex, VS Code, ChatGPT, and any other MCP client.
 
