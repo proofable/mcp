@@ -77,7 +77,7 @@ The [MCP tool reference](https://docs.proofable.me/mcp/tools) lists every tool w
 
 ## Servers and automation
 
-Create an access key under [Account → Access keys](https://proofable.me/profile?tab=account), store it as `PROOFABLE_ACCESS_KEY`, and send it as a Bearer token. Keep access keys out of source code, browser bundles, and chat.
+Create an access key in [your account settings](https://proofable.me/profile?tab=account), store it as `PROOFABLE_ACCESS_KEY`, and send it as a Bearer token. Keep access keys out of source code, browser bundles, and chat.
 
 ```json
 {
