@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "proofable-mcp",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Let AI agents do real work with their own ID, limits you set, and a receipt for every job.",
   "author": {
     "name": "Proofable",

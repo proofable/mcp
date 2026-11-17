@@ -2,7 +2,7 @@
   "name": "proofable-mcp",
   "displayName": "Proofable",
   "description": "Let AI agents do real work with their own ID, limits you set, and a receipt for every job.",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
