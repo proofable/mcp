@@ -22,11 +22,14 @@ Claude Code installs the server and its skills together:
 /plugin install proofable-mcp@proofable
 ```
 
-Codex and the other supported clients, from a terminal:
+Codex, from a terminal:
 
 ```bash
-npx -y @proofable/sdk setup
+npx -y @proofable/sdk setup --client codex
+codex mcp login proofable
 ```
+
+`npx -y @proofable/sdk setup` writes the same connection for every supported client it finds.
 
 In Claude and any other app with connectors, add `https://mcp.proofable.me/mcp` as a custom connector. A standard MCP configuration:
 
@@ -59,7 +62,7 @@ Check whether I already have the proof needed for this task. Reuse it if it qual
 
 ## What agents can do
 
-18 tools, every client, every plan.
+18 tools in every client and on every plan. The ChatGPT plugin carries 8 of them.
 
 | Outcome | Tools |
 |---|---|
