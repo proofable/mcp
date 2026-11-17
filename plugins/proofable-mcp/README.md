@@ -1,6 +1,6 @@
 # Proofable MCP plugin
 
-Hand your agents the job and keep the keys. Their limits and proof follow them into every MCP client.
+One profile every AI tool you use already knows. Your notes, rules, agents, skills and keys load with only what is true now.
 
 This plugin adds the hosted Proofable MCP server and the `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate` workflow skills. Install it, finish sign-in in your client, then ask:
 

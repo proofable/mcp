@@ -11,7 +11,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Changed
 
-- The listing line, README and plugin descriptions say what you get: AI agents with their own ID, limits you set, and a receipt for every job.
+- The listing line, README and plugin descriptions now lead with one profile every AI tool you use already knows, with only what is true now.
 - Skill setup steps read as plain steps.
 
 ## [0.1.11] - 2026-11-16

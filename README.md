@@ -3,9 +3,9 @@
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
-Hand your agents the job and keep the keys. Their limits and proof follow them into every MCP client.
+One profile every AI tool you use already knows. Your notes, rules, agents, skills and keys load with only what is true now.
 
-Add Proofable to the AI tools you already use. Your agents get their own ID, limits you set, and a receipt for every job.
+Connect once, and Claude, ChatGPT, Codex, Cursor and any MCP client work from the same profile at a fraction of the tokens. Your agents stay inside the rules you set and use keys they never see.
 
 ## Start
 

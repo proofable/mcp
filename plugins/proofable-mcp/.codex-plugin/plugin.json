@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.12",
-  "description": "Let AI agents do real work with their own ID, limits you set, and a receipt for every job.",
+  "description": "One profile every AI tool you use already knows, with only what is true now.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "Context and control for any AI.",
-    "longDescription": "Check whether someone is already verified before you ask them again. Give each AI agent its own ID, owned by you, with limits on what it can do and spend. Hand it work, watch it run, and switch it off from anywhere. Every job leaves a receipt you can check. Sign in once with your Proofable account.",
+    "shortDescription": "One profile every AI tool already knows.",
+    "longDescription": "Your notes, rules, agents, skills and keys in one profile that Claude, ChatGPT, Codex, Cursor and any MCP client load with only what is true now, so answers come out right at a fraction of the tokens. Agents work inside the rules you set and use keys they never see, and every job leaves a receipt you can check. Sign in once with your Proofable account.",
     "developerName": "Proofable",
     "category": "Developer Tools",
     "websiteURL": "https://proofable.me",
