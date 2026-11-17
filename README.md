@@ -16,7 +16,7 @@ One profile carries your context, agents, skills and keys, loaded with only what
 <a href="https://claude.ai/settings/connectors"><img src=".github/assets/buttons/claude.png" alt="Add to Claude" height="44"></a>
 <a href="https://chatgpt.com/plugins/plugin_asdk_app_6ae65c2bac0881918812c63246c7e6c9"><img src=".github/assets/buttons/chatgpt.png" alt="Add to ChatGPT" height="44"></a>
 
-Every AI tool on your machine, in one command. It finds Claude Code, Codex, Cursor and VS Code and adds Proofable to each:
+One command adds Proofable to Claude Code, Codex, Cursor and VS Code on your machine:
 
 ```bash
 npx -y @proofable/sdk setup
@@ -34,8 +34,6 @@ Or set up one client:
 | **VS Code** | [Install](https://vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D) or [Insiders](https://insiders.vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D&quality=insiders), then start it from the MCP server list |
 | **Hermes** | `hermes mcp add proofable --url https://mcp.proofable.me/mcp --auth oauth` then `hermes mcp login proofable` |
 | **Any other client** | Add `https://mcp.proofable.me/mcp` in its MCP settings, then sign in |
-
-Keep one Proofable connection per client. A plugin plus a manual entry creates a duplicate.
 
 ## First prompt
 
