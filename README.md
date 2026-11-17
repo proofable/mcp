@@ -11,10 +11,10 @@ One profile carries your context, agents, skills and keys, loaded with only what
 
 ## Connect in one click
 
-<a href="https://cursor.com/en/install-mcp?name=proofable&config=eyJ1cmwiOiJodHRwczovL21jcC5wcm9vZmFibGUubWUvbWNwIn0%3D"><img src=".github/assets/buttons/cursor.png" alt="Add to Cursor" height="40"></a>
-<a href="https://vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D"><img src=".github/assets/buttons/vscode.png" alt="Install in VS Code" height="40"></a>
-<a href="https://insiders.vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D&quality=insiders"><img src=".github/assets/buttons/vscode-insiders.png" alt="Install in VS Code Insiders" height="40"></a>
-<a href="https://chatgpt.com/plugins/plugin_asdk_app_6ae65c2bac0881918812c63246c7e6c9"><img src=".github/assets/buttons/chatgpt.png" alt="Add to ChatGPT" height="40"></a>
+<a href="https://cursor.com/en/install-mcp?name=proofable&config=eyJ1cmwiOiJodHRwczovL21jcC5wcm9vZmFibGUubWUvbWNwIn0%3D"><img src=".github/assets/buttons/cursor.png" alt="Add to Cursor" height="44"></a>
+<a href="https://vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D"><img src=".github/assets/buttons/vscode.png" alt="Install in VS Code" height="44"></a>
+<a href="https://insiders.vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D&quality=insiders"><img src=".github/assets/buttons/vscode-insiders.png" alt="Install in VS Code Insiders" height="44"></a>
+<a href="https://chatgpt.com/plugins/plugin_asdk_app_6ae65c2bac0881918812c63246c7e6c9"><img src=".github/assets/buttons/chatgpt.png" alt="Add to ChatGPT" height="44"></a>
 
 Every AI tool on your machine, in one command. It finds Claude Code, Codex, Cursor and VS Code and adds Proofable to each:
 
