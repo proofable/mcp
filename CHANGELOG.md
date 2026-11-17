@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/changelog).
 
+## [0.1.12] - 2026-11-17
+
+### Changed
+
+- The listing line, README and plugin descriptions now say every AI tool you use knows your work and follows your rules.
+- Skill setup steps read as plain steps.
+
 ## [0.1.11] - 2026-11-16
 
 ### Changed
@@ -199,7 +206,8 @@ The `@proofable/mcp` package continues the line published as `@neus/mcp-server`.
 | [1.1.0](https://www.npmjs.com/package/@neus/mcp-server/v/1.1.0) | 2026-05-26 | First public MCP release: OAuth-first setup (`neus setup`, `neus auth`, `neus doctor --live`), the `@neus/mcp-server` npm package, public tools including encrypted Vault secrets, and the Claude Code marketplace plugin with the trust workflow skill. |
 | [1.0.12](https://www.npmjs.com/package/@neus/mcp-server/v/1.0.12) | 2026-05-26 | First `@neus/sdk` release with the hosted MCP CLI and OAuth browser flow. |
 
-[Unreleased]: https://github.com/proofable/mcp/compare/v0.1.10...HEAD
+[0.1.12]: https://www.npmjs.com/package/@proofable/mcp/v/0.1.12
+[0.1.11]: https://github.com/proofable/mcp/compare/v0.1.10...v0.1.11
 [0.1.10]: https://github.com/proofable/mcp/compare/v0.1.8...v0.1.10
 [0.1.8]: https://github.com/proofable/mcp/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/proofable/mcp/compare/v0.1.6...v0.1.7
