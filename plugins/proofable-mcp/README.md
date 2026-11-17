@@ -1,11 +1,11 @@
 # Proofable MCP plugin
 
-One profile every AI tool you use already knows. Your notes, rules, agents, skills and keys load with only what is true now.
+Connect once, and every AI tool you use knows your work and follows your rules.
 
 This plugin adds the hosted Proofable MCP server and the `proofable-setup`, `proofable-trust-workflow`, and `proofable-integrate` workflow skills. Install it, finish sign-in in your client, then ask:
 
 ```text
-Show my Proofable profile and the proofs I can reuse.
+Show my Proofable profile, my agents and what each one is allowed to do.
 ```
 
 ## Install

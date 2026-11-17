@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.proofable/mcp",
   "title": "Proofable MCP",
-  "description": "One profile every AI tool you use already knows, with only what is true now.",
+  "description": "Every AI tool you use knows your work and follows your rules, with a receipt for every action.",
   "version": "0.1.12",
   "repository": {
     "url": "https://github.com/proofable/mcp",

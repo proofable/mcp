@@ -11,7 +11,7 @@ Product release notes: [docs.proofable.me/changelog](https://docs.proofable.me/c
 
 ### Changed
 
-- The listing line, README and plugin descriptions now lead with one profile every AI tool you use already knows, with only what is true now.
+- The listing line, README and plugin descriptions now say every AI tool you use knows your work and follows your rules.
 - Skill setup steps read as plain steps.
 
 ## [0.1.11] - 2026-11-16

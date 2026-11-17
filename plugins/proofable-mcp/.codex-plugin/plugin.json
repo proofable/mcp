@@ -1,7 +1,7 @@
 {
   "name": "proofable-mcp",
   "version": "0.1.12",
-  "description": "One profile every AI tool you use already knows, with only what is true now.",
+  "description": "Every AI tool you use knows your work and follows your rules, with a receipt for every action.",
   "author": {
     "name": "Proofable",
     "url": "https://proofable.me"
@@ -29,8 +29,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Proofable",
-    "shortDescription": "One profile every AI tool already knows.",
-    "longDescription": "Your notes, rules, agents, skills and keys in one profile that Claude, ChatGPT, Codex, Cursor and any MCP client load with only what is true now, so answers come out right at a fraction of the tokens. Agents work inside the rules you set and use keys they never see, and every job leaves a receipt you can check. Sign in once with your Proofable account.",
+    "shortDescription": "Your AI knows your work and follows your rules.",
+    "longDescription": "One profile carries your context, agents, skills and keys into every AI tool you use. Each tool loads only what is true now, so answers come out right at a fraction of the tokens. Agents work inside the rules you set, use keys they never see, wait for you on irreversible actions, and leave a receipt you can check. Sign in once with your Proofable account.",
     "developerName": "Proofable",
     "category": "Developer Tools",
     "websiteURL": "https://proofable.me",

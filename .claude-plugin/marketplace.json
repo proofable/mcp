@@ -4,14 +4,14 @@
     "name": "Proofable"
   },
   "metadata": {
-    "description": "One profile every AI tool you use already knows, with only what is true now.",
+    "description": "Every AI tool you use knows your work and follows your rules, with a receipt for every action.",
     "version": "0.1.12"
   },
   "plugins": [
     {
       "name": "proofable-mcp",
       "source": "./plugins/proofable-mcp",
-      "description": "One profile every AI tool you use already knows, with only what is true now."
+      "description": "Every AI tool you use knows your work and follows your rules, with a receipt for every action."
     }
   ]
 }

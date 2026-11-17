@@ -3,16 +3,16 @@
 [![npm](https://img.shields.io/npm/v/%40proofable%2Fmcp?label=%40proofable%2Fmcp&color=98C0EF)](https://www.npmjs.com/package/@proofable/mcp)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
-One profile every AI tool you use already knows. Your notes, rules, agents, skills and keys load with only what is true now.
+Connect once, and every AI tool you use knows your work and follows your rules.
 
-Connect once, and Claude, ChatGPT, Codex, Cursor and any MCP client work from the same profile at a fraction of the tokens. Your agents stay inside the rules you set and use keys they never see.
+One profile carries your context, agents, skills and keys, loaded with only what is true now. Each action is checked before it runs, and every job leaves a receipt you can check.
 
 ## Start
 
 Open **[Set up Proofable](https://docs.proofable.me/mcp/setup)**, choose your client, and finish sign-in. Then ask:
 
 ```text
-Show my Proofable profile and the proofs I can reuse.
+Show my Proofable profile, my agents and what each one is allowed to do.
 ```
 
 For a specific requirement:
