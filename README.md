@@ -13,7 +13,14 @@ One profile carries your context, agents, skills and keys, loaded with only what
 
 <a href="https://cursor.com/en/install-mcp?name=proofable&config=eyJ1cmwiOiJodHRwczovL21jcC5wcm9vZmFibGUubWUvbWNwIn0%3D"><img src=".github/assets/buttons/cursor.svg" alt="Add to Cursor"></a>
 <a href="https://vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D"><img src=".github/assets/buttons/vscode.svg" alt="Install in VS Code"></a>
+<a href="https://insiders.vscode.dev/redirect/mcp/install?name=proofable&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.proofable.me%2Fmcp%22%7D&quality=insiders"><img src=".github/assets/buttons/vscode-insiders.svg" alt="Install in VS Code Insiders"></a>
 <a href="https://chatgpt.com/plugins/plugin_asdk_app_6ae65c2bac0881918812c63246c7e6c9"><img src=".github/assets/buttons/chatgpt.svg" alt="Add to ChatGPT"></a>
+
+Every AI tool on your machine, in one command. It finds Claude Code, Codex, Cursor and VS Code and adds Proofable to each:
+
+```bash
+npx -y @proofable/sdk setup
+```
 
 Claude Code installs the server and its skills together:
 
@@ -29,7 +36,12 @@ npx -y @proofable/sdk setup --client codex
 codex mcp login proofable
 ```
 
-`npx -y @proofable/sdk setup` writes the same connection for every supported client it finds.
+Hermes:
+
+```bash
+hermes mcp add proofable --url https://mcp.proofable.me/mcp --auth oauth
+hermes mcp login proofable
+```
 
 In Claude and any other app with connectors, add `https://mcp.proofable.me/mcp` as a custom connector. A standard MCP configuration:
 
