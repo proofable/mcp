@@ -47,16 +47,12 @@ Run `/mcp`, select Proofable and sign in.
 https://mcp.proofable.me/mcp
 ```
 
-On Team and Enterprise, an owner adds the connector first.
-
 </details>
 
 <details>
 <summary><b>ChatGPT</b></summary>
 
 [Add Proofable to ChatGPT](https://chatgpt.com/plugins/plugin_asdk_app_6ae65c2bac0881918812c63246c7e6c9), select Install plugin, then sign in when ChatGPT asks.
-
-If your workspace allows developer mode, you can add `https://mcp.proofable.me/mcp` as a custom MCP server instead.
 
 </details>
 
