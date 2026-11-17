@@ -7,7 +7,7 @@ Connect once, and every AI tool you use knows your work and follows your rules.
 
 One profile carries your context, agents, skills and keys, loaded with only what is true now. Each action is checked before it runs, and every job leaves a receipt you can check.
 
-<p align="center"><img src="https://raw.githubusercontent.com/proofable/mcp/main/.github/assets/dashboard.png" width="880" alt="The Proofable dashboard with three agents and their runs, an activity feed, and a release waiting for your approval"></p>
+<p align="center"><img src=".github/assets/dashboard.png" width="880" alt="The Proofable dashboard with three agents and their runs, an activity feed, and a release waiting for your approval"></p>
 
 ## Start
 
